@@ -68,13 +68,6 @@ services:
     ports:
       - ${DB_TESTING_PORT:-13307}:3306
 
-  node:
-    image: node:12.14-alpine
-    tty: true
-    volumes:
-      - ${PROJECT_PATH:-./src}:/work
-    working_dir: /work
-
   mail:
     image: mailhog/mailhog
     ports:

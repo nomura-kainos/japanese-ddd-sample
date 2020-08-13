@@ -56,11 +56,3 @@ mysql:
 	docker-compose exec db bash -c 'mysql -u $$MYSQL_USER -p$$MYSQL_PASSWORD $$MYSQL_DATABASE'
 mysql-testing:
 	docker-compose exec db-testing bash -c 'mysql -u $$MYSQL_USER -p$$MYSQL_PASSWORD $$MYSQL_DATABASE'
-node:
-	docker-compose exec node ash
-npm:
-	docker-compose exec node npm install
-	docker-compose exec node npm run dev
-yarn:
-	docker-compose exec node yarn
-	docker-compose exec node yarn run dev
