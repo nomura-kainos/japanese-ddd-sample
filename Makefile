@@ -26,8 +26,6 @@ destroy:
 	docker-compose down --rmi all --volumes
 ps:
 	docker-compose ps
-app:
-	docker-compose exec app ash -l
 fresh:
 	docker-compose exec app php artisan migrate:fresh
 seed:
