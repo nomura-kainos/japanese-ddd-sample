@@ -50,6 +50,20 @@ services:
     ports:
       - ${DB_PORT:-13306}:3306
 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    restart: always
+    environment:
+      - PMA_ARBITRARY=1
+      - PMA_USER=homestead
+      - PMA_PASSWORD=secret
+    links:
+      - db
+    ports:
+      - ${DB_TOOL_PORT:-13308}:80
+    volumes:
+      - phpmyadmin-sessions
+
   db-testing:
     image: mysql:8.0
     volumes:
