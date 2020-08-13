@@ -8,7 +8,7 @@ https://github.com/ucan-lab/docker-laravel
 # docker-laravel
 
 Build Laravel's development environment using docker.
-PHP7.4/MySQL8.0/nginx/redis/node
+PHP7.4/MySQL8.0/nginx/node
 
 ## Build
 
