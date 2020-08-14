@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', 'ホームコントローラ');
+Route::get('/item', '商品\一覧コントローラ');
 
 Route::get('/hello/', 'HelloController@index')->name('hello');
 Route::post('/hello/other', 'HelloController@other');
