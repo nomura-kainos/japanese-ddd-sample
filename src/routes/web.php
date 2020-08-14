@@ -19,6 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/home', 'ホームコントローラ');
+
 Route::get('/hello/', 'HelloController@index')->name('hello');
 Route::post('/hello/other', 'HelloController@other');
 Route::get('/sample', 'Sample\SampleController@index')->name('sample');
@@ -40,10 +42,6 @@ Route::get('board', 'BoardController@index');
 Route::get('board/add', 'BoardController@add');
 Route::post('board/add', 'BoardController@create');
 Route::resource('rest', 'RestappController');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/sample_mail', function () {
     Mail::to('sample@example.com')->send(new SampleMail);
