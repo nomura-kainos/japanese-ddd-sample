@@ -14,12 +14,13 @@
 use App\Mail\SampleMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
+use 商品\アプリ\コントローラ\一覧コントローラ;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/item', '商品\一覧コントローラ');
+Route::get('/item', 一覧コントローラ::class);
 
 Route::get('/hello/', 'HelloController@index')->name('hello');
 Route::post('/hello/other', 'HelloController@other');
