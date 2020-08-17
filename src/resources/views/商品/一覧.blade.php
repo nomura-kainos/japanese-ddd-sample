@@ -10,6 +10,15 @@
                 <div class="card-body">
                     You are logged in!
                 </div>
+                <p>A list of items.</p>
+                <table>
+                    @foreach ($商品 as $単品)
+                    <tr>
+                        <td>{{ $単品->名前 }}</td>
+                        <td>{{ $単品->価格 }}</td>
+                    </tr>
+                    @endforeach
+                </table>
             </div>
         </div>
     </div>
