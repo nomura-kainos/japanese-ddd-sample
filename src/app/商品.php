@@ -13,4 +13,6 @@ class 商品 extends Model
      * @var string
      */
     protected $table = '商品';
+
+    protected $fillable = ['名前', '価格'];
 }
