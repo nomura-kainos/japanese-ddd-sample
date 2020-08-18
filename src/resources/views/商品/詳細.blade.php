@@ -12,12 +12,11 @@
                 </div>
                 <p>A list of items.</p>
                 <table>
-                    @foreach ($商品 as $単品)
                     <tr>
-                        <td><a href="/item_detail/{{ $単品->id }}"> {{ $単品->名前 }} </a></td>
+                        <td>{{ $単品->id }}</td>
+                        <td>{{ $単品->名前 }}</td>
                         <td>{{ $単品->価格 }}</td>
                     </tr>
-                    @endforeach
                 </table>
             </div>
         </div>
