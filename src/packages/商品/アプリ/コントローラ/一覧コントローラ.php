@@ -10,6 +10,6 @@ class 一覧コントローラ extends Controller
     public function __invoke()
     {
         $商品 = 商品::all();
-        return view('商品.一覧', ['商品'=>$商品]);
+        return view('商品.一覧', ['商品' => $商品]);
     }
 }
