@@ -26,6 +26,8 @@ destroy:
 	docker-compose down --rmi all --volumes
 ps:
 	docker-compose ps
+auto:
+	docker-compose exec app composer dump-autoload
 fresh:
 	docker-compose exec app php artisan migrate:fresh
 seed:
