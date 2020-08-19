@@ -2,8 +2,6 @@
 
 namespace 商品\ドメイン\モデル;
 
-use Illuminate\Support\Collection;
-
 interface 商品リポジトリインターフェース
 {
     /**
@@ -13,9 +11,9 @@ interface 商品リポジトリインターフェース
     public function IDで1件取得(int $id): 商品;
 
     /**
-     * @return Collection
+     * @return 商品コレクション
      */
-    public function 全件取得(): Collection;
+    public function 全件取得(): 商品コレクション;
 
     /**
      * @param 商品 $商品

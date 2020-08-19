@@ -2,7 +2,7 @@
 
 namespace 商品\アプリ\ユースケース;
 
-use Illuminate\Support\Collection;
+use 商品\ドメイン\モデル\商品コレクション;
 use 商品\ドメイン\モデル\商品リポジトリインターフェース;
 
 class 一覧表示
@@ -16,7 +16,7 @@ class 一覧表示
         $this->商品リポ = $商品リポ;
     }
 
-    public function 実行(): Collection
+    public function 実行():商品コレクション
     {
         $複数商品 = $this->商品リポ->全件取得();
 
