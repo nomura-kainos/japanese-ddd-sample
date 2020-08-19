@@ -17,8 +17,8 @@ class 一覧コントローラ extends Controller
 
     public function __invoke()
     {
-        $商品 = $this->一覧表示->実行();
+        $複数商品 = $this->一覧表示->実行();
 
-        return view('商品.一覧', ['商品' => $商品]);
+        return view('商品.一覧', ['複数商品' => $複数商品]);
     }
 }

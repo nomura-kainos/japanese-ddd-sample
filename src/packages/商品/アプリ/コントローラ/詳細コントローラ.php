@@ -18,8 +18,8 @@ class 詳細コントローラ extends Controller
 
     public function __invoke(int $id)
     {
-        $単品 = $this->詳細表示->実行($id);
+        $商品 = $this->詳細表示->実行($id);
 
-        return view('商品.詳細', ['単品' => $単品]);
+        return view('商品.詳細', ['商品' => $商品]);
     }
 }

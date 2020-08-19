@@ -18,8 +18,8 @@ class 一覧表示
 
     public function 実行(): Collection
     {
-        $商品 = $this->商品リポ->全件取得();
+        $複数商品 = $this->商品リポ->全件取得();
 
-        return $商品;
+        return $複数商品;
     }
 }

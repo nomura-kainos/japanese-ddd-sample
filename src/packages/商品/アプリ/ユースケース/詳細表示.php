@@ -19,8 +19,8 @@ class 詳細表示
 
     public function 実行(int $id):商品
     {
-        $単品 = $this->商品リポ->IDで1件取得($id);
+        $商品 = $this->商品リポ->IDで1件取得($id);
 
-        return $単品;
+        return $商品;
     }
 }
