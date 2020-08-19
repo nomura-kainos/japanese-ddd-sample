@@ -2,7 +2,7 @@
 
 namespace 商品\インフラ\リポジトリ;
 
-use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Collection;
 use 商品\ドメイン\モデル\商品;
 use 商品\インフラ\エロクアント\商品エロクアント;
 
