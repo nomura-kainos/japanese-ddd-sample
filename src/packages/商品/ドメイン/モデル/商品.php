@@ -5,20 +5,20 @@ namespace 商品\ドメイン\モデル;
 class 商品
 {
 
-    private int $id;
+    private 商品ID $id;
     private string $名前;
-    private int $価格;
+    private レンタル料金 $レンタル料金;
 
-    public function __construct(int $id, string $名前, int $価格)
+    public function __construct(商品ID $id, string $名前, レンタル料金 $レンタル料金)
     {
         $this->id = $id;
         $this->名前 = $名前;
-        $this->価格 = $価格;
+        $this->レンタル料金 = $レンタル料金;
     }
 
     public function id(): int
     {
-        return $this->id;
+        return $this->id->値();
     }
 
     public function 名前(): string
@@ -26,9 +26,9 @@ class 商品
         return $this->名前;
     }
 
-    public function 価格(): string
+    public function レンタル料金(): int
     {
-        return $this->価格;
+        return $this->レンタル料金->値();
     }
 
     /**
