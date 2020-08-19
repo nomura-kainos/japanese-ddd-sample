@@ -4,29 +4,22 @@ namespace 商品\アプリ\コントローラ;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use 商品\ドメイン\モデル\商品;
-use 商品\ドメイン\モデル\商品リポジトリインターフェース;
+use 商品\アプリ\ユースケース\編集;
 
 class 編集コントローラ extends Controller
 {
-    private $商品リポ;
+    private $編集;
 
     public function __construct(
-        商品リポジトリインターフェース $商品リポ
+        編集 $編集
     )
     {
-        $this->商品リポ = $商品リポ;
+        $this->編集 = $編集;
     }
 
     public function __invoke(Request $リクエスト)
     {
-        $単品 = new 商品(
-            $リクエスト->id,
-            $リクエスト->名前,
-            $リクエスト->価格
-        );
-
-        $this->商品リポ->保存($単品);
+        $this->編集->実行($リクエスト);
 
         return redirect('/item/');
     }

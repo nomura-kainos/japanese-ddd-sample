@@ -2,10 +2,11 @@
 
 namespace 商品\アプリ\ユースケース;
 
-use Illuminate\Support\Collection;
+use Illuminate\Http\Request;
+use 商品\ドメイン\モデル\商品;
 use 商品\ドメイン\モデル\商品リポジトリインターフェース;
 
-class 一覧表示
+class 編集
 {
     private $商品リポ;
 
@@ -16,10 +17,14 @@ class 一覧表示
         $this->商品リポ = $商品リポ;
     }
 
-    public function 実行(): Collection
+    public function 実行(Request $リクエスト)
     {
-        $商品 = $this->商品リポ->全件取得();
+        $単品 = new 商品(
+            $リクエスト->id,
+            $リクエスト->名前,
+            $リクエスト->価格
+        );
 
-        return $商品;
+        $this->商品リポ->保存($単品);
     }
 }
