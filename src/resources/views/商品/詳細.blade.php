@@ -12,8 +12,8 @@
                     <input type='hidden' name='id' value='{{ $商品->id() }}'><br>
 
                     ID:{{ $商品->id() }}<br>
-                    タイトル：<input type='text' name='名前' value='{{ $商品->名前() }}'><br>
-                    内容：<input type='text' name='価格' value='{{ $商品->価格() }}'><br>
+                    名前：<input type='text' name='名前' value='{{ $商品->名前() }}'><br>
+                    レンタル料金：<input type='text' name='レンタル料金' value='{{ $商品->レンタル料金() }}'><br>
                     <div><input type='submit' value='編集'></div>
                 </form>
             </div>

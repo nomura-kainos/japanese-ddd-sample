@@ -16,7 +16,7 @@ class 商品テーブル作成 extends Migration
         Schema::create('商品', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('名前');
-            $table->integer('価格');
+            $table->integer('レンタル料金');
             $table->timestamps();
         });
     }

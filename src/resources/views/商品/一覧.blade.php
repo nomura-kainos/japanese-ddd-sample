@@ -14,8 +14,8 @@
                 <table>
                     @foreach ($複数商品 as $商品)
                     <tr>
-                        <td><a href="/item_detail/{{ $商品->id }}"> {{ $商品->名前 }} </a></td>
-                        <td>{{ $商品->価格 }}</td>
+                        <td><a href="/item_detail/{{ $商品->id() }}"> {{ $商品->名前() }} </a></td>
+                        <td>{{ $商品->レンタル料金() }}</td>
                     </tr>
                     @endforeach
                 </table>
