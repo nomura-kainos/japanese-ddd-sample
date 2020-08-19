@@ -2,13 +2,13 @@
 
 namespace 商品\アプリ\コントローラ;
 
-use 商品\インフラ\リポジトリ\商品リポジトリ;
 use App\Http\Controllers\Controller;
+use 商品\ドメイン\モデル\商品リポジトリインターフェース;
 
 class 詳細コントローラ extends Controller
 {
     public function __construct(
-        商品リポジトリ $商品リポ
+        商品リポジトリインターフェース $商品リポ
     )
     {
         $this->商品リポ = $商品リポ;

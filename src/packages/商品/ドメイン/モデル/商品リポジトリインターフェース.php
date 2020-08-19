@@ -4,7 +4,7 @@ namespace 商品\ドメイン\モデル;
 
 use Illuminate\Database\Eloquent\Collection;
 
-interface 商品リポジトリ
+interface 商品リポジトリインターフェース
 {
     /**
      * @param int $id

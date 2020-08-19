@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Collection;
 use 商品\ドメイン\モデル\商品;
 use 商品\インフラ\エロクアント\商品エロクアント;
 
-class 商品リポジトリ
+class 商品リポジトリ implements \商品\ドメイン\モデル\商品リポジトリインターフェース
 {
     private $商品エロクアント;
 
