@@ -2,7 +2,6 @@
 
 namespace 商品\アプリ\ユースケース;
 
-use Illuminate\Http\Request;
 use 商品\ドメイン\モデル\商品;
 use 商品\ドメイン\モデル\商品リポジトリインターフェース;
 
