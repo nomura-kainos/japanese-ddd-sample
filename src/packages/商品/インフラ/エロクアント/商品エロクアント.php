@@ -21,6 +21,9 @@ class 商品エロクアント extends Model
     // 代入可能なフィールドを指定する
     protected $fillable = ['名前', 'レンタル料金'];
 
+    // 代入不可なフィールドを指定する
+    protected $guarded = ['id', 'created_at', 'updated_at'];
+
     /**
      * @return 商品
      */
