@@ -14,9 +14,9 @@
 use App\Mail\SampleMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
-use 商品\アプリ\コントローラ\一覧コントローラ;
-use 商品\アプリ\コントローラ\詳細コントローラ;
-use 商品\アプリ\コントローラ\編集コントローラ;
+use 商品\プレゼンテーション\コントローラ\一覧コントローラ;
+use 商品\プレゼンテーション\コントローラ\詳細コントローラ;
+use 商品\プレゼンテーション\コントローラ\編集コントローラ;
 
 Route::get('/', function () {
     return view('welcome');

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace 商品\アプリ\コントローラ;
+namespace 商品\プレゼンテーション\コントローラ;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
