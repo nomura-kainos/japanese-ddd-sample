@@ -32,6 +32,16 @@ class 商品
         return $this->レンタル料金->値();
     }
 
+    public function 名前を変更する(string $名前): string
+    {
+        return $this->名前 = $名前;
+    }
+
+    public function レンタル料金を変更する(レンタル料金 $レンタル料金): レンタル料金
+    {
+        return $this->レンタル料金 = $レンタル料金;
+    }
+
     /**
      * @param 商品 $商品
      * @return bool
