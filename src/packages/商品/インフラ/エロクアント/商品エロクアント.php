@@ -23,16 +23,4 @@ class 商品エロクアント extends Model
 
     // 代入不可なフィールドを指定する
     protected $guarded = ['id', 'created_at', 'updated_at'];
-
-    /**
-     * @return 商品
-     */
-    public function ドメイン作成(): 商品
-    {
-        return new 商品(
-            商品ID::作成($this->id),
-            $this->名前,
-            レンタル料金::作成($this->レンタル料金)
-        );
-    }
 }
