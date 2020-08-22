@@ -3,6 +3,7 @@ declare(strict_types=1);
 
 namespace 商品\インフラ\リポジトリ;
 
+use 商品\インフラ\レスポンスデータ\商品レスポンスデータ;
 use 商品\ドメイン\モデル\商品;
 use 商品\インフラ\エロクアント\商品エロクアント;
 use 商品\ドメイン\モデル\商品コレクション;
@@ -19,12 +20,12 @@ class 商品リポジトリ implements 商品リポジトリインターフェ�
 
     /**
      * @param int $id
-     * @return 商品
+     * @return 商品レスポンスデータ
      */
-    public function IDで1件取得(int $id):商品
+    public function IDで1件取得(int $id):商品レスポンスデータ
     {
         $単品 = $this->商品エロクアント::find($id);
-        return $単品->ドメイン作成();
+        return new 商品レスポンスデータ($単品);
     }
 
     /**
