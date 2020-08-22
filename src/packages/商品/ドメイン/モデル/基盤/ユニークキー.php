@@ -3,6 +3,8 @@ declare(strict_types=1);
 
 namespace 商品\ドメイン\モデル\基盤;
 
+use Illuminate\Support\Str;
+
 class ユニークキー
 {
     protected $値;
@@ -22,10 +24,10 @@ class ユニークキー
         return $this->値 === $id->値;
     }
 
-    public static function 作成(int $value)
+    public static function 作成(int $値)
     {
         // インスタンスIDとインスタンスの値が全く同じものは、1つしか作れないように
         // staticにしている
-        return new static($value);
+        return new static($値);
     }
 }
