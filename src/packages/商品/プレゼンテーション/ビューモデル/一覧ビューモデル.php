@@ -3,14 +3,13 @@ declare(strict_types=1);
 
 namespace 商品\プレゼンテーション\ビューモデル;
 
-use 商品\ドメイン\モデル\商品コレクション;
+use 商品\インフラ\レスポンスデータ\商品コレクションレスポンスデータ;
 
 class 一覧ビューモデル
 {
-
     private $商品コレクション;
 
-    public function __construct(商品コレクション $コレクション)
+    public function __construct(商品コレクションレスポンスデータ $コレクション)
     {
         $詰め替え後のコレクション = $コレクション->取得()->map(function ($商品) {
 
