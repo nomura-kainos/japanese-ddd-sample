@@ -17,7 +17,7 @@ class ユニークキー
         return $this->値;
     }
 
-    public function equals(self $id): bool
+    public function 等しいか(self $id): bool
     {
         return $this->値 === $id->値;
     }
