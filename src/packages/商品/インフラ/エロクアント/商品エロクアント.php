@@ -15,9 +15,12 @@ class 商品エロクアント extends Model
      */
     protected $table = '商品';
 
+    // INSERT時の自動採番の有無を指定する
+    public $incrementing = false;
+
     // 代入可能なフィールドを指定する
-    protected $fillable = ['名前', 'レンタル料金'];
+    protected $fillable = ['id', '名前', 'レンタル料金'];
 
     // 代入不可なフィールドを指定する
-    protected $guarded = ['id', 'created_at', 'updated_at'];
+    protected $guarded = ['created_at', 'updated_at'];
 }
