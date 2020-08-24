@@ -5,7 +5,7 @@ namespace 商品\ドメイン\モデル\基盤;
 
 class ユニークキー
 {
-    protected $値;
+    private int $値;
 
     private function __construct(int $値)
     {
@@ -15,11 +15,6 @@ class ユニークキー
     public function 値(): int
     {
         return $this->値;
-    }
-
-    public function 等しいか(self $id): bool
-    {
-        return $this->値 === $id->値;
     }
 
     public static function 作成(int $値)

@@ -3,7 +3,9 @@ declare(strict_types=1);
 
 namespace 商品\ドメイン\モデル;
 
-class 商品
+use 商品\ドメイン\モデル\基盤\エンティティ;
+
+class 商品 extends エンティティ
 {
 
     private 商品ID $id;
@@ -40,14 +42,5 @@ class 商品
     public function レンタル料金を変更する(レンタル料金 $レンタル料金): レンタル料金
     {
         return $this->レンタル料金 = $レンタル料金;
-    }
-
-    /**
-     * @param 商品 $商品
-     * @return bool
-     */
-    public function equals(self $商品): bool
-    {
-        return $this->id()->equals($商品->id());
     }
 }
