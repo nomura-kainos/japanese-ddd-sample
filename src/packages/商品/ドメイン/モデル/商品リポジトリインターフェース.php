@@ -12,7 +12,7 @@ interface 商品リポジトリインターフェース
     /**
      * @return 商品IDレスポンスデータ
      */
-    public function 商品IDを新規採番する(): 商品IDレスポンスデータ;
+    public function 登録用に次の商品IDを取得する(): 商品IDレスポンスデータ;
 
     /**
      * @param int $id
