@@ -15,6 +15,7 @@ use App\Mail\SampleMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use 商品\プレゼンテーション\コントローラ\一覧コントローラ;
+use 商品\プレゼンテーション\コントローラ\登録コントローラ;
 use 商品\プレゼンテーション\コントローラ\詳細コントローラ;
 use 商品\プレゼンテーション\コントローラ\編集コントローラ;
 
@@ -25,6 +26,10 @@ Route::get('/', function () {
 Route::get('/item', 一覧コントローラ::class);
 Route::get('/item_detail/{id}', 詳細コントローラ::class);
 Route::post('/item/edit/{id}', 編集コントローラ::class);
+Route::get('/item/register', function () {
+    return view('商品.登録');
+});
+Route::post('/item/register', 登録コントローラ::class);
 
 Route::get('/hello/', 'HelloController@index')->name('hello');
 Route::post('/hello/other', 'HelloController@other');

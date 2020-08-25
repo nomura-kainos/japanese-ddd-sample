@@ -19,6 +19,8 @@
                     </tr>
                     @endforeach
                 </table>
+                <br>
+                <a href="/item/register/"> 登録 </a>
             </div>
         </div>
     </div>
