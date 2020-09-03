@@ -23,6 +23,8 @@ jobs:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           USER_NAME: ${{ secrets.USER_NAME }}
           HOST_NAME: ${{ secrets.HOST_NAME }}
+          GIT_UESR_NAME: ${{ secrets.GIT_UESR_NAME }}
+          GIT_PASS: ${{ secrets.GIT_PASS }}
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOST_NAME} 'cd /home/ec2-user/www/takuhai-rental/ && git remote set-url origin http://nomura-kainos:nomu80803@github.com/nomura-kainos/takuhai-rental.git && git pull origin develop'
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOST_NAME} 'cd /home/ec2-user/www/takuhai-rental/ && git remote set-url origin http://${GIT_UESR_NAME}:${GIT_PASS}@github.com/nomura-kainos/takuhai-rental.git && git pull origin develop'
