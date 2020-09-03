@@ -10,7 +10,6 @@ jobs:
   laravel-tests:
 
     runs-on: ubuntu-latest
-
     steps:
       - uses: actions/checkout@v2
 
@@ -26,4 +25,4 @@ jobs:
           HOST_NAME: ${{ secrets.HOST_NAME }}
         run: |
           echo "$PRIVATE_KEY" > private_key && chmod 600 private_key
-          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOST_NAME} 'cd /home/ec2-user/www/takuhai-rental/ && git pull origin develop'
+          ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOST_NAME} 'cd /home/ec2-user/www/takuhai-rental/ && git remote set-url origin http://nomura-kainos:nomu80803@github.com/nomura-kainos/takuhai-rental.git && git pull origin develop'
