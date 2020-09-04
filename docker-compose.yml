@@ -1,6 +1,7 @@
 version: "3"
 services:
   app:
+    container_name: app
     build:
       context: ./docker/php
       args:
@@ -24,6 +25,7 @@ services:
 
   web:
     image: nginx:1.17-alpine
+    container_name: web
     depends_on:
       - app
     ports:
@@ -37,6 +39,7 @@ services:
 
   db:
     image: mysql:8.0
+    container_name: db
     volumes:
       - db-store:/var/lib/mysql
       - ./logs:/var/log/mysql
@@ -52,6 +55,7 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
     restart: always
     environment:
       - PMA_ARBITRARY=1
@@ -66,6 +70,7 @@ services:
 
   db-testing:
     image: mysql:8.0
+    container_name: db-testing
     volumes:
       - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
     tmpfs:
@@ -82,6 +87,7 @@ services:
 
   mail:
     image: mailhog/mailhog
+    container_name: mail
     ports:
       - ${MAILHOG_PORT:-18025}:8025
 
