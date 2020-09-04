@@ -12,6 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+        run: |
+          docker-compose exec app php ./vendor/bin/phpunit
 
   deploy:
     needs: [laravel-tests]
