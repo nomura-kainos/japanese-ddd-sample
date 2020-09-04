@@ -28,7 +28,7 @@ RUN apk update && \
     libzip-dev=1.6.1-r1 \
     oniguruma-dev=~6.9 && \
   cp /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && \
-  echo Asia/Tokyo > /etc/timezone && \
+  echo ${TZ} > /etc/timezone && \
   pecl install xdebug && \
   apk del .build-dependencies && \
   docker-php-ext-install intl pdo_mysql mbstring zip bcmath && \
