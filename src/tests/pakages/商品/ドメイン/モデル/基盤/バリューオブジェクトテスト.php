@@ -26,4 +26,11 @@ class バリューオブジェクトテスト extends TestCase
 
         self::assertTrue($オブジェクト1->等しいか($オブジェクト2->値()));
     }
+
+    public function test_設定した属性の値が入力と同じこと()
+    {
+        $オブジェクト = new バリューオブジェクト(1);
+
+        self::assertSame(1, $オブジェクト->値());
+    }
 }
