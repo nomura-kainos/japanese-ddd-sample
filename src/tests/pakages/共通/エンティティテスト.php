@@ -16,6 +16,14 @@ class エンティティテスト extends TestCase
 
         self::assertTrue($エンティティ1->等しいか($エンティティ2));
     }
+
+    public function test_ユニークキーの値が異なるエンティティは別オブジェクトとみなす()
+    {
+        $エンティティ1 = new テストエンティティ((new ユニークキー(1)));
+        $エンティティ2 = new テストエンティティ((new ユニークキー(2)));
+
+        self::assertFalse($エンティティ1->等しいか($エンティティ2));
+    }
 }
 
 class テストエンティティ extends エンティティ{
