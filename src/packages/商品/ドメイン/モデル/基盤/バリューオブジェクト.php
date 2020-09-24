@@ -17,7 +17,7 @@ class バリューオブジェクト
         return $this->値;
     }
 
-    public function 等しいか(self $値): bool
+    public function 等しいか($値): bool
     {
         return $this->値 === $値;
     }
