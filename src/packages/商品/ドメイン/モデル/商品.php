@@ -34,13 +34,13 @@ class 商品 extends エンティティ
         return $this->レンタル料金->値();
     }
 
-    public function 名前を変更する(string $名前): string
+    public function 名前を変更する(string $名前)
     {
-        return $this->名前 = $名前;
+        $this->名前 = $名前;
     }
 
-    public function レンタル料金を変更する(レンタル料金 $レンタル料金): レンタル料金
+    public function レンタル料金を変更する(レンタル料金 $レンタル料金)
     {
-        return $this->レンタル料金 = $レンタル料金;
+        $this->レンタル料金 = $レンタル料金;
     }
 }
