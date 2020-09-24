@@ -7,7 +7,7 @@ class バリューオブジェクト
 {
     private $値;
 
-    private function __construct($値)
+    public function __construct($値)
     {
         $this->値 = $値;
     }
@@ -20,12 +20,5 @@ class バリューオブジェクト
     public function 等しいか($値): bool
     {
         return $this->値 === $値;
-    }
-
-    public static function 作成($値)
-    {
-        // インスタンスIDとインスタンスの値が全く同じものは、1つしか作れないように
-        // staticにしている
-        return new static($値);
     }
 }

@@ -7,7 +7,7 @@ class ユニークキー
 {
     private int $値;
 
-    private function __construct(int $値)
+    public function __construct(int $値)
     {
         $this->値 = $値;
     }
@@ -15,12 +15,5 @@ class ユニークキー
     public function 値(): int
     {
         return $this->値;
-    }
-
-    public static function 作成(int $値)
-    {
-        // インスタンスIDとインスタンスの値が全く同じものは、1つしか作れないように
-        // staticにしている
-        return new static($値);
     }
 }
