@@ -22,8 +22,10 @@ class バリューオブジェクト
         return $this->値;
     }
 
-    public function 等しいか($値): bool
+    public function 等しいか(self $バリューオブジェクト): bool
     {
-        return $this->値 === $値;
+        // 同じクラス、同じ属性、同じ値をすべて満たす場合に、等しいと判定される
+        // https://www.php.net/manual/ja/language.oop5.object-comparison.php
+        return $this == $バリューオブジェクト;
     }
 }

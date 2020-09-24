@@ -24,7 +24,7 @@ class バリューオブジェクトテスト extends TestCase
         $オブジェクト1 = new バリューオブジェクト(1);
         $オブジェクト2 = new バリューオブジェクト(1);
 
-        self::assertTrue($オブジェクト1->等しいか($オブジェクト2->値()));
+        self::assertTrue($オブジェクト1->等しいか($オブジェクト2));
     }
 
     public function test_属性が異なるオブジェクトは別オブジェクトとみなす()
@@ -32,7 +32,7 @@ class バリューオブジェクトテスト extends TestCase
         $オブジェクト1 = new バリューオブジェクト(1);
         $オブジェクト2 = new バリューオブジェクト(2);
 
-        self::assertFalse($オブジェクト1->等しいか($オブジェクト2->値()));
+        self::assertFalse($オブジェクト1->等しいか($オブジェクト2));
     }
 
     public function test_設定した属性の値が入力と同じこと()
