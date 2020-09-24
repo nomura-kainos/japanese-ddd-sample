@@ -25,7 +25,7 @@ class エンティティテスト extends TestCase
         self::assertFalse($エンティティ1->等しいか($エンティティ2));
     }
 
-    public function test_コンストラクタで設定したユニークキーの値が入力と同じこと()
+    public function test_ユニークキーの値がコンストラクタの設定値と同じこと()
     {
         $エンティティ = new テストエンティティ(new ユニークキー(1));
 
