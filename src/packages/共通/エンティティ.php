@@ -17,8 +17,8 @@ class エンティティ
         $this->ユニークキー = $ユニークキー;
     }
 
-    public function 等しいか(ユニークキー $ユニークキー): bool
+    public function 等しいか(self $エンティティ): bool
     {
-        return $this->ユニークキー->値() === $ユニークキー->値();
+        return $this->ユニークキー() === $エンティティ->ユニークキー();
     }
 }
