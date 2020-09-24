@@ -9,7 +9,7 @@ use 共通\ユニークキー;
 
 class エンティティテスト extends TestCase
 {
-    public function test_ユニークキーが同じエンティティは同じオブジェクトとみなす()
+    public function test_ユニークキーの値が同じエンティティは同じオブジェクトとみなす()
     {
         $エンティティ1 = new テストエンティティ((new ユニークキー(1)));
         $エンティティ2 = new テストエンティティ((new ユニークキー(1)));
