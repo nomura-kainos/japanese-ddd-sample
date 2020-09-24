@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace 商品\ドメイン\モデル\基盤;
+namespace 共通;
 
 class エンティティ
 {

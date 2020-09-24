@@ -1,10 +1,10 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests\pakages\商品\ドメイン\モデル\基盤;
+namespace Tests\pakages\共通;
 
 use Tests\TestCase;
-use 商品\ドメイン\モデル\基盤\バリューオブジェクト;
+use 共通\バリューオブジェクト;
 
 class バリューオブジェクトテスト extends TestCase
 {
@@ -16,7 +16,7 @@ class バリューオブジェクトテスト extends TestCase
         $this->markTestSkipped();
 
         $オブジェクト = new バリューオブジェクト(1);
-        $オブジェクト->値 = 2;
+//        $オブジェクト->値 = 2;
     }
 
     public function test_属性が同じオブジェクトは同じオブジェクトとみなす()

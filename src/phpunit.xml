@@ -20,6 +20,10 @@
         <testsuite name="商品">
             <directory suffix="テスト.php">./tests/pakages/商品</directory>
         </testsuite>
+
+        <testsuite name="共通">
+            <directory suffix="テスト.php">./tests/pakages/共通</directory>
+        </testsuite>
     </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">

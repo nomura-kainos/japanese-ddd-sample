@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace 商品\ドメイン\モデル;
 
-use 商品\ドメイン\モデル\基盤\エンティティ;
+use 共通\エンティティ;
 
 class 商品 extends エンティティ
 {

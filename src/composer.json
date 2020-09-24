@@ -35,7 +35,8 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
-            "商品\\": "packages/商品/"
+            "商品\\": "packages/商品/",
+            "共通\\": "packages/共通/"
         },
         "classmap": [
             "database/seeds",
