@@ -12,6 +12,11 @@ class バリューオブジェクト
         $this->値 = $値;
     }
 
+    /*
+     * 取得メソッドのみ
+     *
+     * 変更メソッドの追加は禁止
+     */
     public function 値()
     {
         return $this->値;
