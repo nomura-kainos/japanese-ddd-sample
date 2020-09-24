@@ -14,6 +14,7 @@ class 商品 extends エンティティ
 
     public function __construct(商品ID $id, string $名前, レンタル料金 $レンタル料金)
     {
+        parent::ユニークキーを設定する($id);
         $this->id = $id;
         $this->名前 = $名前;
         $this->レンタル料金 = $レンタル料金;

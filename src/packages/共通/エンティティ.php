@@ -7,14 +7,14 @@ class エンティティ
 {
     private ユニークキー $ユニークキー;
 
-    public function __construct(ユニークキー $ユニークキー)
+    public function ユニークキー(): int
     {
-        $this->ユニークキー = $ユニークキー;
+        return $this->ユニークキー->値();
     }
 
-    public function ユニークキー(): ユニークキー
+    protected function ユニークキーを設定する(ユニークキー $ユニークキー)
     {
-        return $this->ユニークキー;
+        $this->ユニークキー = $ユニークキー;
     }
 
     public function 等しいか(ユニークキー $ユニークキー): bool
