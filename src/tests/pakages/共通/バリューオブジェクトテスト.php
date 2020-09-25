@@ -18,7 +18,7 @@ class バリューオブジェクトテスト extends TestCase
         $this->markTestSkipped();
 
         $オブジェクト = new テストバリューオブジェクト(1);
-//        $オブジェクト->値 = 2;
+//        $オブジェクト->id = 5;
     }
 
     public function test_属性が同じオブジェクトは同じオブジェクトとみなす()
