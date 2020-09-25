@@ -3,23 +3,19 @@ declare(strict_types=1);
 
 namespace 共通;
 
-class バリューオブジェクト
+trait バリューオブジェクト
 {
-    private $値;
-
-    public function __construct($値)
-    {
-        $this->値 = $値;
-    }
-
     /*
-     * 取得メソッドのみ
+     * バリューオブジェクトの値は不変のため、参照メソッドのみ提供
      *
-     * 変更メソッドの追加は禁止
+     * 参照メソッドを用意しなくてもuseバリューオブジェクトをすることでプロパティに参照できる
+     * 値は変更不可のため、__setメソッドは禁止
+     * 本来は、privateプロパティにアクセスできることは良くないが、readonlyの代用で実装が簡単な方法がなかったためtraitを使用
+     * https://qiita.com/0w0/items/fa927961a54c9bb7a66b#%E9%9D%A2%E5%80%92%E3%81%AA%E3%81%AE%E3%81%A7getter%E3%82%92%E5%85%B1%E9%80%9A%E5%8C%96%E3%81%99%E3%82%8B
      */
-    final public function 値()
+    public function __get($name)
     {
-        return $this->値;
+        return $this->$name;
     }
 
     final public function 等しいか(self $バリューオブジェクト): bool
