@@ -5,7 +5,7 @@ namespace 商品\ドメイン\モデル;
 
 class 商品ファクトリ
 {
-    private 商品リポジトリインターフェース $商品リポ;
+    private ?商品リポジトリインターフェース $商品リポ;
 
     public function __construct(商品リポジトリインターフェース $商品リポ = null)
     {
