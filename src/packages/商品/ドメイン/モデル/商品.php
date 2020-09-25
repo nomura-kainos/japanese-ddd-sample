@@ -22,7 +22,7 @@ class 商品 extends エンティティ
 
     public function id(): int
     {
-        return $this->id->値();
+        return $this->id->値;
     }
 
     public function 名前(): string
@@ -32,7 +32,7 @@ class 商品 extends エンティティ
 
     public function レンタル料金(): int
     {
-        return $this->レンタル料金->値();
+        return $this->レンタル料金->値;
     }
 
     public function 名前を変更する(string $名前)
