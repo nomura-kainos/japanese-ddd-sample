@@ -9,7 +9,7 @@ class エンティティ
 
     final public function ユニークキー(): int
     {
-        return $this->ユニークキー->値();
+        return $this->ユニークキー->値;
     }
 
     final protected function ユニークキーを設定する(ユニークキー $ユニークキー)

@@ -12,6 +12,6 @@ class ユニークキーテスト extends TestCase
     {
         $ユニークキー = new ユニークキー(1);
 
-        self::assertSame(1, $ユニークキー->値());
+        self::assertSame(1, $ユニークキー->値);
     }
 }
