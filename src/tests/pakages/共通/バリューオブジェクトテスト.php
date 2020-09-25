@@ -15,30 +15,43 @@ class バリューオブジェクトテスト extends TestCase
     {
         $this->markTestSkipped();
 
-        $オブジェクト = new バリューオブジェクト(1);
+        $オブジェクト = new テストバリューオブジェクト(1);
 //        $オブジェクト->値 = 2;
     }
 
     public function test_属性が同じオブジェクトは同じオブジェクトとみなす()
     {
-        $オブジェクト1 = new バリューオブジェクト(1);
-        $オブジェクト2 = new バリューオブジェクト(1);
+        $オブジェクト1 = new テストバリューオブジェクト(1);
+        $オブジェクト2 = new テストバリューオブジェクト(1);
 
         self::assertTrue($オブジェクト1->等しいか($オブジェクト2));
     }
 
     public function test_属性が異なるオブジェクトは別オブジェクトとみなす()
     {
-        $オブジェクト1 = new バリューオブジェクト(1);
-        $オブジェクト2 = new バリューオブジェクト(2);
+        $オブジェクト1 = new テストバリューオブジェクト(1);
+        $オブジェクト2 = new テストバリューオブジェクト(2);
 
         self::assertFalse($オブジェクト1->等しいか($オブジェクト2));
     }
 
     public function test_設定した属性の値が入力と同じこと()
     {
-        $オブジェクト = new バリューオブジェクト(1);
+        $オブジェクト = new テストバリューオブジェクト(1);
 
-        self::assertSame(1, $オブジェクト->値());
+        self::assertSame(1, $オブジェクト->id);
+    }
+}
+/**
+ * @property-read int $id
+ */
+class テストバリューオブジェクト{
+    use バリューオブジェクト;
+
+    private int $id;
+
+    public function __construct(int $id)
+    {
+        $this->id = $id;
     }
 }
