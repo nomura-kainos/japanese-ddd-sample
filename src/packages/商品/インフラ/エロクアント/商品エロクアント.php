@@ -9,9 +9,7 @@ class 商品エロクアント extends Model
 {
 
     /**
-     * The table associated with the model.
-     *
-     * @var string
+     * テーブル名を指定する
      */
     protected $table = '商品';
 
