@@ -10,8 +10,12 @@ class ユニークキーテスト extends TestCase
 {
     public function test_設定した属性の値が入力と同じこと()
     {
-        $ユニークキー = new ユニークキー(1);
+        $ユニークキー = new テストユニークキー(1);
 
         self::assertSame(1, $ユニークキー->値);
     }
+}
+class テストユニークキー extends ユニークキー
+{
+
 }
