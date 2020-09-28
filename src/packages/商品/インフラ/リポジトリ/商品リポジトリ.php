@@ -33,7 +33,7 @@ class 商品リポジトリ implements 商品リポジトリインターフェ�
      * @param int $id
      * @return 商品レスポンスデータ
      */
-    public function IDで1件取得(int $id):商品レスポンスデータ
+    public function IDで1件取得(int $id): 商品レスポンスデータ
     {
         $単品 = $this->商品エロクアント::find($id);
         return new 商品レスポンスデータ($単品);

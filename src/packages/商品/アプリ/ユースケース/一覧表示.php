@@ -17,7 +17,7 @@ class 一覧表示
         $this->商品リポ = $商品リポ;
     }
 
-    public function 実行():一覧ビューモデル
+    public function 実行(): 一覧ビューモデル
     {
         $複数商品 = $this->商品リポ->全件取得();
 

@@ -17,7 +17,7 @@ class 詳細表示
         $this->商品リポ = $商品リポ;
     }
 
-    public function 実行(int $id):詳細ビューモデル
+    public function 実行(int $id): 詳細ビューモデル
     {
         $商品 = $this->商品リポ->IDで1件取得($id);
 
