@@ -3,6 +3,11 @@ declare(strict_types=1);
 
 namespace 共通;
 
+/**
+ * 注意 バリューオブジェクトtraitを使用するクラスは
+ * phpstormにプロパティの入力補完を追加するために、
+ * @property-readを追加すること
+ */
 trait バリューオブジェクト
 {
     /*
