@@ -8,9 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class 商品エロクアント extends Model
 {
 
-    /**
-     * テーブル名を指定する
-     */
+    // テーブル名を指定する
     protected $table = '商品';
 
     // INSERT時の自動採番の有無を指定する
