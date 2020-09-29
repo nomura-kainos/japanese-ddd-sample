@@ -19,16 +19,22 @@ class 商品リポジトリテスト extends TestCase
      */
     use RefreshDatabase;
 
+    private function テスト用商品を作成(int $id, string $名前, int $レンタル料金): 商品
+    {
+        return new 商品(
+            new 商品ID($id),
+            $名前,
+            new レンタル料金($レンタル料金)
+        );
+    }
+
     public function test_商品の新規登録ができること()
     {
         $リポジトリ = new 商品リポジトリ(new 商品エロクアント);
 
         $リポジトリ->保存(
-            new 商品(
-                new 商品ID(1),
-                '登録済',
-                new レンタル料金(1000)
-            ));
+            $this->テスト用商品を作成(1, '登録済', 1000)
+        );
 
         $this->assertDatabaseHas('商品', [
             'id' => 1,
@@ -45,11 +51,8 @@ class 商品リポジトリテスト extends TestCase
         $リポジトリ = new 商品リポジトリ(new 商品エロクアント);
 
         $リポジトリ->保存(
-            new 商品(
-                new 商品ID(1),
-                '更新済',
-                new レンタル料金(2000)
-            ));
+            $this->テスト用商品を作成(1, '更新済', 2000)
+        );
 
         $this->assertDatabaseHas('商品', [
             'id' => 1,
