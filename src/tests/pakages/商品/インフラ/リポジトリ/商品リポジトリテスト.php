@@ -36,4 +36,37 @@ class 商品リポジトリテスト extends TestCase
             'レンタル料金' => 1000
         ]);
     }
+
+    /**
+     * @depends test_商品の新規登録ができること
+     */
+    public function test_既に登録されている商品が更新できること()
+    {
+        $リポジトリ = new 商品リポジトリ(new 商品エロクアント);
+
+        $リポジトリ->保存(
+            new 商品(
+                new 商品ID(1),
+                '更新済',
+                new レンタル料金(2000)
+            ));
+
+        $this->assertDatabaseHas('商品', [
+            'id' => 1,
+            '名前' => '更新済',
+            'レンタル料金' => 2000
+        ]);
+    }
+
+    /**
+     * @depends test_既に登録されている商品が更新できること
+     */
+    public function test_登録された商品が残っていないこと()
+    {
+        $this->assertDatabaseMissing('商品', [
+            'id' => 1,
+            '名前' => 'テスト',
+            'レンタル料金' => 1000
+        ]);
+    }
 }
