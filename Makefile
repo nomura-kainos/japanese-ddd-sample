@@ -50,9 +50,5 @@ cbf:
 	docker-compose exec app ./vendor/bin/phpcbf
 db:
 	docker-compose exec db bash
-db-testing:
-	docker-compose exec db-testing bash
 mysql:
 	docker-compose exec db bash -c 'mysql -u $$MYSQL_USER -p$$MYSQL_PASSWORD $$MYSQL_DATABASE'
-mysql-testing:
-	docker-compose exec db-testing bash -c 'mysql -u $$MYSQL_USER -p$$MYSQL_PASSWORD $$MYSQL_DATABASE'

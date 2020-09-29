@@ -68,23 +68,6 @@ services:
     volumes:
       - phpmyadmin-sessions
 
-  db-testing:
-    image: mysql:8.0
-    container_name: db-testing
-    volumes:
-      - ./docker/mysql/my.cnf:/etc/mysql/conf.d/my.cnf
-    tmpfs:
-      - /var/lib/mysql
-      - /var/log/mysql
-    environment:
-      - MYSQL_DATABASE=${DB_NAME:-homestead}
-      - MYSQL_USER=${DB_USER:-homestead}
-      - MYSQL_PASSWORD=${DB_PASS:-secret}
-      - MYSQL_ROOT_PASSWORD=${DB_PASS:-secret}
-      - TZ=${TZ:-Asia/Tokyo}
-    ports:
-      - ${DB_TESTING_PORT:-13307}:3306
-
   mail:
     image: mailhog/mailhog
     container_name: mail
