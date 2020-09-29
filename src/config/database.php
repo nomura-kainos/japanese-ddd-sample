@@ -43,6 +43,7 @@ return [
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
+
         'testing' => [
             'driver' => 'sqlite',
             'database' => ':memory:', // SQLiteのインメモリ機能を使用
@@ -52,6 +53,7 @@ return [
                 PDO::ATTR_PERSISTENT => false,
             ],
         ],
+        // 詳細は、src\tests\採用するテスト環境.mdを参照
 
         'mysql' => [
             'driver' => 'mysql',
