@@ -26,13 +26,13 @@ class 商品リポジトリテスト extends TestCase
         $リポジトリ->保存(
             new 商品(
                 new 商品ID(1),
-                'テスト',
+                '登録済',
                 new レンタル料金(1000)
             ));
 
         $this->assertDatabaseHas('商品', [
             'id' => 1,
-            '名前' => 'テスト',
+            '名前' => '登録済',
             'レンタル料金' => 1000
         ]);
     }
@@ -65,7 +65,7 @@ class 商品リポジトリテスト extends TestCase
     {
         $this->assertDatabaseMissing('商品', [
             'id' => 1,
-            '名前' => 'テスト',
+            '名前' => '登録済',
             'レンタル料金' => 1000
         ]);
     }
