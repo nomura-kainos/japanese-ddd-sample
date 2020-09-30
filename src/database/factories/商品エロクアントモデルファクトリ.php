@@ -11,3 +11,11 @@ $factory->define(商品エロクアント::class, function (Faker $faker) {
         'レンタル料金' => 1000,
     ];
 }, '商品が1件登録済');
+
+$factory->define(商品エロクアント::class, function (Faker $faker) {
+    return [
+        'id' => $faker->randomNumber(),
+        '名前' => $faker->name(),
+        'レンタル料金' => $faker->randomNumber(),
+    ];
+}, '商品が複数登録済');
