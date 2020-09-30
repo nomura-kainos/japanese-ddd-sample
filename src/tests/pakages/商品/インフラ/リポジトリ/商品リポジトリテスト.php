@@ -47,7 +47,6 @@ class 商品リポジトリテスト extends TestCase
     public function test_既に登録されている商品が更新できること()
     {
         $this->seed(商品シーダー::class);
-
         $リポジトリ = new 商品リポジトリ(new 商品エロクアント);
 
         $リポジトリ->保存(
@@ -64,7 +63,6 @@ class 商品リポジトリテスト extends TestCase
     public function test_登録された商品が残っていないこと()
     {
         $this->seed(商品シーダー::class);
-
         $リポジトリ = new 商品リポジトリ(new 商品エロクアント);
 
         $リポジトリ->保存(
