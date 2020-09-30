@@ -32,7 +32,7 @@ class 商品リポジトリテスト extends TestCase
     public function test_登録用に次の商品IDが取得できること()
     {
         // 通常使用する際は既に商品が登録されているため、同じ環境を考慮して事前に商品を登録する
-        $this->seed(商品シーダー::class);
+        factory(商品エロクアント::class, '商品が1件登録済')->create();
         $リポジトリ = new 商品リポジトリ(new 商品エロクアント);
 
         $レスポンスデータ = $リポジトリ->登録用に次の商品IDを取得する();
@@ -56,8 +56,7 @@ class 商品リポジトリテスト extends TestCase
 
     public function test_既に登録されている商品が更新できること()
     {
-        factory(商品エロクアント::class, '商品が1件登録済')->make();
-
+        factory(商品エロクアント::class, '商品が1件登録済')->create();
         $リポジトリ = new 商品リポジトリ(new 商品エロクアント);
         $商品 = $this->テスト用商品を作成(1, '更新済', 2000);
 
@@ -72,7 +71,7 @@ class 商品リポジトリテスト extends TestCase
 
     public function test_登録された商品が残っていないこと()
     {
-        factory(商品エロクアント::class, '商品が1件登録済')->make();
+        factory(商品エロクアント::class, '商品が1件登録済')->create();
         $リポジトリ = new 商品リポジトリ(new 商品エロクアント);
         $商品 = $this->テスト用商品を作成(1, '更新済', 2000);
 
