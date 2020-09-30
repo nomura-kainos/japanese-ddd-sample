@@ -15,10 +15,10 @@ interface 商品リポジトリインターフェース
     public function 登録用に次の商品IDを取得する(): 商品IDレスポンスデータ;
 
     /**
-     * @param int $id
+     * @param 商品ID $id
      * @return 商品レスポンスデータ
      */
-    public function IDで1件取得(int $id): 商品レスポンスデータ;
+    public function IDで1件取得(商品ID $id): 商品レスポンスデータ;
 
     /**
      * @return 商品コレクションレスポンスデータ
