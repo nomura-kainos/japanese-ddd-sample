@@ -10,6 +10,7 @@ use 商品\インフラ\リポジトリ\商品リポジトリ;
 use 商品\ドメイン\モデル\レンタル料金;
 use 商品\ドメイン\モデル\商品;
 use 商品\ドメイン\モデル\商品ID;
+use 商品シーダー;
 
 class 商品リポジトリテスト extends TestCase
 {
@@ -45,6 +46,8 @@ class 商品リポジトリテスト extends TestCase
 
     public function test_既に登録されている商品が更新できること()
     {
+        $this->seed(商品シーダー::class);
+
         $リポジトリ = new 商品リポジトリ(new 商品エロクアント);
 
         $リポジトリ->保存(
