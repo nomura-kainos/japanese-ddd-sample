@@ -18,12 +18,12 @@ interface 商品リポジトリインターフェース
      * @param 商品ID $id
      * @return 商品レスポンスデータ
      */
-    public function IDで1件取得(商品ID $id): 商品レスポンスデータ;
+    public function IDで1件取得(商品ID $id): ?商品レスポンスデータ;
 
     /**
      * @return 商品コレクションレスポンスデータ
      */
-    public function 全件取得(): 商品コレクションレスポンスデータ;
+    public function 全件取得(): ?商品コレクションレスポンスデータ;
 
     /**
      * @param 商品 $商品

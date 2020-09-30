@@ -34,16 +34,20 @@ class 商品リポジトリ implements 商品リポジトリインターフェ�
      * @param 商品ID $id
      * @return 商品レスポンスデータ
      */
-    public function IDで1件取得(商品ID $id): 商品レスポンスデータ
+    public function IDで1件取得(商品ID $id): ?商品レスポンスデータ
     {
         $単品 = $this->商品エロクアント::find($id->値);
+        if($単品 === null)
+        {
+            return null;
+        }
         return new 商品レスポンスデータ($単品);
     }
 
     /**
      * @return 商品コレクションレスポンスデータ
      */
-    public function 全件取得(): 商品コレクションレスポンスデータ
+    public function 全件取得(): ?商品コレクションレスポンスデータ
     {
         $複数商品 = $this->商品エロクアント::all();
         return new 商品コレクションレスポンスデータ($複数商品);
