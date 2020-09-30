@@ -43,9 +43,6 @@ class 商品リポジトリテスト extends TestCase
         ]);
     }
 
-    /**
-     * @depends test_商品の新規登録ができること
-     */
     public function test_既に登録されている商品が更新できること()
     {
         $リポジトリ = new 商品リポジトリ(new 商品エロクアント);
@@ -61,11 +58,16 @@ class 商品リポジトリテスト extends TestCase
         ]);
     }
 
-    /**
-     * @depends test_既に登録されている商品が更新できること
-     */
     public function test_登録された商品が残っていないこと()
     {
+        $this->seed(商品シーダー::class);
+
+        $リポジトリ = new 商品リポジトリ(new 商品エロクアント);
+
+        $リポジトリ->保存(
+            $this->テスト用商品を作成(1, '更新済', 2000)
+        );
+
         $this->assertDatabaseMissing('商品', [
             'id' => 1,
             '名前' => '登録済',
