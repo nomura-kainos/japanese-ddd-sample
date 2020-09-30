@@ -83,4 +83,26 @@ class 商品リポジトリテスト extends TestCase
             'レンタル料金' => 1000
         ]);
     }
+
+    public function test_商品IDで指定した商品が取得できること()
+    {
+        factory(商品エロクアント::class, '商品が1件登録済')->create();
+        $リポジトリ = new 商品リポジトリ(new 商品エロクアント);
+
+        $レスポンスデータ = $リポジトリ->IDで1件取得(new 商品ID(1));
+
+        self::assertSame(1, $レスポンスデータ->id());
+        self::assertSame('登録済', $レスポンスデータ->名前());
+        self::assertSame(1000, $レスポンスデータ->レンタル料金());
+    }
+
+    public function test_商品IDで指定した商品が取得できない場合にnullを返す()
+    {
+        factory(商品エロクアント::class, '商品が1件登録済')->create();
+        $リポジトリ = new 商品リポジトリ(new 商品エロクアント);
+
+        $レスポンスデータ = $リポジトリ->IDで1件取得(new 商品ID(2));
+
+        self::assertNull($レスポンスデータ);
+    }
 }
