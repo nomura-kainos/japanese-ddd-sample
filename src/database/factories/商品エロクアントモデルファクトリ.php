@@ -1,6 +1,10 @@
 <?php
 /* @var \Illuminate\Database\Eloquent\Factory $factory
- * 参考 Eloquent Model Factory を使ってテストデータを整備する
+ * 参考
+ * 公式ドキュメント
+ * https://readouble.com/laravel/5.5/ja/database-testing.html
+ *
+ * Eloquent Model Factory を使ってテストデータを整備する
  * https://qiita.com/nunulk/items/06370af1594a10faa749
  */
 use 商品\インフラ\エロクアント\商品エロクアント;
