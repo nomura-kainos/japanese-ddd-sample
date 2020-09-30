@@ -96,7 +96,7 @@ class 商品リポジトリテスト extends TestCase
         self::assertSame(1000, $レスポンスデータ->レンタル料金());
     }
 
-    public function test_商品IDで指定した商品が取得できない場合にnullを返す()
+    public function test_指定した商品が取得できない場合、nullを返す()
     {
         factory(商品エロクアント::class, '商品が1件登録済')->create();
         $リポジトリ = new 商品リポジトリ(new 商品エロクアント);
