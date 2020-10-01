@@ -18,15 +18,15 @@
         </testsuite>
 
         <testsuite name="商品">
-            <directory suffix="テスト.php">./tests/pakages/商品</directory>
+            <directory suffix="テスト.php">./tests/packages/商品</directory>
         </testsuite>
 
         <testsuite name="共通">
-            <directory suffix="テスト.php">./tests/pakages/共通</directory>
+            <directory suffix="テスト.php">./tests/packages/共通</directory>
         </testsuite>
 
         <testsuite name="ルート">
-            <directory suffix="テスト.php">./tests/pakages/ルート</directory>
+            <directory suffix="テスト.php">./tests/packages/ルート</directory>
         </testsuite>
     </testsuites>
     <filter>
