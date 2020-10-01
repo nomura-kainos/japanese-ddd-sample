@@ -38,6 +38,8 @@ dump:
 	docker-compose exec app php artisan dump-server
 test:
 	docker-compose exec app php ./vendor/bin/phpunit
+test-group:
+	docker-compose exec app php ./vendor/bin/phpunit --group=${group}
 cache:
 	docker-compose exec app composer dump-autoload -o
 	docker-compose exec app php artisan optimize:clear
