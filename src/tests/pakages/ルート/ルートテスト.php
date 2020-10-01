@@ -51,7 +51,6 @@ class ルートテスト extends TestCase
     public function test_画面に遷移できること_POST(string $URI, array $入力, string $リダイレクトURI)
     {
         factory(商品エロクアント::class, '商品が1件登録済')->create();
-        $正常ステータス = 200;
 
         $レスポンス = $this->post($URI, $入力);
 
