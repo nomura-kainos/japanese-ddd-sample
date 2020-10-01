@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace Tests\packages\共通;
@@ -51,7 +52,8 @@ class エンティティテスト extends TestCase
     }
 }
 
-class テストエンティティ extends エンティティ{
+class テストエンティティ extends エンティティ
+{
     public function __construct(ユニークキー $ユニークキー)
     {
         parent::ユニークキーを設定する($ユニークキー);
