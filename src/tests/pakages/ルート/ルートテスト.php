@@ -17,8 +17,10 @@ class ルートテスト extends TestCase
 
     public function test_一覧画面に遷移できること()
     {
+        $正常ステータス = 200;
+
         $レスポンス = $this->get('/item');
 
-        $レスポンス->assertSuccessful();
+        $レスポンス->assertStatus($正常ステータス);
     }
 }
