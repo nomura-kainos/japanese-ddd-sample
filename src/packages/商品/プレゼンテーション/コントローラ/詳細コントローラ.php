@@ -13,8 +13,7 @@ class 詳細コントローラ extends Controller
 
     public function __construct(
         詳細表示 $詳細表示
-    )
-    {
+    ) {
         $this->詳細表示 = $詳細表示;
     }
 

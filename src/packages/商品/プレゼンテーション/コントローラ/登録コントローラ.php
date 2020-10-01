@@ -14,8 +14,7 @@ class 登録コントローラ extends Controller
 
     public function __construct(
         登録 $登録
-    )
-    {
+    ) {
         $this->登録 = $登録;
     }
 

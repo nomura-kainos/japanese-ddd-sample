@@ -12,8 +12,7 @@ class 一覧コントローラ extends Controller
     private $一覧表示;
 
     public function __construct(一覧表示 $一覧表示
-    )
-    {
+    ) {
         $this->一覧表示 = $一覧表示;
     }
 

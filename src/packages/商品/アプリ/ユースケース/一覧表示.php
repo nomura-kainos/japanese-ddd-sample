@@ -13,8 +13,7 @@ class 一覧表示
 
     public function __construct(
         商品リポジトリインターフェース $商品リポ
-    )
-    {
+    ) {
         $this->商品リポ = $商品リポ;
     }
 
