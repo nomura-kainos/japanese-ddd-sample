@@ -22,9 +22,6 @@ class 商品リポジトリ implements 商品リポジトリインターフェ�
         $this->商品エロクアント = $商品エロクアント;
     }
 
-    /**
-     * @return 商品IDレスポンスデータ
-     */
     public function 登録用に次の商品IDを取得する(): 商品IDレスポンスデータ
     {
         $テーブル名 = $this->商品エロクアント->getTable();
@@ -32,10 +29,6 @@ class 商品リポジトリ implements 商品リポジトリインターフェ�
         return new 商品IDレスポンスデータ($新規採番ID);
     }
 
-    /**
-     * @param 商品ID $id
-     * @return 商品レスポンスデータ
-     */
     public function IDで1件取得(商品ID $id): ?商品レスポンスデータ
     {
         $単品 = $this->商品エロクアント::find($id->値);
@@ -45,18 +38,12 @@ class 商品リポジトリ implements 商品リポジトリインターフェ�
         return new 商品レスポンスデータ($単品);
     }
 
-    /**
-     * @return 商品コレクションレスポンスデータ
-     */
     public function 全件取得(): 商品コレクションレスポンスデータ
     {
         $複数商品 = $this->商品エロクアント::all();
         return new 商品コレクションレスポンスデータ($複数商品);
     }
 
-    /**
-     * @return void
-     */
     public function 保存(商品 $商品)
     {
         // 呼び出し元のメソッドで商品が存在するか検索されているかわからないため、再度検索する
