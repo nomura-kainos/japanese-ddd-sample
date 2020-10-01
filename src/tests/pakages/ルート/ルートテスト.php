@@ -13,6 +13,10 @@ use Tests\TestCase;
  */
 class ルートテスト extends TestCase
 {
+    /*
+     * 画面に遷移時にデータベースがないと異常エラーになってしまうため
+     * マイグレーションを実施する
+     */
     use DatabaseMigrations;
 
     public function test_一覧画面に遷移できること()
