@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Tests\pakages\ルート;
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
 /**
