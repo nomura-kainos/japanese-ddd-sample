@@ -20,10 +20,10 @@ class ルートテスト extends TestCase
     use DatabaseMigrations;
 
     /**
-     * @dataProvider URIプロバイダ
+     * @dataProvider URIプロバイダ_GET
      * @param string $URI
      */
-    public function test_画面に遷移できること(string $URI)
+    public function test_画面に遷移できること_GET(string $URI)
     {
         factory(商品エロクアント::class, '商品が1件登録済')->create();
         $正常ステータス = 200;
@@ -33,7 +33,7 @@ class ルートテスト extends TestCase
         $レスポンス->assertStatus($正常ステータス);
     }
 
-    public function URIプロバイダ()
+    public function URIプロバイダ_GET()
     {
         return [
             ['/item'],
