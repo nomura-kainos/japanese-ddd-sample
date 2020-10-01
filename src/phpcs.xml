@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <ruleset name="KainosCustom">
     <description>カイノス コーディングスタイル</description>
-    <!-- 設定オプションの詳細、https://pear.plus-server.net/package.php.php-codesniffer.config-options.html -->
+    <!-- 設定オプションの詳細、https://pear.plus-server.net/package.php.php-codesniffer.advanced-usage.html -->
     <arg name="tab-width" value="4"/><!--インデントでタブも使用して良いように設定-->
 
     <rule ref="PSR12">
