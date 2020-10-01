@@ -47,7 +47,7 @@ cache-clear:
 cs:
 	docker-compose exec app ./vendor/bin/phpcs ./packages --standard=./phpcs.xml
 cbf:
-	docker-compose exec app ./vendor/bin/phpcbf
+	docker-compose exec app ./vendor/bin/phpcbf ./packages --standard=./phpcs.xml
 db:
 	docker-compose exec db bash
 mysql:
