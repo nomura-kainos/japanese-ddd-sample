@@ -23,4 +23,11 @@ class ルートテスト extends TestCase
 
         $レスポンス->assertStatus($正常ステータス);
     }
+
+    public function test_存在しない一覧画面に遷移できないこと()
+    {
+        $レスポンス = $this->get('/item/1');
+
+        $レスポンス->assertStatus(404);
+    }
 }
