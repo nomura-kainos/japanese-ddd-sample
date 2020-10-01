@@ -2,7 +2,7 @@
 <ruleset name="KainosCustom">
     <description>カイノス コーディングスタイル</description>
     <!-- 設定オプションの詳細、https://pear.plus-server.net/package.php.php-codesniffer.config-options.html -->
-    <arg name="tab-width" value="4"/>
+    <arg name="tab-width" value="4"/><!--インデントでタブも使用して良いように設定-->
 
     <rule ref="PSR12">
         <exclude name="PSR1.Methods.CamelCapsMethodName.NotCamelCaps"/><!--キャメルケースか-->
