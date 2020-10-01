@@ -12,9 +12,7 @@ class 編集コントローラ extends Controller
 {
     private $編集;
 
-    public function __construct(
-        編集 $編集
-    ) {
+    public function __construct(編集 $編集) {
         $this->編集 = $編集;
     }
 
