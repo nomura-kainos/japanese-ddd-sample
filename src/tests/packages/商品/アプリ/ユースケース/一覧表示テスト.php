@@ -18,7 +18,6 @@ class 一覧表示テスト extends TestCase
 {
     public function test_一覧ビューモデルのインスタンスが返却されること()
     {
-
         $リポジトリモック = $this->mock(商品リポジトリ::class, function ($モック) {
             $空の配列 = new Collection();
 
