@@ -46,9 +46,24 @@ class ルートテスト extends TestCase
      * @dataProvider URIプロバイダ_POST
      * @param string $URI
      * @param array $入力
+     */
+    public function test_画面に遷移できること_POST(string $URI, array $入力)
+    {
+        factory(商品エロクアント::class, '商品が1件登録済')->create();
+        $正常ステータス = 302;
+
+        $レスポンス = $this->post($URI, $入力);
+
+        $レスポンス->assertStatus($正常ステータス);
+    }
+
+    /**
+     * @dataProvider URIプロバイダ_POST
+     * @param string $URI
+     * @param array $入力
      * @param string $リダイレクトURI
      */
-    public function test_画面に遷移できること_POST(string $URI, array $入力, string $リダイレクトURI)
+    public function test_リダイレクトされること(string $URI, array $入力, string $リダイレクトURI)
     {
         factory(商品エロクアント::class, '商品が1件登録済')->create();
 
