@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Tests\pakages\ルート;
+namespace Tests\packages\ルート;
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;

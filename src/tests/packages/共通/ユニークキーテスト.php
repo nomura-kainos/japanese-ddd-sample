@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests\pakages\共通;
+namespace Tests\packages\共通;
 
 use Tests\TestCase;
 use 共通\ユニークキー;

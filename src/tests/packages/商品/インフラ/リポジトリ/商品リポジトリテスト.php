@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Tests\pakages\商品\インフラ\リポジトリ;
+namespace Tests\packages\商品\インフラ\リポジトリ;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
