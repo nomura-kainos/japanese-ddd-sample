@@ -11,7 +11,8 @@ class 詳細コントローラ extends Controller
 {
     private $詳細表示;
 
-    public function __construct(詳細表示 $詳細表示) {
+    public function __construct(詳細表示 $詳細表示)
+    {
         $this->詳細表示 = $詳細表示;
     }
 
