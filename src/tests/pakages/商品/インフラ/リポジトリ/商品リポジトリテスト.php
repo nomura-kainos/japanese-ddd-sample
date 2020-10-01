@@ -12,6 +12,9 @@ use 商品\ドメイン\モデル\商品;
 use 商品\ドメイン\モデル\商品ID;
 use 商品シーダー;
 
+/**
+ * @group 商品
+ */
 class 商品リポジトリテスト extends TestCase
 {
     /*

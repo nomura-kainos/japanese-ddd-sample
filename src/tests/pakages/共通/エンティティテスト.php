@@ -7,6 +7,9 @@ use Tests\TestCase;
 use 共通\エンティティ;
 use 共通\ユニークキー;
 
+/**
+ * @group 共通
+ */
 class エンティティテスト extends TestCase
 {
     /*

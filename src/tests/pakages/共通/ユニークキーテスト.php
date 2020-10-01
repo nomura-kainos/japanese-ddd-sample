@@ -6,6 +6,9 @@ namespace Tests\pakages\共通;
 use Tests\TestCase;
 use 共通\ユニークキー;
 
+/**
+ * @group 共通
+ */
 class ユニークキーテスト extends TestCase
 {
     public function test_設定した属性の値が入力と同じこと()
