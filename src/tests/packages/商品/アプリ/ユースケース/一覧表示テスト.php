@@ -22,7 +22,6 @@ class 一覧表示テスト extends TestCase
             $空の配列 = new Collection();
 
             $モック->shouldReceive('全件取得')
-                ->once()
                 ->andReturn(new 商品コレクションレスポンスデータ($空の配列));
         });
         $ユースケース = new 一覧表示($リポジトリモック);
