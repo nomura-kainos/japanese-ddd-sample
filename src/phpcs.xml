@@ -10,5 +10,4 @@
         <exclude name="Squiz.Classes.ValidClassName"/><!--単語の先頭文字を大文字で表記する記法か-->
     </rule>
 
-    <rule ref="Generic.Commenting.DocComment"/>
 </ruleset>
