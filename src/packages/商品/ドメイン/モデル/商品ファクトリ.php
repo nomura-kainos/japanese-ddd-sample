@@ -13,22 +13,24 @@ class 商品ファクトリ
         $this->商品リポ = $商品リポ;
     }
 
-    public function 作成する(string $名前, レンタル料金 $レンタル料金)
+    public function 作成する(string $名前, レンタル料金 $レンタル料金, カテゴリID $カテゴリid)
     {
         $商品ID = $this->商品リポ->登録用に次の商品IDを取得する();
         return new 商品(
             new 商品ID($商品ID->値()),
             $名前,
-            $レンタル料金
+            $レンタル料金,
+            $カテゴリid
         );
     }
 
-    public function 再構成する(商品ID $id, string $名前, レンタル料金 $レンタル料金)
+    public function 再構成する(商品ID $id, string $名前, レンタル料金 $レンタル料金, カテゴリID $カテゴリid)
     {
         return new 商品(
             $id,
             $名前,
-            $レンタル料金
+            $レンタル料金,
+            $カテゴリid
         );
     }
 }

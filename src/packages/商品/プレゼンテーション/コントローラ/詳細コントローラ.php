@@ -20,6 +20,6 @@ class 詳細コントローラ extends Controller
     {
         $商品 = $this->詳細表示->実行($id);
 
-        return view('商品.詳細', ['商品' => $商品]);
+    return view('商品.詳細', ['商品' => $商品]);
     }
 }

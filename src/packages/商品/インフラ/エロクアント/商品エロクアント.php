@@ -23,10 +23,11 @@ class 商品エロクアント extends Model
         'id' => 'int',
         '名前' => 'string',
         'レンタル料金' => 'int',
+        'カテゴリid' => 'int',
     ];
 
     // 代入可能なフィールドを指定する
-    protected $fillable = ['id', '名前', 'レンタル料金'];
+    protected $fillable = ['id', '名前', 'レンタル料金', 'カテゴリid'];
 
     // 代入不可なフィールドを指定する
     protected $guarded = ['created_at', 'updated_at'];

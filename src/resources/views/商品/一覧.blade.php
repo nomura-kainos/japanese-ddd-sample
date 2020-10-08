@@ -16,6 +16,7 @@
                     <tr>
                         <td><a href="/item_detail/{{ $商品->id() }}"> {{ $商品->名前() }} </a></td>
                         <td>{{ $商品->レンタル料金() }}</td>
+                        <td>{{ $商品->カテゴリid() }}</td>
                     </tr>
                     @endforeach
                 </table>

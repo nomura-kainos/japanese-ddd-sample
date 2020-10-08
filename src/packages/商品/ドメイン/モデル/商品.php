@@ -12,13 +12,15 @@ class 商品 extends エンティティ
     private 商品ID $id;
     private string $名前;
     private レンタル料金 $レンタル料金;
+    private カテゴリID $カテゴリid;
 
-    public function __construct(商品ID $id, string $名前, レンタル料金 $レンタル料金)
+    public function __construct(商品ID $id, string $名前, レンタル料金 $レンタル料金, カテゴリID $カテゴリid)
     {
         parent::ユニークキーを設定する($id);
         $this->id = $id;
         $this->名前 = $名前;
         $this->レンタル料金 = $レンタル料金;
+        $this->カテゴリid = $カテゴリid;
     }
 
     public function id(): int
@@ -34,6 +36,11 @@ class 商品 extends エンティティ
     public function レンタル料金(): int
     {
         return $this->レンタル料金->値;
+    }
+
+    public function カテゴリid(): int
+    {
+        return $this->カテゴリid->値;
     }
 
     public function 名前を変更する(string $名前)
