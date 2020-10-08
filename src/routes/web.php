@@ -14,22 +14,30 @@
 use App\Mail\SampleMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
-use 商品\プレゼンテーション\コントローラ\一覧コントローラ;
-use 商品\プレゼンテーション\コントローラ\登録コントローラ;
-use 商品\プレゼンテーション\コントローラ\詳細コントローラ;
-use 商品\プレゼンテーション\コントローラ\編集コントローラ;
+use 商品\プレゼンテーション\コントローラ\一覧コントローラ as 商品一覧コントローラ;
+use 商品\プレゼンテーション\コントローラ\登録コントローラ as 商品登録コントローラ;
+use 商品\プレゼンテーション\コントローラ\詳細コントローラ as 商品詳細コントローラ;
+use 商品\プレゼンテーション\コントローラ\編集コントローラ as 商品編集コントローラ;
+use 商品カテゴリ\プレゼンテーション\コントローラ\一覧コントローラ as 商品カテゴリ一覧コントローラ;
+use 商品カテゴリ\プレゼンテーション\コントローラ\登録コントローラ as 商品カテゴリ登録コントローラ;
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/item', 一覧コントローラ::class);
-Route::get('/item_detail/{id}', 詳細コントローラ::class);
-Route::post('/item/edit/{id}', 編集コントローラ::class);
+Route::get('/item', 商品一覧コントローラ::class);
+Route::get('/item_detail/{id}', 商品詳細コントローラ::class);
+Route::post('/item/edit/{id}', 商品編集コントローラ::class);
 Route::get('/item/register', function () {
     return view('商品.登録');
 });
-Route::post('/item/register', 登録コントローラ::class);
+Route::post('/item/register', 商品登録コントローラ::class);
+
+Route::get('/category', 商品カテゴリ一覧コントローラ::class);
+Route::get('/category/register', function () {
+    return view('商品カテゴリ.登録');
+});
+Route::post('/category/register', 商品カテゴリ登録コントローラ::class);
 
 Route::get('/hello/', 'HelloController@index')->name('hello');
 Route::post('/hello/other', 'HelloController@other');

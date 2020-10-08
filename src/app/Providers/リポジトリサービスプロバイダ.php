@@ -7,6 +7,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use 商品\インフラ\リポジトリ\商品リポジトリ;
 use 商品\ドメイン\モデル\商品リポジトリインターフェース;
+use 商品カテゴリ\インフラ\リポジトリ\商品カテゴリリポジトリ;
+use 商品カテゴリ\ドメイン\モデル\商品カテゴリリポジトリインターフェース;
 
 class リポジトリサービスプロバイダ extends ServiceProvider
 {
@@ -21,6 +23,11 @@ class リポジトリサービスプロバイダ extends ServiceProvider
         $this->app->bind(
             商品リポジトリインターフェース::class,
             商品リポジトリ::class
+        );
+
+        $this->app->bind(
+            商品カテゴリリポジトリインターフェース::class,
+            商品カテゴリリポジトリ::class
         );
 
     }
