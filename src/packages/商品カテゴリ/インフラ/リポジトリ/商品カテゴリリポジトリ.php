@@ -35,7 +35,7 @@ class 商品カテゴリリポジトリ implements 商品カテゴリリポジ�
         if ($単品 === null) {
             return null;
         }
-        return new 商品カテゴリカテゴリレスポンスデータ($単品);
+        return new 商品カテゴリレスポンスデータ($単品);
     }
 
     public function 全件取得(): 商品カテゴリコレクションレスポンスデータ
