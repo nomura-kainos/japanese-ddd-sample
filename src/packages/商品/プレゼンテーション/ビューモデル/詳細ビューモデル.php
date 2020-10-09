@@ -4,19 +4,26 @@ declare(strict_types=1);
 
 namespace 商品\プレゼンテーション\ビューモデル;
 
+use Illuminate\Support\Collection;
+use 商品カテゴリ\インフラ\レスポンスデータ\商品カテゴリコレクションレスポンスデータ;
+
 class 詳細ビューモデル
 {
     private int $id;
     private string $名前;
     private int $レンタル料金;
     private int $カテゴリid;
+    private string $カテゴリ名;
+    private 商品カテゴリコレクションレスポンスデータ $カテゴリコレクション;
 
-    public function __construct(int $id, string $名前, int $レンタル料金, int $カテゴリid)
+    public function __construct(int $id, string $名前, int $レンタル料金, int $カテゴリid, string $カテゴリ名, 商品カテゴリコレクションレスポンスデータ $カテゴリコレクション)
     {
         $this->id = $id;
         $this->名前 = $名前;
         $this->レンタル料金 = $レンタル料金;
         $this->カテゴリid = $カテゴリid;
+        $this->カテゴリ名 = $カテゴリ名;
+        $this->カテゴリコレクション = $カテゴリコレクション;
     }
 
     public function id(): string
@@ -37,5 +44,15 @@ class 詳細ビューモデル
     public function カテゴリid(): string
     {
         return (string)$this->カテゴリid;
+    }
+
+    public function カテゴリ名(): string
+    {
+        return $this->カテゴリ名;
+    }
+
+    public function カテゴリコレクション(): Collection
+    {
+        return $this->カテゴリコレクション->取得();
     }
 }

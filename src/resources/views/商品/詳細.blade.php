@@ -14,7 +14,11 @@
                     ID:{{ $商品->id() }}<br>
                     名前：<input type='text' name='名前' value='{{ $商品->名前() }}'><br>
                     レンタル料金：<input type='text' name='レンタル料金' value='{{ $商品->レンタル料金() }}'><br>
-                    カテゴリID：<input type='text' name='カテゴリid' value='{{ $商品->カテゴリid() }}'><br>
+                    カテゴリ:<select name='カテゴリid'>
+                        @foreach($複数カテゴリ as $カテゴリ)
+                            <option value="{{ $カテゴリ->id() }}">{{ $カテゴリ->名前() }}</option>
+                        @endforeach
+                    </select><br>
                     <div><input type='submit' value='編集'></div>
                 </form>
             </div>
