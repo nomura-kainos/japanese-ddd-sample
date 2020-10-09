@@ -13,7 +13,7 @@ class 商品カテゴリファクトリ
         $this->商品カテゴリリポ = $商品カテゴリリポ;
     }
 
-    public function 作成する(string $名前, レンタル料金 $レンタル料金)
+    public function 作成する(string $名前)
     {
         $商品カテゴリID = $this->商品カテゴリリポ->登録用に次の商品カテゴリIDを取得する();
         return new 商品カテゴリ(
