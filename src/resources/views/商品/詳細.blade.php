@@ -15,8 +15,13 @@
                     名前：<input type='text' name='名前' value='{{ $商品->名前() }}'><br>
                     レンタル料金：<input type='text' name='レンタル料金' value='{{ $商品->レンタル料金() }}'><br>
                     カテゴリ:<select name='カテゴリid'>
+                        <option value = '' selected>選択なし</option>
                         @foreach($複数カテゴリ as $カテゴリ)
-                            <option value="{{ $カテゴリ->id() }}">{{ $カテゴリ->名前() }}</option>
+                            @if(!empty($商品->カテゴリid()) && $商品->カテゴリid() == $カテゴリ->id())
+                                <option value = '{{ $カテゴリ->id() }}' selected>{{ $カテゴリ->名前() }}</option>
+                            @else
+                                <option value = '{{ $カテゴリ->id() }}'>{{ $カテゴリ->名前() }}</option>
+                            @endif
                         @endforeach
                     </select><br>
                     <div><input type='submit' value='編集'></div>
