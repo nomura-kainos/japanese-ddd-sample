@@ -6,7 +6,6 @@ namespace Tests\packages\商品\プレゼンテーション\ビューモデル;
 
 use Illuminate\Support\Collection;
 use Tests\TestCase;
-use 商品\インフラ\エロクアント\商品エロクアント;
 use 商品\プレゼンテーション\ビューモデル\詳細ビューモデル;
 use 商品カテゴリ\インフラ\エロクアント\商品カテゴリエロクアント;
 use 商品カテゴリ\インフラ\レスポンスデータ\商品カテゴリコレクションレスポンスデータ;
