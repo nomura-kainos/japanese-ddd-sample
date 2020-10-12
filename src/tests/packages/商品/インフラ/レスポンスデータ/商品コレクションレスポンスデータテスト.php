@@ -14,11 +14,17 @@ use 商品\インフラ\レスポンスデータ\商品コレクションレス�
  */
 class 商品コレクションレスポンスデータテスト extends TestCase
 {
+    private function Null合体演算子の返却値($モック, bool $判定)
+    {
+        $モック->shouldReceive('offsetExists')
+            ->andReturn($判定);
+    }
     public function test_コレクションの値が取得できること()
     {
         $エロクアントモック = $this->mock(商品エロクアント::class, function ($モック) {
             $モック->shouldReceive('getAttribute')
-                ->andReturn(100, '登録', 1000);
+                ->andReturn(100, '登録', 1000, 1, 'カテゴリ名1');
+            $this->Null合体演算子の返却値($モック, true);
         });
         $コレクション = new Collection([$エロクアントモック]);
         $商品コレクション = new 商品コレクションレスポンスデータ($コレクション);
@@ -28,5 +34,7 @@ class 商品コレクションレスポンスデータテスト extends TestCase
         self::assertSame(100, $コレクションレスポンスデータ->first()->id());
         self::assertSame('登録', $コレクションレスポンスデータ->first()->名前());
         self::assertSame(1000, $コレクションレスポンスデータ->first()->レンタル料金());
+        self::assertSame(1, $コレクションレスポンスデータ->first()->カテゴリid());
+        self::assertSame('カテゴリ名1', $コレクションレスポンスデータ->first()->カテゴリ名());
     }
 }

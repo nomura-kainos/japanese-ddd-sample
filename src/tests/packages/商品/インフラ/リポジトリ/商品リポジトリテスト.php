@@ -8,6 +8,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 use 商品\インフラ\エロクアント\商品エロクアント;
 use 商品\インフラ\リポジトリ\商品リポジトリ;
+use 商品\ドメイン\モデル\カテゴリID;
 use 商品\ドメイン\モデル\レンタル料金;
 use 商品\ドメイン\モデル\商品;
 use 商品\ドメイン\モデル\商品ID;
@@ -23,12 +24,13 @@ class 商品リポジトリテスト extends TestCase
      */
     use RefreshDatabase;
 
-    private function テスト用商品を作成(int $id, string $名前, int $レンタル料金): 商品
+    private function テスト用商品を作成(int $id, string $名前, int $レンタル料金, int $カテゴリid): 商品
     {
         return new 商品(
             new 商品ID($id),
             $名前,
-            new レンタル料金($レンタル料金)
+            new レンタル料金($レンタル料金),
+            new カテゴリID($カテゴリid)
         );
     }
 
@@ -46,14 +48,15 @@ class 商品リポジトリテスト extends TestCase
     public function test_商品の新規登録ができること()
     {
         $リポジトリ = new 商品リポジトリ(new 商品エロクアント());
-        $商品 = $this->テスト用商品を作成(1, '登録済', 1000);
+        $商品 = $this->テスト用商品を作成(1, '登録済', 1000, 1);
 
         $リポジトリ->保存($商品);
 
         $this->assertDatabaseHas('商品', [
             'id' => 1,
             '名前' => '登録済',
-            'レンタル料金' => 1000
+            'レンタル料金' => 1000,
+            'カテゴリid' => 1,
         ]);
     }
 
@@ -61,14 +64,15 @@ class 商品リポジトリテスト extends TestCase
     {
         factory(商品エロクアント::class, '商品が1件登録済')->create();
         $リポジトリ = new 商品リポジトリ(new 商品エロクアント());
-        $商品 = $this->テスト用商品を作成(1, '更新済', 2000);
+        $商品 = $this->テスト用商品を作成(1, '更新済', 2000, 2);
 
         $リポジトリ->保存($商品);
 
         $this->assertDatabaseHas('商品', [
             'id' => 1,
             '名前' => '更新済',
-            'レンタル料金' => 2000
+            'レンタル料金' => 2000,
+            'カテゴリid' => 2,
         ]);
     }
 
@@ -76,14 +80,15 @@ class 商品リポジトリテスト extends TestCase
     {
         factory(商品エロクアント::class, '商品が1件登録済')->create();
         $リポジトリ = new 商品リポジトリ(new 商品エロクアント());
-        $商品 = $this->テスト用商品を作成(1, '更新済', 2000);
+        $商品 = $this->テスト用商品を作成(1, '更新済', 2000, 1);
 
         $リポジトリ->保存($商品);
 
         $this->assertDatabaseMissing('商品', [
             'id' => 1,
             '名前' => '登録済',
-            'レンタル料金' => 1000
+            'レンタル料金' => 1000,
+            'カテゴリid' => 1,
         ]);
     }
 
@@ -97,6 +102,7 @@ class 商品リポジトリテスト extends TestCase
         self::assertSame(1, $レスポンスデータ->id());
         self::assertSame('登録済', $レスポンスデータ->名前());
         self::assertSame(1000, $レスポンスデータ->レンタル料金());
+        self::assertSame(1, $レスポンスデータ->カテゴリid());
     }
 
     public function test_指定した商品が取得できない場合、nullを返す()
