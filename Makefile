@@ -41,8 +41,8 @@ test:
 # make test-group group=***
 test-group:
 	docker-compose exec app php ./vendor/bin/phpunit --group=${group}
-metrics:
-    docker-compose exec app php ./vendor/bin/phpmetrics --report-html=myreport ./packages
+report:
+	docker-compose exec app php ./vendor/bin/phpmetrics --report-html=myreport ./packages
 cache:
 	docker-compose exec app composer dump-autoload -o
 	docker-compose exec app php artisan optimize:clear
