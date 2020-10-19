@@ -16,8 +16,14 @@ class 詳細ビューモデル
     private string $カテゴリ名;
     private 商品カテゴリコレクションレスポンスデータ $カテゴリコレクション;
 
-    public function __construct(int $id, string $名前, int $レンタル料金, int $カテゴリid, string $カテゴリ名, 商品カテゴリコレクションレスポンスデータ $カテゴリコレクション)
-    {
+    public function __construct(
+        int $id,
+        string $名前,
+        int $レンタル料金,
+        int $カテゴリid,
+        string $カテゴリ名,
+        商品カテゴリコレクションレスポンスデータ $カテゴリコレクション
+    ) {
         $this->id = $id;
         $this->名前 = $名前;
         $this->レンタル料金 = $レンタル料金;
