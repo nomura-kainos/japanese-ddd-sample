@@ -4,6 +4,7 @@
 skinparam Actor {
     BackgroundColor black
     BorderColor black
+    FontColor 454645
 }
 
 skinparam Boundary {
