@@ -1,10 +1,11 @@
 @startuml
+!include color.inc
 
 usecase ログイン
 
 actor ユーザー
 boundary ログインページ
-boundary #black ユーザー名入力ページ
+boundary ユーザー名入力ページ
 control ログインページを表示する
 control ユーザー名とパスワードを入力する
 control アカウントは存在するか
