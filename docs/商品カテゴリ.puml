@@ -1,0 +1,46 @@
+@startuml
+!include color.inc
+
+プレゼンテーション ---> アプリ
+アプリ ---> ドメイン
+ドメイン ---> インフラ
+
+package 商品カテゴリ <<Folder>> {
+ package プレゼンテーション {
+  package ビューモデル {
+   class 一覧ビューモデル
+  }
+  package コントローラ {
+   class 一覧コントローラ
+   class 登録コントローラ
+  }
+ }
+ package アプリ {
+  package ユースケース {
+   class 一覧表示
+   class 登録
+  }
+ }
+ package ドメイン {
+  package モデル {
+   class 商品カテゴリ
+   class 商品カテゴリID
+   class 商品カテゴリファクトリ
+   interface 商品カテゴリリポジトリインターフェース
+  }
+ }
+ package インフラ {
+  package レスポンスデータ {
+   class 商品カテゴリIDレスポンスデータ
+   class 商品カテゴリコレクションレスポンスデータ
+   class 商品カテゴリレスポンスデータ
+  }
+  package エロクアント {
+   class 商品カテゴリエロクアント
+  }
+  package リポジトリ {
+   class 商品カテゴリリポジトリ
+  }
+ }
+}
+@enduml

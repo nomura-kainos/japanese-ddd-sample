@@ -1,0 +1,9 @@
+@startuml
+!include color.inc
+
+package 共通 <<Folder>> {
+  class エンティティ
+  class ユニークキー
+  class バリューオブジェクト
+}
+@enduml
