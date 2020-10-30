@@ -30,7 +30,7 @@ skinparam Usecase {
     BorderColor 999999
 }
 
-skinparam class {
+skinparam Class {
     BackgroundColor white
     BorderColor black
     ArrowColor black
@@ -40,7 +40,7 @@ skinparam class {
 }
 
 skinparam BackgroundColor DDDDDD
-skinparam shadowing false
+skinparam Shadowing false
 skinparam RoundCorner 7
 skinparam ArrowColor 454645
 skinparam FontColor 454645
