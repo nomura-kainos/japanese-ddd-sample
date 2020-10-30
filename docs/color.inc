@@ -31,10 +31,10 @@ skinparam Usecase {
 }
 
 skinparam class {
-    BackgroundColor #white
-    BorderColor #black
-    ArrowColor #black
-    FontColor #black
+    BackgroundColor white
+    BorderColor black
+    ArrowColor black
+    FontColor black
     FontSize 10
     FontName Helvetica
 }
