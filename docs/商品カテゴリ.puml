@@ -43,4 +43,5 @@ package 商品カテゴリ <<Folder>> {
   }
  }
 }
+
 @enduml
