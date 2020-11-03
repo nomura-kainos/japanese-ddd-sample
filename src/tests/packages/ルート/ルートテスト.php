@@ -25,7 +25,7 @@ class ルートテスト extends TestCase
      */
     public function test_画面に遷移できること_GET(string $URI)
     {
-        factory(商品エロクアント::class, '商品が1件登録済')->create();
+        $this->seed('商品が1件登録済シーダ');
         $正常ステータス = 200;
 
         $レスポンス = $this->get($URI);
@@ -49,7 +49,7 @@ class ルートテスト extends TestCase
      */
     public function test_画面に遷移できること_POST(string $URI, array $入力)
     {
-        factory(商品エロクアント::class, '商品が1件登録済')->create();
+        $this->seed('商品が1件登録済シーダ');
         $正常ステータス = 302;
 
         $レスポンス = $this->post($URI, $入力);
@@ -65,8 +65,7 @@ class ルートテスト extends TestCase
      */
     public function test_リダイレクトされること(string $URI, array $入力, string $リダイレクトURI)
     {
-        factory(商品エロクアント::class, '商品が1件登録済')->create();
-
+        $this->seed('商品が1件登録済シーダ');
         $レスポンス = $this->post($URI, $入力);
 
         $レスポンス->assertRedirect($リダイレクトURI);

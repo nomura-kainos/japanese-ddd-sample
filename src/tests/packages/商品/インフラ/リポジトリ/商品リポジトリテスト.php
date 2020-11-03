@@ -37,7 +37,7 @@ class 商品リポジトリテスト extends TestCase
     public function test_登録用に次の商品IDが取得できること()
     {
         // 通常使用する際は既に商品が登録されているため、同じ環境を考慮して事前に商品を登録する
-        factory(商品エロクアント::class, '商品が1件登録済')->create();
+        $this->seed('商品が1件登録済シーダ');
         $リポジトリ = new 商品リポジトリ(new 商品エロクアント());
 
         $レスポンスデータ = $リポジトリ->登録用に次の商品IDを取得する();
@@ -62,7 +62,7 @@ class 商品リポジトリテスト extends TestCase
 
     public function test_既に登録されている商品が更新できること()
     {
-        factory(商品エロクアント::class, '商品が1件登録済')->create();
+        $this->seed('商品が1件登録済シーダ');
         $リポジトリ = new 商品リポジトリ(new 商品エロクアント());
         $商品 = $this->テスト用商品を作成(1, '更新済', 2000, 2);
 
@@ -78,7 +78,7 @@ class 商品リポジトリテスト extends TestCase
 
     public function test_登録された商品が残っていないこと()
     {
-        factory(商品エロクアント::class, '商品が1件登録済')->create();
+        $this->seed('商品が1件登録済シーダ');
         $リポジトリ = new 商品リポジトリ(new 商品エロクアント());
         $商品 = $this->テスト用商品を作成(1, '更新済', 2000, 1);
 
@@ -94,7 +94,7 @@ class 商品リポジトリテスト extends TestCase
 
     public function test_商品IDで指定した商品が取得できること()
     {
-        factory(商品エロクアント::class, '商品が1件登録済')->create();
+        $this->seed('商品が1件登録済シーダ');
         $リポジトリ = new 商品リポジトリ(new 商品エロクアント());
 
         $レスポンスデータ = $リポジトリ->IDで1件取得(new 商品ID(1));
@@ -107,7 +107,7 @@ class 商品リポジトリテスト extends TestCase
 
     public function test_指定した商品が取得できない場合、nullを返す()
     {
-        factory(商品エロクアント::class, '商品が1件登録済')->create();
+        $this->seed('商品が1件登録済シーダ');
         $リポジトリ = new 商品リポジトリ(new 商品エロクアント());
 
         $レスポンスデータ = $リポジトリ->IDで1件取得(new 商品ID(2));
@@ -117,13 +117,12 @@ class 商品リポジトリテスト extends TestCase
 
     public function test_全ての商品が取得できること()
     {
-        $レコード数 = 5;
-        factory(商品エロクアント::class, '商品が複数登録済', $レコード数)->create();
+        $this->seed('商品が複数登録済シーダ');
         $リポジトリ = new 商品リポジトリ(new 商品エロクアント());
 
         $コレクションレスポンスデータ = $リポジトリ->全件取得();
 
-        self::assertSame(5, $コレクションレスポンスデータ->取得()->count());
+        self::assertSame(3, $コレクションレスポンスデータ->取得()->count());
     }
 
     public function test_商品が0件の場合、空の配列を返却すること()

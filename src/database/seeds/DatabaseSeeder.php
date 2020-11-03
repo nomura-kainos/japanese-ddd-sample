@@ -11,5 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call('商品が1件登録済シーダ::class');
+        $this->call('商品が複数登録済シーダ::class');
     }
 }
