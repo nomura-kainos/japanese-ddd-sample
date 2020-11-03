@@ -30,6 +30,12 @@ skinparam Usecase {
     BorderColor 999999
 }
 
+skinparam Note {
+    BackgroundColor white
+    BorderColor 454645
+    FontColor 454645
+}
+
 skinparam Class {
     BackgroundColor white
     BorderColor black
