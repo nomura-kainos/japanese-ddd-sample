@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace 認証\プレゼンテーション\コントローラ;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use 認証\アプリ\ユースケース\SNSログイン;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 
