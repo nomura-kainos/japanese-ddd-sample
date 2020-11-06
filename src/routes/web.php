@@ -14,6 +14,7 @@
 use App\Mail\SampleMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\URL;
 use 認証\プレゼンテーション\コントローラ\SNSログインコントローラ;
 use 認証\プレゼンテーション\コントローラ\会員ユーザ紐付けコントローラ;
 use 商品\プレゼンテーション\コントローラ\一覧コントローラ as 商品一覧コントローラ;
