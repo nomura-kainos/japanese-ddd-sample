@@ -20,6 +20,6 @@ class 会員ユーザ紐付けコントローラ extends Controller
     {
         $this->会員ユーザ紐付け->実行($SNS名);
 
-        return redirect('/item');
+        return redirect('http://localhost:10080/item');
     }
 }
