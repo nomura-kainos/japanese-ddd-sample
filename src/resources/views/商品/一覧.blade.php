@@ -28,6 +28,11 @@
                             Google Login
                         </a>
                     </div>
+                    <div class="col-md-8 offset-md-4">
+                        <a href="/login/facebook" class="btn btn-secondary" role="button">
+                            Facebook Login
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

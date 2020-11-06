@@ -40,4 +40,9 @@ return [
         'redirect' => env('GOOGLE_CALLBACK_URL'),
     ],
 
+    'facebook' => [
+        'client_id' => env('FACEBOOK_APP_ID'),
+        'client_secret' => env('FACEBOOK_APP_SECRET'),
+        'redirect' => env('FACEBOOK_CALLBACK_URL'),
+    ],
 ];

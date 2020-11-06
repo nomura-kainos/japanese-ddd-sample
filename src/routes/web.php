@@ -28,8 +28,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('login/{sns_name}', SNSログインコントローラ::class)->where('SNS名', 'google');
-Route::get('login/{sns_name}/callback', 会員ユーザ紐付けコントローラ::class)->where('SNS名', 'google');
+Route::get('login/{sns_name}', SNSログインコントローラ::class)->where('SNS名', 'google|facebook');
+Route::get('login/{sns_name}/callback', 会員ユーザ紐付けコントローラ::class)->where('SNS名', 'google|facebook');
 
 Route::get('/item', 商品一覧コントローラ::class);
 Route::get('/item_detail/{id}', 商品詳細コントローラ::class);

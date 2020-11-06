@@ -37,6 +37,15 @@ services:
     environment:
       - TZ=${TZ:-Asia/Tokyo}
 
+  facebook-login:
+    image: steveltn/https-portal:1
+    container_name: facebook_login
+    ports:
+      - ${FACEBOOK_LOGIN_PORT:-10081}:443
+    environment:
+      STAGE: local
+      DOMAINS: localhost -> http://host.docker.internal:${WEB_PORT:-10080}
+
   db:
     image: mysql:8.0
     container_name: db
