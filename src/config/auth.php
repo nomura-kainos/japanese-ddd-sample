@@ -1,5 +1,7 @@
 <?php
 
+use 認証\インフラ\エロクアント\ユーザエロクアント;
+
 return [
 
     /*
@@ -68,7 +70,7 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => ユーザエロクアント::class,
         ],
 
         // 'users' => [

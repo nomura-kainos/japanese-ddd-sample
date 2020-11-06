@@ -38,6 +38,7 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
+            "認証\\": "packages/認証/",
             "商品\\": "packages/商品/",
             "商品カテゴリ\\": "packages/商品カテゴリ/",
             "共通\\": "packages/共通/"
