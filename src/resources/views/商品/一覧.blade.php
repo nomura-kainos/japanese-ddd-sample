@@ -33,6 +33,11 @@
                             Facebook Login
                         </a>
                     </div>
+                    <div class="col-md-8 offset-md-4">
+                        <a href="/login/amazon" class="btn btn-secondary" role="button">
+                            Amazon Login
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

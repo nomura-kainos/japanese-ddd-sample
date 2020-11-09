@@ -45,4 +45,10 @@ return [
         'client_secret' => env('FACEBOOK_APP_SECRET'),
         'redirect' => env('FACEBOOK_CALLBACK_URL'),
     ],
+
+    'amazon' => [
+        'client_id' => env('AMAZON_CLIENT_ID'),
+        'client_secret' => env('AMAZON_CLIENT_SECRET'),
+        'redirect' => env('AMAZON_CALLBACK_URL'),
+    ],
 ];

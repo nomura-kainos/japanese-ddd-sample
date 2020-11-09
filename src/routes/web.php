@@ -14,7 +14,6 @@
 use App\Mail\SampleMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\URL;
 use 認証\プレゼンテーション\コントローラ\SNSログインコントローラ;
 use 認証\プレゼンテーション\コントローラ\会員ユーザ紐付けコントローラ;
 use 商品\プレゼンテーション\コントローラ\一覧コントローラ as 商品一覧コントローラ;
@@ -28,8 +27,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('login/{sns_name}', SNSログインコントローラ::class)->where('SNS名', 'google|facebook');
-Route::get('login/{sns_name}/callback', 会員ユーザ紐付けコントローラ::class)->where('SNS名', 'google|facebook');
+Route::get('login/{sns_name}', SNSログインコントローラ::class)->where('SNS名', 'google|facebook|amazon');
+Route::get('login/{sns_name}/callback', 会員ユーザ紐付けコントローラ::class)->where('SNS名', 'google|facebook|amazon');
 
 Route::get('/item', 商品一覧コントローラ::class);
 Route::get('/item_detail/{id}', 商品詳細コントローラ::class);
