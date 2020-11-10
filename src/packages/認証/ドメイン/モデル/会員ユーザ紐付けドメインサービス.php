@@ -29,8 +29,9 @@ class 会員ユーザ紐付けドメインサービス
             return $紐付け済みSNSアカウント->ユーザエロクアント;
         }
 
-        $登録済みユーザ = $this->登録済みユーザの取得($SNSユーザ->getEmail());
-        if ($登録済みユーザ == null) {
+        if ($this->ログイン済みか()) {
+            $登録済みユーザ = $this->登録済みユーザの取得(Auth::id());
+        } else {
             $登録済みユーザ = $this->新規ユーザ作成($SNSユーザ);
         }
 
@@ -50,9 +51,9 @@ class 会員ユーザ紐付けドメインサービス
             ->first();
     }
 
-    private function 登録済みユーザの取得(string $メール): ?ユーザエロクアント
+    private function 登録済みユーザの取得(int $id): ?ユーザエロクアント
     {
-        return $this->ユーザエロクアント::where('メール', $メール)->first();
+        return $this->ユーザエロクアント::where('id',  $id)->first();
     }
 
     private function 新規ユーザ作成(User $SNSユーザ): ユーザエロクアント
