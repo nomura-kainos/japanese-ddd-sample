@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace 認証\ドメイン\モデル;
 
+use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Contracts\User;
 use 認証\インフラ\エロクアント\SNSアカウントエロクアント;
 use 認証\インフラ\エロクアント\ユーザエロクアント;
@@ -42,6 +43,15 @@ class 会員ユーザ紐付けドメインサービス
         $this->ユーザ紐付け($登録済みユーザ->id, $SNSアカウント引数);
 
         return $登録済みユーザ;
+    }
+
+    private function ログイン済みか()
+    {
+        if(Auth::check() == null) {
+            return false;
+        }
+
+        return true;
     }
 
     private function 紐付け済みSNSアカウントの取得(string $SNSアカウントid, string $SNS名): ?SNSアカウントエロクアント
