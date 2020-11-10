@@ -20,20 +20,12 @@ class LoginController extends Controller
 
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/item';
 
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    // 認証で使用するユニークキーを指定
+    public function username()
     {
-        $this->middleware('guest')->except('logout');
+        return 'email';
     }
+
 }

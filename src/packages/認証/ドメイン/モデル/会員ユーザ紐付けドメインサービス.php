@@ -70,8 +70,8 @@ class 会員ユーザ紐付けドメインサービス
     {
         return $this->ユーザエロクアント::create([
             '名前'  => $SNSユーザ->getName(),
-            'メール' => $SNSユーザ->getEmail(),
-            'パスワード' => null, //SNS側にログインを委譲するため、パスワードを必要としない
+            'email' => $SNSユーザ->getEmail(),
+            'password' => null, //SNS側にログインを委譲するため、パスワードを必要としない
         ]);
     }
 

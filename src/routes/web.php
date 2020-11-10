@@ -70,3 +70,9 @@ Route::get('/sample_mail', function () {
     Mail::to('sample@example.com')->send(new SampleMail);
     return '送信完了!';
 });
+
+Route::get('/user/register', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('/user/register', 'App\Http\Controllers\Auth\RegisterController@register');
+Route::get('/user/login', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login');
+Route::post('/user/login', 'App\Http\Controllers\Auth\LoginController@login');
+Route::post('/user/logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');

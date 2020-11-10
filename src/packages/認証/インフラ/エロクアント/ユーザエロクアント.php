@@ -13,13 +13,13 @@ class ユーザエロクアント extends Authenticatable
     protected $casts = [
         'id' => 'int',
         '名前' => 'string',
-        'メール' => 'string',
-        'パスワード' => 'string',
+        'email' => 'string',
+        'password' => 'string',
     ];
 
     // 代入可能なフィールドを指定する
     protected $fillable = [
-        '名前', 'メール', 'パスワード',
+        '名前', 'email', 'password',
     ];
 
     function SNSアカウントエロクアント()
