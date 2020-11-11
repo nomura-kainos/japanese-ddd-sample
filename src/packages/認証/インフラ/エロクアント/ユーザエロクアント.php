@@ -26,7 +26,7 @@ class ユーザエロクアント extends Authenticatable
         '名前', 'email', 'password',
     ];
 
-    function SNSアカウントエロクアント()
+    public function SNSアカウントエロクアント()
     {
         // SNSアカウントエロクアントと紐付ける 1対多の関係
         return $this->hasMany(SNSアカウントエロクアント::class, 'ユーザid');

@@ -25,7 +25,7 @@ class SNSアカウントエロクアント extends Model
         'ユーザid', 'SNS名', 'SNSアカウントid'
     ];
 
-    function ユーザエロクアント()
+    public function ユーザエロクアント()
     {
         return $this->belongsTo(ユーザエロクアント::class, 'ユーザid');
     }
