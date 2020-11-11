@@ -46,7 +46,7 @@ class 会員ユーザ紐付けドメインサービス
 
     private function ログイン済みか()
     {
-        if(Auth::check() == null) {
+        if (Auth::check() == null) {
             return false;
         }
 

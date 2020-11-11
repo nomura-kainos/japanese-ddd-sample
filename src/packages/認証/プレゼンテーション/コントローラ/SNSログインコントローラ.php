@@ -17,7 +17,7 @@ class SNSログインコントローラ extends Controller
         $this->SNSログイン = $SNSログイン;
     }
 
-    public function __invoke($SNS名):RedirectResponse
+    public function __invoke($SNS名): RedirectResponse
     {
         return $this->SNSログイン->実行($SNS名);
     }

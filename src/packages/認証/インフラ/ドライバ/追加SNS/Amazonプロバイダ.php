@@ -55,7 +55,7 @@ class Amazonプロバイダ extends AbstractProvider implements ProviderInterfac
         $response = $this->getHttpClient()
             ->get('https://api.amazon.com/user/profile', [
                 'headers' => [
-                    'Authorization' => 'Bearer '.$token,
+                    'Authorization' => 'Bearer ' . $token,
                 ],
             ]);
 
