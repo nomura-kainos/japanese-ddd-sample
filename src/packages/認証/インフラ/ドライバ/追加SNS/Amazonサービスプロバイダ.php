@@ -14,7 +14,7 @@ class Amazonサービスプロバイダ extends SocialiteServiceProvider
         Socialite::extend('amazon', function ($app) {
             $config = $this->app['config']['services.amazon'];
 
-            return Socialite::buildProvider( Amazonプロバイダ::class, $config);
+            return Socialite::buildProvider(Amazonプロバイダ::class, $config);
         });
     }
 }
