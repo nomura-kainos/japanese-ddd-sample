@@ -3,9 +3,13 @@
 namespace 認証\インフラ\エロクアント;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 class ユーザエロクアント extends Authenticatable
 {
+    // パスワードリセットのメール送信ができるように設定
+    use Notifiable;
+
     // テーブル名を指定する
     protected $table = 'ユーザ';
 
