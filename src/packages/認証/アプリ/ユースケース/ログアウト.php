@@ -11,7 +11,10 @@ class ログアウト
 {
     use AuthenticatesUsers;
 
-    protected $redirectTo = '/item';
+    protected function loggedOut(Request $request)
+    {
+        return redirect('/item');
+    }
 
     public function 実行(Request $リクエスト)
     {
