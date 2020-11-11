@@ -7,6 +7,9 @@
 
 package 認証 <<Folder>> {
  package プレゼンテーション {
+   package フォームリクエスト {
+    class ユーザ登録フォームリクエスト
+   }
   package コントローラ {
     package パスワードリセット {
      class リンク表示コントローラ
