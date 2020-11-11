@@ -24,17 +24,17 @@
                 <a href="/item/register/"> 登録 </a>
                 <div class="form-group row mt-2">
                     <div class="col-md-8 offset-md-4">
-                        <a href="/login/google" class="btn btn-secondary" role="button">
+                        <a href="/user/login/google" class="btn btn-secondary" role="button">
                             Google Login
                         </a>
                     </div>
                     <div class="col-md-8 offset-md-4">
-                        <a href="/login/facebook" class="btn btn-secondary" role="button">
+                        <a href="/user/login/facebook" class="btn btn-secondary" role="button">
                             Facebook Login
                         </a>
                     </div>
                     <div class="col-md-8 offset-md-4">
-                        <a href="/login/amazon" class="btn btn-secondary" role="button">
+                        <a href="/user/login/amazon" class="btn btn-secondary" role="button">
                             Amazon Login
                         </a>
                     </div>

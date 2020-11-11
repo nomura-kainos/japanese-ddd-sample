@@ -36,8 +36,8 @@ Route::get('/', function () {
 Route::get('/user/login', 手動ログインフォーム表示コントローラ::class)->name('login');
 Route::post('/user/login', 手動ログインコントローラ::class);
 Route::post('/user/logout', ログアウトコントローラ::class)->name('logout');
-Route::get('login/{sns_name}', SNSログインコントローラ::class)->where('SNS名', 'google|facebook|amazon');
-Route::get('login/{sns_name}/callback', 会員ユーザ紐付けコントローラ::class)->where('SNS名', 'google|facebook|amazon');
+Route::get('/user/login/{sns_name}', SNSログインコントローラ::class)->where('SNS名', 'google|facebook|amazon');
+Route::get('/user/login/{sns_name}/callback', 会員ユーザ紐付けコントローラ::class)->where('SNS名', 'google|facebook|amazon');
 
 Route::get('/user/register', ユーザ登録フォーム表示コントローラ::class)->name('register');
 Route::post('/user/register', ユーザ登録コントローラ::class);
