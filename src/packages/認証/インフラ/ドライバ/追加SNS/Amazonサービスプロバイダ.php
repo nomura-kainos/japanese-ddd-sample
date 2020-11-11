@@ -7,7 +7,6 @@ namespace 認証\インフラ\ドライバ\追加SNS;
 use Laravel\Socialite\Facades\Socialite;
 use Laravel\Socialite\SocialiteServiceProvider;
 
-
 class Amazonサービスプロバイダ extends SocialiteServiceProvider
 {
     public function boot()
