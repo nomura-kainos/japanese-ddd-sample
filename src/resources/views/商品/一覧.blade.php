@@ -32,7 +32,7 @@
                     </div>
                     <div class="col-md-8 offset-md-4">
                         <a href="/user/login/facebook" role="button">
-                            <img border="0" alt="Login with Google"
+                            <img border="0" alt="Login with Facebook"
                                  src="{{ asset('/img/facebookログインボタン.png') }}"
                                  width="156" height="35" />
                         </a>
