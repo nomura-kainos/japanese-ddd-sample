@@ -62,7 +62,7 @@ class 会員ユーザ紐付けドメインサービス
 
     private function 登録済みユーザの取得(int $id): ?ユーザエロクアント
     {
-        return $this->ユーザエロクアント::where('id',  $id)->first();
+        return $this->ユーザエロクアント::where('id', $id)->first();
     }
 
     private function 新規ユーザ作成(User $SNSユーザ): ユーザエロクアント

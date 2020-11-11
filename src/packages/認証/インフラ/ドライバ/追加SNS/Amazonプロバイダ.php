@@ -59,7 +59,7 @@ class Amazonプロバイダ extends AbstractProvider implements ProviderInterfac
                 ],
             ]);
 
-        return json_decode($response->getBody()->getContents(), true );
+        return json_decode($response->getBody()->getContents(), true);
     }
 
     /**
