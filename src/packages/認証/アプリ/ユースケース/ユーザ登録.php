@@ -22,6 +22,13 @@ class ユーザ登録
 
     public function 実行(Request $リクエスト)
     {
-        return $this->register($リクエスト);
+        $登録済みユーザ = $this->register($リクエスト);
+
+        $this->ユーザのログイン情報削除();
+        Auth::login($登録済みユーザ, true);
+    }
+
+    private function ユーザのログイン情報削除() {
+        Auth::logout();
     }
 }
