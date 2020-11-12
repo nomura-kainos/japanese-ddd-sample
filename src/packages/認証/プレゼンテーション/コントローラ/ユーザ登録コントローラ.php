@@ -19,6 +19,8 @@ class ユーザ登録コントローラ extends Controller
 
     public function __invoke(ユーザ登録フォームリクエスト $リクエスト)
     {
-        return $this->ユーザ登録->実行($リクエスト);
+        $this->ユーザ登録->実行($リクエスト);
+
+        return redirect('/item');
     }
 }
