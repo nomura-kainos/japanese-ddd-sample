@@ -25,7 +25,7 @@ class ユーザ登録
         $登録済みユーザ = $this->register($リクエスト);
 
         $this->ユーザのログイン情報削除();
-        Auth::login($登録済みユーザ, true);
+        Auth::loginUsingId($登録済みユーザ->id(), true);
     }
 
     private function ユーザのログイン情報削除() {

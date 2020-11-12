@@ -27,6 +27,6 @@ class 会員ユーザ紐付け
 
         $登録済みユーザ = $this->会員ユーザ紐付けドメインサービス->実行($SNSユーザ, $SNS名);
 
-        Auth::login($登録済みユーザ, true);
+        Auth::loginUsingId($登録済みユーザ->id(), true);
     }
 }
