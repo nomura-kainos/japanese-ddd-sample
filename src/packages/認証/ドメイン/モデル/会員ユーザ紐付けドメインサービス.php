@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace 認証\ドメイン\モデル;
 
-use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Contracts\User;
 
 class 会員ユーザ紐付けドメインサービス
@@ -27,8 +26,8 @@ class 会員ユーザ紐付けドメインサービス
             return $紐付け済みユーザ;
         }
 
-        if ($this->ログイン済みか()) {
-            $登録済みユーザ = $this->ユーザリポ->IDで1件取得(new ユーザID(Auth::id()));
+        if (ログインユーザ::ログイン済みか()) {
+            $登録済みユーザ = $this->ユーザリポ->IDで1件取得(new ユーザID(ログインユーザ::id()));
         } else {
             $ユーザ = $this->ユーザファクトリ->作成する(
                 $SNSアカウント->getName(),
@@ -46,14 +45,5 @@ class 会員ユーザ紐付けドメインサービス
         $this->ユーザリポ->SNSアカウント紐付け(new ユーザID($登録済みユーザ->id()), $SNSアカウント引数);
 
         return $登録済みユーザ;
-    }
-
-    private function ログイン済みか()
-    {
-        if (Auth::check() == null) {
-            return false;
-        }
-
-        return true;
     }
 }

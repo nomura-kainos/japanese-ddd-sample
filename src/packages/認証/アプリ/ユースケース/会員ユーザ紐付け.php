@@ -4,7 +4,8 @@ declare(strict_types=1);
 
 namespace 認証\アプリ\ユースケース;
 
-use Illuminate\Support\Facades\Auth;
+use 認証\ドメイン\モデル\ユーザID;
+use 認証\ドメイン\モデル\ログインユーザ;
 use 認証\ドメイン\モデル\会員ユーザ紐付けドメインサービス;
 use 認証\ドメイン\モデル\ドライバインターフェース;
 
@@ -27,6 +28,6 @@ class 会員ユーザ紐付け
 
         $登録済みユーザ = $this->会員ユーザ紐付けドメインサービス->実行($SNSユーザ, $SNS名);
 
-        Auth::loginUsingId($登録済みユーザ->id(), true);
+        ログインユーザ::ユーザーIDのみで自動ログインする(new ユーザID($登録済みユーザ->id()));
     }
 }

@@ -5,9 +5,10 @@ declare(strict_types=1);
 namespace 認証\アプリ\ユースケース;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+use 認証\ドメイン\モデル\ユーザID;
 use 認証\ドメイン\モデル\ユーザファクトリ;
 use 認証\ドメイン\モデル\ユーザリポジトリインターフェース;
+use 認証\ドメイン\モデル\ログインユーザ;
 
 class ユーザ登録
 {
@@ -30,11 +31,7 @@ class ユーザ登録
 
         $登録済みユーザ = $this->ユーザリポ->保存($ユーザ);
 
-        $this->ユーザのログイン情報削除();
-        Auth::loginUsingId($登録済みユーザ->id(), true);
-    }
-
-    private function ユーザのログイン情報削除() {
-        Auth::logout();
+        ログインユーザ::自動ログイン情報削除();
+        ログインユーザ::ユーザーIDのみで自動ログインする(new ユーザID($登録済みユーザ->id()));
     }
 }
