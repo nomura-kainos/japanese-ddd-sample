@@ -24,7 +24,6 @@ class ユーザ登録
     public function 実行(Request $リクエスト)
     {
         $ユーザ = $this->ユーザファクトリ->作成する(
-            $リクエスト->input('name'),
             $リクエスト->input('email'),
             $リクエスト->input('password')
         );

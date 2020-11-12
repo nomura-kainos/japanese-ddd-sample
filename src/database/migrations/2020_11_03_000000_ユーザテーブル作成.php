@@ -15,7 +15,6 @@ class ユーザテーブル作成 extends Migration
     {
         Schema::create('ユーザ', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('名前');
             $table->string('email')->unique();
             $table->string('password')->nullable();
             $table->rememberToken();
