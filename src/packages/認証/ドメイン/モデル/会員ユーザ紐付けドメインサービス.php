@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace 認証\ドメイン\モデル;
 
-use Laravel\Socialite\Contracts\User;
-
 class 会員ユーザ紐付けドメインサービス
 {
     private $ユーザリポ;
