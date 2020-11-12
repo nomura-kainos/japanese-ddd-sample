@@ -6,23 +6,29 @@ namespace 認証\アプリ\ユースケース;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
-use 認証\インフラ\エロクアント\ユーザエロクアント;
+use 認証\ドメイン\モデル\ユーザファクトリ;
+use 認証\ドメイン\モデル\ユーザリポジトリインターフェース;
 
 class ユーザ登録
 {
-    public function register(Request $request)
+    private $ユーザリポ;
+    private $ユーザファクトリ;
+
+    public function __construct(ユーザリポジトリインターフェース $ユーザリポ, ユーザファクトリ $ユーザファクトリ)
     {
-        return ユーザエロクアント::create([
-            '名前' => $request->input('name'),
-            'email' => $request->input('email'),
-            'password' => Hash::make($request->input('password'),),
-        ]);
+        $this->ユーザリポ = $ユーザリポ;
+        $this->ユーザファクトリ = $ユーザファクトリ;
     }
 
     public function 実行(Request $リクエスト)
     {
-        $登録済みユーザ = $this->register($リクエスト);
+        $ユーザ = $this->ユーザファクトリ->作成する(
+            $リクエスト->input('name'),
+            $リクエスト->input('email'),
+            $リクエスト->input('password')
+        );
+
+        $登録済みユーザ = $this->ユーザリポ->保存($ユーザ);
 
         $this->ユーザのログイン情報削除();
         Auth::loginUsingId($登録済みユーザ->id(), true);

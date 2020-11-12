@@ -6,40 +6,44 @@ namespace 認証\ドメイン\モデル;
 
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Contracts\User;
-use 認証\インフラ\エロクアント\SNSアカウントエロクアント;
-use 認証\インフラ\エロクアント\ユーザエロクアント;
 
 class 会員ユーザ紐付けドメインサービス
 {
-    private $SNSアカウントエロクアント;
-    private $ユーザエロクアント;
+    private $ユーザリポ;
+    private $ユーザファクトリ;
 
     public function __construct(
-        SNSアカウントエロクアント $SNSアカウントエロクアント,
-        ユーザエロクアント $ユーザエロクアント
+        ユーザリポジトリインターフェース $ユーザリポ,
+        ユーザファクトリ $ユーザファクトリ
     ) {
-        $this->SNSアカウントエロクアント = $SNSアカウントエロクアント;
-        $this->ユーザエロクアント = $ユーザエロクアント;
+        $this->ユーザリポ = $ユーザリポ;
+        $this->ユーザファクトリ = $ユーザファクトリ;
     }
 
-    public function 実行(User $SNSユーザ, string $SNS名)
+    public function 実行(User $SNSアカウント, string $SNS名)
     {
-        $紐付け済みSNSアカウント = $this->紐付け済みSNSアカウントの取得($SNSユーザ->getId(), $SNS名);
-        if ($紐付け済みSNSアカウント) {
-            return $紐付け済みSNSアカウント->ユーザエロクアント;
+        $紐付け済みユーザ = $this->ユーザリポ->SNS紐付け済みユーザを1件取得($SNSアカウント->getId(), $SNS名);
+        if ($紐付け済みユーザ !== null) {
+            return $紐付け済みユーザ;
         }
 
         if ($this->ログイン済みか()) {
-            $登録済みユーザ = $this->登録済みユーザの取得(Auth::id());
+            $登録済みユーザ = $this->ユーザリポ->IDで1件取得(new ユーザID(Auth::id()));
         } else {
-            $登録済みユーザ = $this->新規ユーザ作成($SNSユーザ);
+            $ユーザ = $this->ユーザファクトリ->作成する(
+                $SNSアカウント->getName(),
+                $SNSアカウント->getEmail(),
+                null, //SNS側にログインを委譲するため、パスワードを必要としない
+            );
+            $登録済みユーザ = $this->ユーザリポ->保存($ユーザ);
         }
 
         $SNSアカウント引数 = [
             'SNS名' => $SNS名,
-            'SNSアカウントid' => $SNSユーザ->getId()
+            'SNSアカウントid' => $SNSアカウント->getId()
         ];
-        $this->ユーザ紐付け($登録済みユーザ->id, $SNSアカウント引数);
+
+        $this->ユーザリポ->SNSアカウント紐付け(new ユーザID($登録済みユーザ->id()), $SNSアカウント引数);
 
         return $登録済みユーザ;
     }
@@ -51,35 +55,5 @@ class 会員ユーザ紐付けドメインサービス
         }
 
         return true;
-    }
-
-    private function 紐付け済みSNSアカウントの取得(string $SNSアカウントid, string $SNS名): ?SNSアカウントエロクアント
-    {
-        return $this->SNSアカウントエロクアント::where('SNS名', $SNS名)
-            ->where('SNSアカウントid', $SNSアカウントid)
-            ->first();
-    }
-
-    private function 登録済みユーザの取得(int $id): ?ユーザエロクアント
-    {
-        return $this->ユーザエロクアント::where('id', $id)->first();
-    }
-
-    private function 新規ユーザ作成(User $SNSユーザ): ユーザエロクアント
-    {
-        return $this->ユーザエロクアント::create([
-            '名前'  => $SNSユーザ->getName(),
-            'email' => $SNSユーザ->getEmail(),
-            'password' => null, //SNS側にログインを委譲するため、パスワードを必要としない
-        ]);
-    }
-
-    private function ユーザ紐付け(int $ユーザid, array $SNSアカウント引数)
-    {
-        $this->SNSアカウントエロクアント->create([
-            'ユーザid' => $ユーザid,
-            'SNS名' => $SNSアカウント引数['SNS名'],
-            'SNSアカウントid'   => $SNSアカウント引数['SNSアカウントid'],
-        ]);
     }
 }
