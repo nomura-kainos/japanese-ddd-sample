@@ -11,9 +11,9 @@ class ユニークキー
 {
     use バリューオブジェクト;
 
-    private int $値;
+    private $値;
 
-    final public function __construct(int $値)
+    final public function __construct($値)
     {
         $this->値 = $値;
     }
