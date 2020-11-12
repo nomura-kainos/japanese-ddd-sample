@@ -10,5 +10,5 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 interface ドライバインターフェース
 {
     public function 認証ページヘリダイレクト(string $SNS名): RedirectResponse;
-    public function ユーザ情報取得(string $SNS名): User;
+    public function アカウント取得(string $SNS名): User;
 }

@@ -16,7 +16,7 @@ class SNSドライバ implements ドライバインターフェース
         return Socialite::driver($SNS名)->redirect();
     }
 
-    public function ユーザ情報取得(string $SNS名): User
+    public function アカウント取得(string $SNS名): User
     {
         return Socialite::driver($SNS名)->stateless()->user();
     }
