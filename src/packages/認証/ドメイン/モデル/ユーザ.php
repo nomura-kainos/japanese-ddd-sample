@@ -10,9 +10,9 @@ class ユーザ extends エンティティ
 {
     private ユーザID $id;
     private string $メール;
-    private string $パスワード;
+    private ?string $パスワード;
 
-    public function __construct(ユーザID $id, string $メール, string $パスワード)
+    public function __construct(ユーザID $id, string $メール, ?string $パスワード)
     {
         parent::ユニークキーを設定する($id);
         $this->id = $id;
@@ -30,7 +30,7 @@ class ユーザ extends エンティティ
         return $this->メール;
     }
 
-    public function パスワード(): string
+    public function パスワード(): ?string
     {
         return $this->パスワード;
     }

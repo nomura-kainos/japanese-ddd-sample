@@ -10,7 +10,7 @@ class ユーザレスポンスデータ
 {
     private int $id;
     private string $メール;
-    private string $パスワード;
+    private ?string $パスワード;
 
     public function __construct(ユーザエロクアント $ユーザ)
     {
@@ -29,7 +29,7 @@ class ユーザレスポンスデータ
         return $this->メール;
     }
 
-    public function パスワード(): string
+    public function パスワード(): ?string
     {
         return $this->パスワード;
     }
