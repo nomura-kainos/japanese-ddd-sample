@@ -15,14 +15,14 @@ class SNSアカウントエロクアント extends Model
 
     // フィールドの属性キャストを指定(未指定の場合stringになる)
     protected $casts = [
-        'ユーザid' => 'int',
         'SNS名' => 'string',
         'SNSアカウントid' => 'string',
+        'ユーザid' => 'int',
     ];
 
     // 代入可能なフィールドを指定する
     protected $fillable = [
-        'ユーザid', 'SNS名', 'SNSアカウントid'
+        'SNS名', 'SNSアカウントid', 'ユーザid'
     ];
 
     public function ユーザエロクアント()
