@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use カート\インフラ\リポジトリ\カートリポジトリ;
+use カート\ドメイン\モデル\カートリポジトリインターフェース;
 use 商品\アプリ\ユースケース\一覧表示クエリサービスインターフェース;
 use 商品\アプリ\ユースケース\詳細表示クエリサービスインターフェース;
 use 商品\インフラ\リポジトリ\一覧表示クエリサービス;
@@ -49,6 +51,11 @@ class リポジトリサービスプロバイダ extends ServiceProvider
         $this->app->bind(
             ユーザリポジトリインターフェース::class,
             ユーザリポジトリ::class
+        );
+
+        $this->app->bind(
+            カートリポジトリインターフェース::class,
+            カートリポジトリ::class
         );
     }
 

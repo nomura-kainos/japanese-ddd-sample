@@ -26,6 +26,28 @@
                     </select><br>
                     <div><input type='submit' value='編集'></div>
                 </form>
+
+                @if(!auth()->guest())
+                    <form action="{{ url('/cart/add') }}" method="POST">
+                        {{ csrf_field() }}
+                        <input
+                                type='hidden'
+                                name='商品id'
+                                value='{{ $商品->id() }}'/>
+                        <select name='数量'>
+                            <option value='1'>1</option>
+                            <option value='2'>2</option>
+                            <option value='3'>3</option>
+                            <option value='4'>4</option>
+                            <option value='5'>5</option>
+                        </select>
+                        <button
+                                type='submit'
+                                class='btn btn-primary'>カートに入れる
+                        </button>
+                    </form>
+                @endguest
+
             </div>
         </div>
     </div>
