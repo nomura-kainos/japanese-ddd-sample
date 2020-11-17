@@ -14,6 +14,8 @@ class カート内商品エロクアント extends Model
     // テーブル名を指定する
     protected $table = 'カート内商品';
 
+    // 複合キーを指定する(複合キーを有効にするために、incrementを無効にする)
+    protected $primaryKey = [ 'カートid', '商品id' ];
     // INSERT時の自動採番の有無を指定する
     public $incrementing = false;
 
