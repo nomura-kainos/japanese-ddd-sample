@@ -15,6 +15,7 @@ use App\Mail\SampleMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use カート\プレゼンテーション\コントローラ\カートに入れるコントローラ;
+use カート\プレゼンテーション\コントローラ\カート一覧コントローラ;
 use 認証\プレゼンテーション\コントローラ\SNSログインコントローラ;
 use 認証\プレゼンテーション\コントローラ\ユーザ登録コントローラ;
 use 認証\プレゼンテーション\コントローラ\ユーザ登録フォーム表示コントローラ;
@@ -67,7 +68,7 @@ Route::get('/category/register', function () {
 });
 Route::post('/category/register', 商品カテゴリ登録コントローラ::class);
 
-Route::get('/cart', 'App\Http\Controllers\カートコントローラ@index');
+Route::get('/cart', カート一覧コントローラ::class)->name('cart');
 Route::post('/cart/add', カートに入れるコントローラ::class);
 Route::get('/cart/remove/{id}', 'App\Http\Controllers\カートコントローラ@remove');
 Route::post('/cart/complete', 'App\Http\Controllers\カートコントローラ@complete')->name('cart.complete');

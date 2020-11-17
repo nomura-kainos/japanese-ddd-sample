@@ -1,0 +1,79 @@
+<?php
+
+declare(strict_types=1);
+
+namespace カート\プレゼンテーション\ビューモデル;
+
+use カート\インフラ\レスポンスデータ\カート内商品コレクションレスポンスデータ;
+
+class 一覧ビューモデル
+{
+    private $カートコレクション;
+
+    public function __construct(カート内商品コレクションレスポンスデータ $コレクション)
+    {
+        $詰め替え後のコレクション = $コレクション->取得()->map(function ($カート) {
+
+            return new カート内商品(
+                $カート->カートid(),
+                $カート->商品id(),
+                $カート->名前(),
+                $カート->価格(),
+                $カート->数量()
+            );
+        });
+
+        $this->カートコレクション = $詰め替え後のコレクション;
+    }
+
+    public function 取得()
+    {
+        return $this->カートコレクション;
+    }
+}
+/*
+ * phpでインナークラスが使えないため、privateにできない
+ * このビューモデル以外で使わないこと
+ */
+class カート内商品
+{
+    private int $カートid;
+    private int $商品id;
+    private string $名前;
+    private int $価格;
+    private int $数量;
+
+    public function __construct(int $カートid, int $商品id, string $名前, int $価格, int $数量)
+    {
+        $this->カートid = $カートid;
+        $this->商品id = $商品id;
+        $this->名前 = $名前;
+        $this->価格 = $価格;
+        $this->数量 = $数量;
+    }
+
+    public function カートid(): string
+    {
+        return (string)$this->カートid;
+    }
+
+    public function 商品id(): string
+    {
+        return (string)$this->商品id;
+    }
+
+    public function 名前(): string
+    {
+        return $this->名前;
+    }
+
+    public function 数量(): string
+    {
+        return (string)$this->数量;
+    }
+
+    public function 総額(): string
+    {
+        return number_format($this->価格 * $this->数量);
+    }
+}
