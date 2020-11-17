@@ -15,7 +15,7 @@ use App\Mail\SampleMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use カート\プレゼンテーション\コントローラ\カートに入れるコントローラ;
-use カート\プレゼンテーション\コントローラ\カート一覧コントローラ;
+use カート\プレゼンテーション\コントローラ\一覧コントローラ as カート一覧コントローラ;
 use 認証\プレゼンテーション\コントローラ\SNSログインコントローラ;
 use 認証\プレゼンテーション\コントローラ\ユーザ登録コントローラ;
 use 認証\プレゼンテーション\コントローラ\ユーザ登録フォーム表示コントローラ;

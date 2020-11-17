@@ -7,7 +7,7 @@ namespace カート\プレゼンテーション\コントローラ;
 use App\Http\Controllers\Controller;
 use カート\アプリ\ユースケース\一覧表示;
 
-class カート一覧コントローラ extends Controller
+class 一覧コントローラ extends Controller
 {
     private $一覧表示;
 
