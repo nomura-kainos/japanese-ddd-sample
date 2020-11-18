@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace カート\ドメイン\モデル;
 
-use Illuminate\Http\Request;
 use 認証\ドメイン\モデル\ログインユーザ;
 
 class カートドメインサービス
@@ -20,7 +19,7 @@ class カートドメインサービス
         $this->カートファクトリ = $カートファクトリ;
     }
 
-    public function カートに入れる(Request $リクエスト)
+    public function カートに入れる($商品id, $数量)
     {
         $ユーザid = new ユーザID(ログインユーザ::id());
         $カート = $this->カートリポ->ユーザIDで1件取得($ユーザid);
@@ -33,8 +32,7 @@ class カートドメインサービス
         $this->カートリポ->保存($カート);
 
         $カートid = new カートID($カート->id());
-        $商品id = new カート内商品ID((int)$リクエスト->商品id);
-        $数量 = (int)$リクエスト->数量;
+        $商品id = new カート内商品ID($商品id);
 
         $カート内商品 = $this->カートリポ->カート内商品を1件取得($カートid, $商品id);
         if ($カート内商品 === null) {
