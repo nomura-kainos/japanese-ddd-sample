@@ -1,0 +1,57 @@
+@startuml
+!include color.inc
+
+プレゼンテーション ---> アプリ
+アプリ ---> ドメイン
+ドメイン ----> インフラ
+
+package カート <<Folder>> {
+ package プレゼンテーション {
+  package ビューモデル {
+   class 一覧ビューモデル
+  }
+  package コントローラ {
+   class カートに入れるコントローラ
+   class カート内商品を削除コントローラ
+   class 一覧コントローラ
+  }
+ }
+ package アプリ {
+  package ユースケース {
+   class カートに入れる
+   class カート内商品を削除
+   class 一覧表示
+   interface 一覧表示クエリサービスインターフェース
+  }
+ }
+ package ドメイン {
+  package モデル {
+   class カート
+   class カートID
+   class カートドメインサービス
+   interface カートリポジトリインターフェース
+   class カートファクトリ
+   class カート内商品ID
+   class カート内商品
+   class ユーザID
+   class 商品ID
+  }
+ }
+ package インフラ {
+  package レスポンスデータ {
+   class カート内商品レスポンスデータ
+   class カート内商品コレクションレスポンスデータ
+   class カートレスポンスデータ
+   class カートIDレスポンスデータ
+  }
+  package エロクアント {
+   class カート内商品エロクアント
+   class カートエロクアント
+  }
+  package リポジトリ {
+   class カートリポジトリ
+   class 一覧表示クエリサービス
+  }
+ }
+}
+@enduml
