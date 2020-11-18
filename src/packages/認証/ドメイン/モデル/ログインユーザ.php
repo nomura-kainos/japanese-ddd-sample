@@ -16,11 +16,13 @@ class ログインユーザ extends Auth
         return true;
     }
 
-    public static function 自動ログイン情報削除() {
+    public static function 自動ログイン情報削除()
+    {
         self::logout();
     }
 
-    public static function ユーザーIDのみで自動ログインする(ユーザID $id) {
+    public static function ユーザーIDのみで自動ログインする(ユーザID $id)
+    {
         $自動ログインの設定 = true;
         self::loginUsingId($id->値, $自動ログインの設定);
     }
