@@ -34,7 +34,6 @@ package カート <<Folder>> {
    class カート内商品ID
    class カート内商品
    class ユーザID
-   class 商品ID
   }
  }
  package インフラ {
