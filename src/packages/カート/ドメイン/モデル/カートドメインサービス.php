@@ -7,7 +7,7 @@ namespace カート\ドメイン\モデル;
 use Illuminate\Http\Request;
 use 認証\ドメイン\モデル\ログインユーザ;
 
-class カートに入れるドメインサービス
+class カートドメインサービス
 {
     private $カートリポ;
     private $カートファクトリ;
@@ -20,7 +20,7 @@ class カートに入れるドメインサービス
         $this->カートファクトリ = $カートファクトリ;
     }
 
-    public function 実行(Request $リクエスト)
+    public function カートに入れる(Request $リクエスト)
     {
         $ユーザid = new ユーザID(ログインユーザ::id());
         $カート = $this->カートリポ->ユーザIDで1件取得($ユーザid);
@@ -47,5 +47,10 @@ class カートに入れるドメインサービス
             );
         }
         $this->カートリポ->カート内商品を保存($カート内商品);
+    }
+
+    public function カート内商品を削除($カートid, $商品id)
+    {
+        $this->カートリポ->カート内商品を削除(new カートID($カートid), new カート内商品ID($商品id));
     }
 }

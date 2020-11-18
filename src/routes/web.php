@@ -15,6 +15,7 @@ use App\Mail\SampleMail;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Route;
 use カート\プレゼンテーション\コントローラ\カートに入れるコントローラ;
+use カート\プレゼンテーション\コントローラ\カート内商品削除コントローラ;
 use カート\プレゼンテーション\コントローラ\一覧コントローラ as カート一覧コントローラ;
 use 認証\プレゼンテーション\コントローラ\SNSログインコントローラ;
 use 認証\プレゼンテーション\コントローラ\ユーザ登録コントローラ;
@@ -70,7 +71,11 @@ Route::post('/category/register', 商品カテゴリ登録コントローラ::cl
 
 Route::get('/cart', カート一覧コントローラ::class)->name('cart');
 Route::post('/cart/add', カートに入れるコントローラ::class);
-Route::get('/cart/remove/{id}', 'App\Http\Controllers\カートコントローラ@remove');
+Route::get('/cart/remove', function () {
+    return view('カート.一覧');
+});
+Route::post('/cart/remove', カート内商品削除コントローラ::class);
+
 Route::post('/cart/complete', 'App\Http\Controllers\カートコントローラ@complete')->name('cart.complete');
 
 Route::get('/hello/', 'HelloController@index')->name('hello');

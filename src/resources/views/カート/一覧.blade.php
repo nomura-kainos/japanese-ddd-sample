@@ -1,26 +1,31 @@
 @extends('layouts.app')
 
 @section('content')
-<table class="table table-border">
+<div class="table table-border">
     <thead>
     <tr>
+        <th></th>
         <th></th>
         <th>名前</th>
         <th>数量</th>
         <th>総額</th>
     </tr>
     </thead>
-    <tbody>
-        @foreach ($カート内複数商品->取得() as $商品)
+    @foreach ($カート内複数商品->取得() as $商品)
+        <form action="{{ url('/cart/remove')}}" method="POST">
+            {{ csrf_field() }}
+
             <tr>
-                <td><a href="/cart/remove/{{ $商品->カートid() }}">x</a></td>
+                <td><input type="submit" value="x"></td>
                 <td>{{ $商品->名前() }}</td>
                 <td>{{ $商品->数量() }}個</td>
                 <td>{{ $商品->総額() }}円</td>
+                <input type="hidden" name="カートid" value="{{ $商品->カートid() }}">
+                <input type="hidden" name="商品id" value="{{ $商品->商品id() }}">
             </tr>
-        @endforeach
-    </tbody>
-</table>
+        </form>
+    @endforeach
+</div>
 <div class="payment-errors alert alert-danger"
      style="display: none;">
 </div>

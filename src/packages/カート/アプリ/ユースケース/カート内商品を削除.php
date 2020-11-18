@@ -7,7 +7,7 @@ namespace カート\アプリ\ユースケース;
 use Illuminate\Http\Request;
 use カート\ドメイン\モデル\カートドメインサービス;
 
-class カートに入れる
+class カート内商品を削除
 {
     private $カートドメインサービス;
 
@@ -18,6 +18,6 @@ class カートに入れる
 
     public function 実行(Request $リクエスト)
     {
-        $this->カートドメインサービス->カートに入れる($リクエスト);
+        $this->カートドメインサービス->カート内商品を削除((int)$リクエスト->カートid, (int)$リクエスト->商品id);
     }
 }

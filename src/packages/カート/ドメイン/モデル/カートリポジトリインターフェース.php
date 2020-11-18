@@ -19,4 +19,6 @@ interface カートリポジトリインターフェース
     public function 保存(カート $カート);
 
     public function カート内商品を保存(カート内商品 $カート内商品);
+
+    public function カート内商品を削除(カートID $カートid, カート内商品ID $商品id);
 }
