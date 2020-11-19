@@ -20,7 +20,7 @@ class カート内商品 extends エンティティ
         parent::ユニークキーを設定する(new ユニークキー($カートid->値 . $商品id->値));
         $this->カートid = $カートid;
         $this->商品id = $商品id;
-        $this->数量 = $数量;
+        $this->数量を変更する($数量);
         $this->注文済みか = $注文済みか;
     }
 
@@ -42,5 +42,10 @@ class カート内商品 extends エンティティ
     public function 注文済みか(): bool
     {
         return $this->注文済みか;
+    }
+
+    public function 数量を変更する(int $数量)
+    {
+        $this->数量 = $数量;
     }
 }

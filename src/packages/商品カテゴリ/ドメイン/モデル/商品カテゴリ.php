@@ -15,7 +15,7 @@ class 商品カテゴリ extends エンティティ
     {
         parent::ユニークキーを設定する($id);
         $this->id = $id;
-        $this->名前 = $名前;
+        $this->名前を変更する($名前);
     }
 
     public function id(): int
