@@ -6,7 +6,6 @@ namespace Tests\packages\ルート;
 
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
-use 商品\インフラ\エロクアント\商品エロクアント;
 
 /**
  * @group ルート
