@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace 商品カテゴリ\アプリ\ユースケース;
 
-use Illuminate\Http\Request;
 use 商品カテゴリ\ドメイン\モデル\商品カテゴリファクトリ;
 use 商品カテゴリ\ドメイン\モデル\商品カテゴリリポジトリインターフェース;
 
@@ -19,11 +18,11 @@ class 登録
         $this->商品カテゴリファクトリ = $商品カテゴリファクトリ;
     }
 
-    public function 実行(Request $リクエスト)
+    public function 実行(string $名前, int $カテゴリid)
     {
         $商品カテゴリ = $this->商品カテゴリファクトリ->作成する(
-            $リクエスト->名前,
-            $リクエスト->カテゴリid
+            $名前,
+            $カテゴリid
         );
 
         $this->商品カテゴリリポ->保存($商品カテゴリ);

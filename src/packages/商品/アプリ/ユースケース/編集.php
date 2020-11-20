@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace 商品\アプリ\ユースケース;
 
-use Illuminate\Http\Request;
 use 商品\ドメイン\モデル\カテゴリID;
 use 商品\ドメイン\モデル\レンタル料金;
 use 商品\ドメイン\モデル\商品ID;
@@ -22,16 +21,16 @@ class 編集
         $this->商品ファクトリ = $商品ファクトリ;
     }
 
-    public function 実行(Request $リクエスト)
+    public function 実行(int $商品id, string $名前, int $レンタル料金, int $カテゴリid)
     {
-        $商品レスポンスデータ = $this->商品リポ->IDで1件取得(new 商品ID((int)$リクエスト->id));
-        $値段表記を消したレンタル料金 = (int)str_replace(',', '', $リクエスト->レンタル料金);
+        $商品レスポンスデータ = $this->商品リポ->IDで1件取得(new 商品ID($商品id));
+        $値段表記を消したレンタル料金 = (int)str_replace(',', '', $$レンタル料金);
 
         $商品 = $this->商品ファクトリ->再構成する(
             new 商品ID($商品レスポンスデータ->id()),
-            $リクエスト->名前,
+            $名前,
             new レンタル料金($値段表記を消したレンタル料金),
-            new カテゴリID((int)$リクエスト->カテゴリid)
+            new カテゴリID($カテゴリid)
         );
 
         $this->商品リポ->保存($商品);

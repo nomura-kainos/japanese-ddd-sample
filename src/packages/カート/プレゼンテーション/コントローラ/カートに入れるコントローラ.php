@@ -19,7 +19,7 @@ class カートに入れるコントローラ extends Controller
 
     public function __invoke(Request $リクエスト)
     {
-        $this->カートに入れる->実行($リクエスト);
+        $this->カートに入れる->実行((int)$リクエスト->商品id, (int)$リクエスト->数量);
 
         return redirect('/cart/');
     }

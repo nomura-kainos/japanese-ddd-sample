@@ -19,7 +19,7 @@ class カート内商品削除コントローラ extends Controller
 
     public function __invoke(Request $リクエスト)
     {
-        $this->カート内商品を削除->実行($リクエスト);
+        $this->カート内商品を削除->実行((int)$リクエスト->カートid, (int)$リクエスト->商品id);
 
         return redirect('/cart');
     }

@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace 認証\アプリ\ユースケース;
 
-use Illuminate\Http\Request;
 use 認証\ドメイン\モデル\ユーザID;
 use 認証\ドメイン\モデル\ユーザファクトリ;
 use 認証\ドメイン\モデル\ユーザリポジトリインターフェース;
@@ -21,11 +20,11 @@ class ユーザ登録
         $this->ユーザファクトリ = $ユーザファクトリ;
     }
 
-    public function 実行(Request $リクエスト)
+    public function 実行(string $メール, string $パスワード)
     {
         $ユーザ = $this->ユーザファクトリ->作成する(
-            $リクエスト->input('email'),
-            $リクエスト->input('password')
+            $メール,
+            $パスワード
         );
 
         $登録済みユーザ = $this->ユーザリポ->保存($ユーザ);

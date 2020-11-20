@@ -19,7 +19,12 @@ class 編集コントローラ extends Controller
 
     public function __invoke(Request $リクエスト)
     {
-        $this->編集->実行($リクエスト);
+        $this->編集->実行(
+            (int)$リクエスト->id,
+            $リクエスト->名前,
+            $リクエスト->レンタル料金,
+            (int)$リクエスト->カテゴリid
+        );
 
         return redirect('/item/');
     }

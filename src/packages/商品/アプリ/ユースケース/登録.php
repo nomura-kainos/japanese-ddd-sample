@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace 商品\アプリ\ユースケース;
 
-use Illuminate\Http\Request;
 use 商品\ドメイン\モデル\カテゴリID;
 use 商品\ドメイン\モデル\レンタル料金;
 use 商品\ドメイン\モデル\商品ファクトリ;
@@ -21,12 +20,12 @@ class 登録
         $this->商品ファクトリ = $商品ファクトリ;
     }
 
-    public function 実行(Request $リクエスト)
+    public function 実行(string $名前, int $レンタル料金, int $カテゴリid)
     {
         $商品 = $this->商品ファクトリ->作成する(
-            $リクエスト->名前,
-            new レンタル料金((int)$リクエスト->レンタル料金),
-            new カテゴリID((int)$リクエスト->カテゴリid)
+            $名前,
+            new レンタル料金($レンタル料金),
+            new カテゴリID($カテゴリid)
         );
 
         $this->商品リポ->保存($商品);

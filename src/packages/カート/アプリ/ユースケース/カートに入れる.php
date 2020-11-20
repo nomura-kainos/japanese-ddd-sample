@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace カート\アプリ\ユースケース;
 
-use Illuminate\Http\Request;
 use カート\ドメイン\モデル\カートドメインサービス;
 
 class カートに入れる
@@ -16,8 +15,8 @@ class カートに入れる
         $this->カートドメインサービス = $カートドメインサービス;
     }
 
-    public function 実行(Request $リクエスト)
+    public function 実行(int $商品id, int $数量)
     {
-        $this->カートドメインサービス->カートに入れる((int)$リクエスト->商品id, (int)$リクエスト->数量);
+        $this->カートドメインサービス->カートに入れる($商品id, $数量);
     }
 }
