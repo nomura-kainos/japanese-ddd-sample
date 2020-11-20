@@ -21,10 +21,10 @@ class 編集
         $this->商品ファクトリ = $商品ファクトリ;
     }
 
-    public function 実行(int $商品id, string $名前, int $レンタル料金, int $カテゴリid)
+    public function 実行(int $商品id, string $名前, string $レンタル料金, int $カテゴリid)
     {
         $商品レスポンスデータ = $this->商品リポ->IDで1件取得(new 商品ID($商品id));
-        $値段表記を消したレンタル料金 = (int)str_replace(',', '', $$レンタル料金);
+        $値段表記を消したレンタル料金 = (int)str_replace(',', '', $レンタル料金);
 
         $商品 = $this->商品ファクトリ->再構成する(
             new 商品ID($商品レスポンスデータ->id()),
