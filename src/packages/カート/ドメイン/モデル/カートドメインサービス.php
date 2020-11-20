@@ -19,7 +19,7 @@ class カートドメインサービス
         $this->カートファクトリ = $カートファクトリ;
     }
 
-    public function カートに入れる($商品id, $数量)
+    public function カートに入れる(int $商品id, int $数量)
     {
         $ユーザid = new ユーザID(ログインユーザ::id());
         $カート = $this->カートリポ->ユーザIDで1件取得($ユーザid);
@@ -48,7 +48,7 @@ class カートドメインサービス
         $this->カートリポ->カート内商品を保存($カート内商品);
     }
 
-    public function カート内商品を削除($カートid, $商品id)
+    public function カート内商品を削除(int $カートid, int $商品id)
     {
         $this->カートリポ->カート内商品を削除(new カートID($カートid), new カート内商品ID($商品id));
     }

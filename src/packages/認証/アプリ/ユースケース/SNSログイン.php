@@ -16,7 +16,7 @@ class SNSログイン
         $this->ドライバ = $ドライバ;
     }
 
-    public function 実行($SNS名): RedirectResponse
+    public function 実行(string $SNS名): RedirectResponse
     {
         return $this->ドライバ->認証ページヘリダイレクト($SNS名);
     }

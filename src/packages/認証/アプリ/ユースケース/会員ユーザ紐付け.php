@@ -23,7 +23,7 @@ class 会員ユーザ紐付け
         $this->会員ユーザ紐付けドメインサービス = $会員ユーザ紐付けドメインサービス;
     }
 
-    public function 実行($SNS名)
+    public function 実行(string $SNS名)
     {
         $SNSから取得したアカウント = $this->ドライバ->アカウント取得($SNS名);
         $SNSアカウント = new SNSアカウント(

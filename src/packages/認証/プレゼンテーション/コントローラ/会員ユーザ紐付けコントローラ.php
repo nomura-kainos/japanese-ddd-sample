@@ -16,7 +16,7 @@ class 会員ユーザ紐付けコントローラ extends Controller
         $this->会員ユーザ紐付け = $会員ユーザ紐付け;
     }
 
-    public function __invoke($SNS名)
+    public function __invoke(string $SNS名)
     {
         $this->会員ユーザ紐付け->実行($SNS名);
 
