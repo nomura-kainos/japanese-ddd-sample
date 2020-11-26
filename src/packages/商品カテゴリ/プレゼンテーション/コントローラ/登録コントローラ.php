@@ -19,10 +19,7 @@ class 登録コントローラ extends Controller
 
     public function __invoke(Request $リクエスト)
     {
-        $this->登録->実行(
-            $リクエスト->名前,
-            $リクエスト->カテゴリid
-        );
+        $this->登録->実行($リクエスト->名前);
 
         return redirect('/category/');
     }
