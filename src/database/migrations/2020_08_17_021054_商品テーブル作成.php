@@ -15,10 +15,10 @@ class 商品テーブル作成 extends Migration
     public function up()
     {
         Schema::create('商品', function (Blueprint $table) {
-            $table->integer('id');
+            $table->bigInteger('id');
             $table->string('名前');
-            $table->integer('レンタル料金');
-            $table->integer('カテゴリid');
+            $table->bigInteger('レンタル料金');
+            $table->bigInteger('カテゴリid');
             $table->timestamps();
         });
     }

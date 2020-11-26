@@ -14,8 +14,8 @@ class カートテーブル作成 extends Migration
     public function up()
     {
         Schema::create('カート', function (Blueprint $table) {
-            $table->integer('id');
-            $table->unsignedBigInteger('ユーザid');
+            $table->bigInteger('id');
+            $table->bigInteger('ユーザid');
             $table->timestamps();
         });
     }

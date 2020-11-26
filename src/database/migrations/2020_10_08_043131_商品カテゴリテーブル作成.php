@@ -15,7 +15,7 @@ class 商品カテゴリテーブル作成 extends Migration
     public function up()
     {
         Schema::create('商品カテゴリ', function (Blueprint $table) {
-            $table->integer('id');
+            $table->bigInteger('id');
             $table->string('名前');
             $table->timestamps();
         });

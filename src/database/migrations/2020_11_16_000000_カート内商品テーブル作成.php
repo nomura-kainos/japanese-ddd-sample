@@ -14,9 +14,9 @@ class カート内商品テーブル作成 extends Migration
     public function up()
     {
         Schema::create('カート内商品', function (Blueprint $table) {
-            $table->integer('カートid');
-            $table->integer('商品id');
-            $table->integer('数量');
+            $table->bigInteger('カートid');
+            $table->bigInteger('商品id');
+            $table->bigInteger('数量');
             $table->boolean('注文済みか')->default(false);
             $table->primary(['カートid', '商品id']);
             $table->timestamps();

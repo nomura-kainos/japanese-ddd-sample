@@ -16,7 +16,7 @@ class SNSアカウントテーブル作成 extends Migration
         Schema::create('SNSアカウント', function (Blueprint $table) {
             $table->string('SNS名');
             $table->string('SNSアカウントid');
-            $table->unsignedBigInteger('ユーザid');
+            $table->bigInteger('ユーザid');
             $table->foreign('ユーザid')->references('id')->on('ユーザ');
             $table->primary(['SNS名', 'SNSアカウントid']);
             $table->timestamps();
