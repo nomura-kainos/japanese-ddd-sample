@@ -13,6 +13,9 @@ class ユーザエロクアント extends Authenticatable
     // テーブル名を指定する
     protected $table = 'ユーザ';
 
+    // INSERT時の自動採番の有無を指定する
+    public $incrementing = false;
+
     // フィールドの属性キャストを指定(未指定の場合stringになる)
     protected $casts = [
         'id' => 'int',
@@ -23,6 +26,6 @@ class ユーザエロクアント extends Authenticatable
 
     // 代入可能なフィールドを指定する
     protected $fillable = [
-        '名前', 'email', 'password',
+        'id', '名前', 'email', 'password',
     ];
 }
