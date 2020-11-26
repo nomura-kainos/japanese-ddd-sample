@@ -75,6 +75,11 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('cart') }}">{{ __('Cart') }}</a>
                             </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('category_register') }}">{{ __('商品カテゴリ登録') }}</a>
+                            </li>
+
                         @endguest
                     </ul>
                 </div>

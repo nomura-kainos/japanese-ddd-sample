@@ -63,7 +63,7 @@ Route::get('/item/register', function () {
 });
 Route::post('/item/register', 商品登録コントローラ::class);
 
-Route::get('/category', 商品カテゴリ一覧コントローラ::class);
+Route::get('/category', 商品カテゴリ一覧コントローラ::class)->name('category_register');
 Route::get('/category/register', function () {
     return view('商品カテゴリ.登録');
 });
