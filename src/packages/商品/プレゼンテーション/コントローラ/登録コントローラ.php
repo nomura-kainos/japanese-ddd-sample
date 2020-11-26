@@ -7,8 +7,6 @@ namespace 商品\プレゼンテーション\コントローラ;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use 商品\アプリ\ユースケース\登録;
-use 商品\ドメイン\モデル\カテゴリID;
-use 商品\ドメイン\モデル\レンタル料金;
 
 class 登録コントローラ extends Controller
 {
@@ -19,6 +17,9 @@ class 登録コントローラ extends Controller
         $this->登録 = $登録;
     }
 
+    /**
+     * @VisibleTo("App\Presentation");
+     */
     public function __invoke(Request $リクエスト)
     {
         $this->登録->実行(
