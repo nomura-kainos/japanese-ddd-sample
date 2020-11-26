@@ -8,7 +8,6 @@ use 共通\エンティティ;
 
 class 商品 extends エンティティ
 {
-
     private 商品ID $id;
     private string $名前;
     private レンタル料金 $レンタル料金;
