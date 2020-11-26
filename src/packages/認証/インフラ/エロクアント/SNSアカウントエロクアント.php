@@ -24,9 +24,4 @@ class SNSアカウントエロクアント extends Model
     protected $fillable = [
         'SNS名', 'SNSアカウントid', 'ユーザid'
     ];
-
-    public function ユーザエロクアント()
-    {
-        return $this->belongsTo(ユーザエロクアント::class, 'ユーザid');
-    }
 }
