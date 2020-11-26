@@ -17,7 +17,6 @@ class SNSアカウントテーブル作成 extends Migration
             $table->string('SNS名');
             $table->string('SNSアカウントid');
             $table->bigInteger('ユーザid');
-            $table->foreign('ユーザid')->references('id')->on('ユーザ');
             $table->primary(['SNS名', 'SNSアカウントid']);
             $table->timestamps();
         });
