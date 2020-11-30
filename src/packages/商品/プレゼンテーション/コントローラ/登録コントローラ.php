@@ -17,9 +17,6 @@ class 登録コントローラ extends Controller
         $this->登録 = $登録;
     }
 
-    /**
-     * @VisibleTo("App\Presentation");
-     */
     public function __invoke(Request $リクエスト)
     {
         $this->登録->実行(
