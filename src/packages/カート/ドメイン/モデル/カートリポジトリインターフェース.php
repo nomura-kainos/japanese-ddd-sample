@@ -21,4 +21,6 @@ interface カートリポジトリインターフェース
     public function カート内商品を保存(カート内商品 $カート内商品);
 
     public function カート内商品を削除(カートID $カートid, カート内商品ID $商品id);
+
+    public function 注文済みにする(ユーザID $id);
 }
