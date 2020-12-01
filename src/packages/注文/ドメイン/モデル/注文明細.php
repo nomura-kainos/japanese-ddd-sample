@@ -57,7 +57,8 @@ class 注文明細 extends エンティティ
         return $this->総額;
     }
 
-    public function 連想配列(): array {
+    public function 連想配列(): array
+    {
         return [
             '注文id' => $this->id(),
             '行番号' => $this->行番号(),

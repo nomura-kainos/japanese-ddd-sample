@@ -46,7 +46,8 @@ class カートリポジトリ implements カートリポジトリインター�
         return new カートレスポンスデータ($カート);
     }
 
-    public function 商品がすべて注文済みか(ユーザID $ユーザid): bool {
+    public function 商品がすべて注文済みか(ユーザID $ユーザid): bool
+    {
         $テーブル名 = $this->カートエロクアント->getTable();
         $未注文のカート = DB::table($テーブル名)
             ->join('カート内商品', 'カート.id', '=', 'カート内商品.カートid')
