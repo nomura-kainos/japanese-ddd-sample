@@ -83,14 +83,6 @@ class ルートテスト extends TestCase
                 ],
                 '/item',
             ],
-            [
-                '/item/register',
-                [
-                    '名前' => '登録',
-                    'レンタル料金' => 1000,
-                ],
-                '/item',
-            ],
         ];
     }
 
