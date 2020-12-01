@@ -14,6 +14,8 @@ interface カートリポジトリインターフェース
 
     public function ユーザIDで1件取得(ユーザID $id): ?カートレスポンスデータ;
 
+    public function 商品がすべて注文済みか(ユーザID $id): bool;
+
     public function カート内商品を1件取得(カートID $id, カート内商品ID $カート内商品id): ?カート内商品レスポンスデータ;
 
     public function 保存(カート $カート);
