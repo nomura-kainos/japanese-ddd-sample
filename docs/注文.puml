@@ -1,0 +1,43 @@
+@startuml
+!include color.inc
+
+プレゼンテーション --> アプリ
+アプリ --> ドメイン
+ドメイン ----> インフラ
+
+package カート <<Folder>> {
+ package プレゼンテーション {
+  package コントローラ {
+   class 注文を確定するコントローラ
+  }
+ }
+ package アプリ {
+  package ユースケース {
+   class 注文を確定する
+  }
+ }
+ package ドメイン {
+  package モデル {
+   class ユーザID
+   class 商品ID
+   class 注文
+   interface 注文リポジトリインターフェース
+   class 注文ID
+   class 注文ファクトリ
+   class 注文明細
+  }
+ }
+ package インフラ {
+  package レスポンスデータ {
+   class 注文IDレスポンスデータ
+  }
+  package エロクアント {
+   class 注文明細エロクアント
+   class 注文エロクアント
+  }
+  package リポジトリ {
+   class 注文リポジトリ
+  }
+ }
+}
+@enduml
