@@ -14,6 +14,7 @@ package カート <<Folder>> {
    class カートに入れるコントローラ
    class カート内商品を削除コントローラ
    class 一覧コントローラ
+   class 注文済みにするコントローラ
   }
  }
  package アプリ {
@@ -21,6 +22,7 @@ package カート <<Folder>> {
    class カートに入れる
    class カート内商品を削除
    class 一覧表示
+   class 注文済みにする
    interface 一覧表示クエリサービスインターフェース
   }
  }
