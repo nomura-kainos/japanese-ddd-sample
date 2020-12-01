@@ -25,8 +25,14 @@ class 商品リポジトリ implements 商品リポジトリインターフェ�
     public function 登録用に次の商品IDを取得する(): 商品IDレスポンスデータ
     {
         $テーブル名 = $this->商品エロクアント->getTable();
-        $新規採番ID = DB::table($テーブル名)->max('id') + 1;
-        return new 商品IDレスポンスデータ($新規採番ID);
+        $シーケンス名 = $テーブル名 . 'シーケンス';
+
+        //idカラムに現在の値 + 1を挿入
+        DB::table($シーケンス名)->update(['id' => DB::raw('LAST_INSERT_ID(id + 1)')]);
+
+        $新規採番id = DB::table($シーケンス名)->selectRaw('LAST_INSERT_ID() as id')->first()->id;
+
+        return new 商品IDレスポンスデータ($新規採番id);
     }
 
     public function IDで1件取得(商品ID $id): ?商品レスポンスデータ

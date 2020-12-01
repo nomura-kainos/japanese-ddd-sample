@@ -31,8 +31,14 @@ class ユーザリポジトリ implements ユーザリポジトリインター�
     public function 登録用に次のユーザIDを取得する(): ユーザIDレスポンスデータ
     {
         $テーブル名 = $this->ユーザエロクアント->getTable();
-        $新規採番ID = DB::table($テーブル名)->max('id') + 1;
-        return new ユーザIDレスポンスデータ($新規採番ID);
+        $シーケンス名 = $テーブル名 . 'シーケンス';
+
+        //idカラムに現在の値 + 1を挿入
+        DB::table($シーケンス名)->update(['id' => DB::raw('LAST_INSERT_ID(id + 1)')]);
+
+        $新規採番id = DB::table($シーケンス名)->selectRaw('LAST_INSERT_ID() as id')->first()->id;
+
+        return new ユーザIDレスポンスデータ($新規採番id);
     }
 
     public function IDで1件取得(ユーザID $id): ?ユーザレスポンスデータ
