@@ -19,7 +19,7 @@ class 注文ファクトリ
         $登録用注文id = new 注文ID($注文id->値());
 
         $注文明細 = array_map(
-            function($商品, $インデックス) use ($登録用注文id) {
+            function ($商品, $インデックス) use ($登録用注文id) {
                 $値段表記を消した総額 = (int)str_replace(',', '', $商品["総額"]);
 
                 $明細 = new 注文明細(
