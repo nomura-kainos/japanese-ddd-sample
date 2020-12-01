@@ -37,6 +37,7 @@ class 商品リポジトリテスト extends TestCase
     /*
      * id採番のテスト
      * id採番の仕様を説明するために作成したが、DBファサードのテストできないためテストをスキップする
+     * TODO:SQLiteにLAST_INSERT_ID()がないためテストが実行できない
      */
     public function test_登録用に次の商品IDが取得できること()
     {
