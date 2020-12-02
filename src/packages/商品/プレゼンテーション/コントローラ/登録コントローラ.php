@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace 商品\プレゼンテーション\コントローラ;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use 商品\アプリ\ユースケース\登録;
+use 商品\プレゼンテーション\フォームリクエスト\商品登録フォームリクエスト;
 
 class 登録コントローラ extends Controller
 {
@@ -17,7 +17,7 @@ class 登録コントローラ extends Controller
         $this->登録 = $登録;
     }
 
-    public function __invoke(Request $リクエスト)
+    public function __invoke(商品登録フォームリクエスト $リクエスト)
     {
         $this->登録->実行(
             $リクエスト->名前,
