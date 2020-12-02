@@ -22,7 +22,8 @@ class 登録コントローラ extends Controller
         $this->登録->実行(
             $リクエスト->名前,
             (int)$リクエスト->レンタル料金,
-            (int)$リクエスト->カテゴリid
+            (int)$リクエスト->カテゴリid,
+             $リクエスト->file('商品画像')
         );
 
         return redirect('/item/');

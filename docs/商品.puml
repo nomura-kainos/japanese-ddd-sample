@@ -29,7 +29,11 @@ package 商品 <<Folder>> {
   }
  }
  package ドメイン {
-  package モデル {
+  namespace モデル {
+   namespace アップロード {
+    class ファイル
+    interface 画像アップローダインターフェース
+   }
    class カテゴリID
    class レンタル料金
    class 商品
@@ -39,6 +43,9 @@ package 商品 <<Folder>> {
   }
  }
  package インフラ {
+  namespace アップロード {
+   class 画像アップローダ
+  }
   package レスポンスデータ {
    class 商品IDレスポンスデータ
    class 商品コレクションレスポンスデータ
@@ -46,6 +53,7 @@ package 商品 <<Folder>> {
   }
   package エロクアント {
    class 商品エロクアント
+   class 商品画像エロクアント
   }
   package リポジトリ {
    class 一覧表示クエリサービス

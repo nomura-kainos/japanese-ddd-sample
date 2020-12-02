@@ -7,7 +7,7 @@
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
-                <form action="{{ url('/item/register')}}" method="POST">
+                <form action="{{ url('/item/register')}}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
 
                     @if ($errors->any())
@@ -23,6 +23,7 @@
                     名前：<input type='text' name='名前'><br>
                     レンタル料金：<input type='text' name='レンタル料金'><br>
                     カテゴリid：<input type='text' name='カテゴリid'><br>
+                    商品画像:<input type='file' name='商品画像' accept='image/png, image/jpeg'><br>
                     <div><input type='submit' value='登録'></div>
                 </form>
             </div>

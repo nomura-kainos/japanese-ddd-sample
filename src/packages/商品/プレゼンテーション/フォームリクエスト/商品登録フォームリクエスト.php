@@ -13,6 +13,7 @@ class 商品登録フォームリクエスト extends FormRequest
         return [
             '名前' => ['required', 'string'],
             'レンタル料金' => ['required', 'string'],
+            '商品画像' => ['required', 'file', 'image', 'mimes:png,jpeg'],
         ];
     }
 

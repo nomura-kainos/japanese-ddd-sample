@@ -1,5 +1,6 @@
 <?php
 
+use App\Providers\ファイルサービスプロバイダ;
 use 認証\インフラ\ドライバ\追加SNS\Amazonサービスプロバイダ;
 
 return [
@@ -179,6 +180,7 @@ return [
         App\Providers\リポジトリサービスプロバイダ::class,
         App\Providers\ドライバサービスプロバイダ::class,
         App\Providers\メールサービスプロバイダ::class,
+        App\Providers\ファイルサービスプロバイダ::class,
 
         /*
          * SNSログインプロバイダ
