@@ -179,6 +179,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         App\Providers\リポジトリサービスプロバイダ::class,
         App\Providers\ドライバサービスプロバイダ::class,
+        App\Providers\メールサービスプロバイダ::class,
 
         /*
          * SNSログインプロバイダ
