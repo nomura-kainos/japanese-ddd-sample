@@ -22,12 +22,16 @@ package カート <<Folder>> {
    class 商品ID
    class 注文
    interface 注文リポジトリインターフェース
+   interface メールインターフェース
    class 注文ID
    class 注文ファクトリ
    class 注文明細
   }
  }
  package インフラ {
+  package メール {
+   class メール
+  }
   package レスポンスデータ {
    class 注文IDレスポンスデータ
   }
