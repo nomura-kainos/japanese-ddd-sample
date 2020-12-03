@@ -23,7 +23,7 @@ class 登録コントローラ extends Controller
             $リクエスト->名前,
             (int)$リクエスト->レンタル料金,
             (int)$リクエスト->カテゴリid,
-             $リクエスト->file('複数商品画像')
+            $リクエスト->file('複数商品画像')
         );
 
         return redirect('/item/');
