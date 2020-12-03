@@ -7,6 +7,12 @@
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
+                @foreach($複数画像 as $画像)
+                    <div style="width: 18rem; float:left; margin: 16px;">
+                        <img src="{{ Storage::url($画像->ファイルパス()) }}" style="width:100%;"/>
+                    </div>
+                @endforeach
+
                 <form action="{{ url('/item/edit/'.$商品->id() )}}" method="POST">
                     {{ csrf_field() }}
                     <input type='hidden' name='id' value='{{ $商品->id() }}'><br>

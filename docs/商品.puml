@@ -50,6 +50,8 @@ package 商品 <<Folder>> {
    class 商品IDレスポンスデータ
    class 商品コレクションレスポンスデータ
    class 商品レスポンスデータ
+   class 商品画像コレクションレスポンスデータ
+   class 商品画像レスポンスデータ
   }
   package エロクアント {
    class 商品エロクアント
