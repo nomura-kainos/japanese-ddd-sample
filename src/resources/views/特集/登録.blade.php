@@ -46,5 +46,17 @@
         height: 900,
         width: 800,
         lang: 'ja-JP',
+        fontNames: ['YuGothic','Yu Gothic','Hiragino Kaku Gothic Pro','Meiryo','sans-serif'],
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'italic', 'underline', 'clear']],
+            ['fontname', ['fontname']],
+            ['fontsize', ['fontsize']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'hr', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']],
+        ],
     });
 </script>
