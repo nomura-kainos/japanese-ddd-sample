@@ -43,6 +43,7 @@
             "商品カテゴリ\\": "packages/商品カテゴリ/",
             "カート\\": "packages/カート/",
             "注文\\": "packages/注文/",
+            "特集\\": "packages/特集/",
             "共通\\": "packages/共通/"
         },
         "classmap": [

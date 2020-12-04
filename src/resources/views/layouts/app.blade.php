@@ -80,6 +80,10 @@
                                 <a class="nav-link" href="{{ route('category_register') }}">{{ __('商品カテゴリ登録') }}</a>
                             </li>
 
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ route('report') }}">{{ __('特集') }}</a>
+                            </li>
+
                         @endguest
                     </ul>
                 </div>
