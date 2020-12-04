@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends("layouts.app")
 
-@section('content')
+@section("content")
 <div class="table table-border">
     <thead>
     <tr>
@@ -12,7 +12,7 @@
     </tr>
     </thead>
     @foreach ($カート内複数商品->取得() as $商品)
-        <form action="{{ url('/cart/remove')}}" method="POST">
+        <form action="{{ url("/cart/remove")}}" method="POST">
             {{ csrf_field() }}
 
             <tr>
@@ -26,7 +26,7 @@
         </form>
     @endforeach
 
-    <form action="{{ url('/order')}}" method="POST">
+    <form action="{{ url("/order")}}" method="POST">
         {{ csrf_field() }}
 
         @foreach ($カート内複数商品->取得() as $商品)
@@ -37,7 +37,7 @@
             <input type="hidden" name="商品[{{ $loop->index }}][総額]" value="{{ $商品->総額() }}">
         @endforeach
 
-        <div><input type='submit' value='注文を確定する'></div>
+        <div><input type="submit" value="注文を確定する"></div>
     </form>
 
 </div>
