@@ -40,9 +40,11 @@
 <!-- summernote css/js -->
 <link href='https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css' rel='stylesheet'>
 <script src='https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/lang/summernote-ja-JP.js'></script><!-- 日本語対応 -->
 <script type='text/javascript'>
     $('#summernote').summernote({
         height: 900,
         width: 800,
+        lang: 'ja-JP',
     });
 </script>
