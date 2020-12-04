@@ -19,8 +19,8 @@ class 特集登録フォームリクエスト extends FormRequest
     public function messages()
     {
         return [
-            'タイトル.required' => '名前は必須です。',
-            '本文.required' => 'レンタル料金は必須です。',
+            'タイトル.required' => 'タイトルは必須です。',
+            '本文.required' => '本文は必須です。',
         ];
     }
 }
