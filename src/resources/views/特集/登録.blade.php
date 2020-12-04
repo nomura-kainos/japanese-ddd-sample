@@ -13,7 +13,7 @@
         <div class='col-md-7 offset-3 mt-4'>
             <div class='card-body'>
 
-                <form action='{{ url('/report')}}' method='POST'>
+                <form action='{{ url('/report/register')}}' method='POST'>
                     {{ csrf_field() }}
 
                     @if ($errors->any())
