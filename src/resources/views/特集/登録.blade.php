@@ -7,11 +7,17 @@
             <div class="card">
                 <div class="card-header">Dashboard</div>
 
-                <form action="{{ url('/report')}}" method="POST">
+<body>
+<div class='container'>
+    <div class='row'>
+        <div class='col-md-7 offset-3 mt-4'>
+            <div class='card-body'>
+
+                <form action='{{ url('/report')}}' method='POST'>
                     {{ csrf_field() }}
 
                     @if ($errors->any())
-                        <div class="alert alert-danger">
+                        <div class='alert alert-danger'>
                             <ul>
                                 @foreach ($errors->all() as $error)
                                     <li>{{ $error }}</li>
