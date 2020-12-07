@@ -18,7 +18,7 @@ class ファイル
 
     public function ファイルを保存する()
     {
-        $ファイルパス = $this->ファイル->store('アップロード', 'public');
+        $ファイルパス = $this->ファイル->store('アップロード/商品', 'public');
         $this->ファイルパス = $ファイルパス;
     }
 
