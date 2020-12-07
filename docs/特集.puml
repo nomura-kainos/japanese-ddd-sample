@@ -1,0 +1,58 @@
+@startuml
+!include color.inc
+
+プレゼンテーション ---> アプリ
+アプリ ---> ドメイン
+ドメイン ---> インフラ
+
+package 特集 <<Folder>> {
+ package プレゼンテーション {
+  package ビューモデル {
+   class 一覧ビューモデル
+   class 詳細ビューモデル
+  }
+  package フォームリクエスト {
+   class 特集登録フォームリクエスト
+  }
+  package コントローラ {
+   class 一覧コントローラ
+   class 登録コントローラ
+   class 編集コントローラ
+   class 詳細コントローラ
+  }
+ }
+ package アプリ {
+  package ユースケース {
+   class 一覧表示
+   interface 一覧表示クエリサービスインターフェース
+   class 登録
+   class 編集
+   class 詳細表示
+   interface 詳細表示クエリサービスインターフェース
+  }
+ }
+ package ドメイン {
+  namespace モデル {
+   class 特集
+   class 特集ID
+   class 特集ファクトリ
+   interface 特集リポジトリインターフェース
+  }
+ }
+ package インフラ {
+  package レスポンスデータ {
+   class 特集IDレスポンスデータ
+   class 特集コレクションレスポンスデータ
+   class 特集レスポンスデータ
+  }
+  package エロクアント {
+   class 特集エロクアント
+  }
+  package リポジトリ {
+   class 一覧表示クエリサービス
+   class 特集リポジトリ
+   class 詳細表示クエリサービス
+  }
+ }
+}
+@enduml
