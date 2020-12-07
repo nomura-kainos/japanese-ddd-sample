@@ -31,6 +31,10 @@ package 特集 <<Folder>> {
  }
  package ドメイン {
   namespace モデル {
+   namespace アップロード {
+    class ファイル
+    interface 画像アップローダインターフェース
+   }
    class 特集
    class 特集ID
    class 特集ファクトリ
@@ -38,6 +42,9 @@ package 特集 <<Folder>> {
   }
  }
  package インフラ {
+  namespace アップロード {
+   class 画像アップローダ
+  }
   package レスポンスデータ {
    class 特集IDレスポンスデータ
    class 特集コレクションレスポンスデータ
@@ -45,6 +52,7 @@ package 特集 <<Folder>> {
   }
   package エロクアント {
    class 特集エロクアント
+   class タイトル画像エロクアント
   }
   package リポジトリ {
    class 一覧表示クエリサービス
