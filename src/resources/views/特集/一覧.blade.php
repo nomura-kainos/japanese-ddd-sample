@@ -10,6 +10,13 @@
                 <table>
                     @foreach ($複数特集->取得() as $特集)
                     <tr>
+                        <td>
+                            <div style="width: 10rem; margin: 10px;">
+                                <img src="{{ Storage::url($特集->タイトル画像ファイルパス()) }}" style="width:100%;"/>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
                         <td><a href="/report_detail/{{ $特集->id() }}"> {{ $特集->タイトル() }} </a></td>
                     </tr>
                     @endforeach

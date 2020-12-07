@@ -17,6 +17,7 @@ class 一覧ビューモデル
             return new 特集(
                 $特集->id(),
                 $特集->タイトル(),
+                $特集->タイトル画像ファイルパス()
             );
         });
 
@@ -36,11 +37,13 @@ class 特集
 {
     private int $id;
     private string $タイトル;
+    private string $タイトル画像ファイルパス;
 
-    public function __construct(int $id, string $タイトル)
+    public function __construct(int $id, string $タイトル, string $タイトル画像ファイルパス)
     {
         $this->id = $id;
         $this->タイトル = $タイトル;
+        $this->タイトル画像ファイルパス = $タイトル画像ファイルパス;
     }
 
     public function id(): string
@@ -51,5 +54,10 @@ class 特集
     public function タイトル(): string
     {
         return $this->タイトル;
+    }
+
+    public function タイトル画像ファイルパス(): string
+    {
+        return $this->タイトル画像ファイルパス;
     }
 }

@@ -13,7 +13,7 @@
         <div class="col-md-7 offset-3 mt-4">
             <div class="card-body">
 
-                <form action="{{ url("/report/register")}}" method="POST">
+                <form action="{{ url("/report/register")}}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
 
                     @if ($errors->any())
@@ -27,6 +27,7 @@
                     @endif
 
                     タイトル：<input type="text" name="タイトル"><br>
+                    タイトル画像：<input type="file" name="タイトル画像" accept="image/png, image/jpeg"><br>
                     本文：<textarea id="summernote" name="本文"></textarea>
                     <div><input type="submit" value="登録"></div>
                 </form>

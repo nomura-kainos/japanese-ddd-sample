@@ -10,7 +10,7 @@ class 特集レスポンスデータ
 {
     private int $id;
     private string $タイトル;
-    private ?string $本文;
+    private string $本文;
 
     public function __construct(特集エロクアント $特集)
     {
