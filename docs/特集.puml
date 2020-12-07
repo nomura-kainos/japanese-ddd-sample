@@ -17,7 +17,6 @@ package 特集 <<Folder>> {
   package コントローラ {
    class 一覧コントローラ
    class 登録コントローラ
-   class 編集コントローラ
    class 詳細コントローラ
   }
  }
@@ -26,7 +25,6 @@ package 特集 <<Folder>> {
    class 一覧表示
    interface 一覧表示クエリサービスインターフェース
    class 登録
-   class 編集
    class 詳細表示
    interface 詳細表示クエリサービスインターフェース
   }
