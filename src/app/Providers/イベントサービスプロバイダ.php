@@ -40,7 +40,6 @@ class イベントサービスプロバイダ extends ServiceProvider
               ]
             );
             $イベント履歴->save();
-            return $イベント履歴;
         });
 
         Queue::failing(function (JobFailed $イベント) {
