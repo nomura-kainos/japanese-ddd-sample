@@ -31,17 +31,29 @@ class イベントサービスプロバイダ extends ServiceProvider
      */
     public function boot()
     {
+        $this->イベントが開始されたときに、履歴が登録されるように設定する();
+        $this->イベントが失敗したときに、履歴が登録されるように設定する();
+        $this->イベントが成功したときに、履歴が登録されるように設定する();
+
+        parent::boot();
+    }
+
+    private function イベントが開始されたときに、履歴が登録されるように設定する()
+    {
         Queue::before(function (JobProcessing $イベント) {
             $イベント履歴 = new イベント履歴エロクアント();
             $イベント履歴->fill(
-              [
-                  'イベントid' => $イベント->job->getJobId(),
-                  '処理ステータス' => '開始',
-              ]
+                [
+                    'イベントid' => $イベント->job->getJobId(),
+                    '処理ステータス' => '開始',
+                ]
             );
             $イベント履歴->save();
         });
+    }
 
+    private function イベントが失敗したときに、履歴が登録されるように設定する()
+    {
         Queue::failing(function (JobFailed $イベント) {
             $イベント履歴 = new イベント履歴エロクアント();
             $イベント履歴->fill(
@@ -52,7 +64,10 @@ class イベントサービスプロバイダ extends ServiceProvider
             );
             $イベント履歴->save();
         });
+    }
 
+    private function イベントが成功したときに、履歴が登録されるように設定する()
+    {
         Queue::after(function (JobProcessed $イベント) {
             $イベント履歴 = new イベント履歴エロクアント();
             $イベント履歴->fill(
@@ -63,7 +78,5 @@ class イベントサービスプロバイダ extends ServiceProvider
             );
             $イベント履歴->save();
         });
-
-        parent::boot();
     }
 }
