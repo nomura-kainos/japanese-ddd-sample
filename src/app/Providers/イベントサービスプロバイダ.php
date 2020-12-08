@@ -31,6 +31,7 @@ class イベントサービスプロバイダ extends ServiceProvider
      */
     public function boot()
     {
+        // https://readouble.com/laravel/5.8/ja/queues.html
         $this->イベントが開始されたときに、履歴が登録されるように設定する();
         $this->イベントが失敗したときに、履歴が登録されるように設定する();
         $this->イベントが成功したときに、履歴が登録されるように設定する();
