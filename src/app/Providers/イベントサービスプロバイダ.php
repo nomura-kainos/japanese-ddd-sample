@@ -7,7 +7,6 @@ use Illuminate\Support\Facades\Queue;
 use Illuminate\Queue\Events\JobProcessed;
 use Illuminate\Queue\Events\JobProcessing;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
-use カート\アプリ\ユースケース\カートを空にする;
 use カート\アプリ\ユースケース\カート内商品を注文済みにする;
 use 共通\イベント履歴エロクアント;
 use 注文\ドメイン\モデル\注文が確定された;
