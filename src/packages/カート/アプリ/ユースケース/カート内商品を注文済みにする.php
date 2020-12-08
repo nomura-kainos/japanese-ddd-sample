@@ -4,11 +4,12 @@ declare(strict_types=1);
 
 namespace カート\アプリ\ユースケース;
 
-use カート\ドメイン\モデル\カートリポ;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use カート\ドメイン\モデル\カートリポジトリインターフェース;
 use カート\ドメイン\モデル\ユーザID;
+use 注文\ドメイン\モデル\注文が確定された;
 
-class 注文済みにする
+class カート内商品を注文済みにする implements ShouldQueue
 {
     private $カートリポ;
 
@@ -17,8 +18,8 @@ class 注文済みにする
         $this->カートリポ = $カートリポ;
     }
 
-    public function 実行(int $ユーザid)
+    public function handle(注文が確定された $ドメインイベント)
     {
-        $this->カートリポ->注文済みにする(new ユーザID($ユーザid));
+        $this->カートリポ->注文済みにする(new ユーザID($ドメインイベント->ユーザid()));
     }
 }

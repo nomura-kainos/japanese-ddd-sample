@@ -21,6 +21,6 @@ class 注文を確定するコントローラ extends Controller
     {
         $this->注文を確定する->実行($リクエスト->商品);
 
-        return redirect('/cart/ordered');
+        return redirect('/cart/');
     }
 }
