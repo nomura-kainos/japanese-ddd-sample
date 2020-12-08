@@ -17,7 +17,6 @@ use Illuminate\Support\Facades\Route;
 use カート\プレゼンテーション\コントローラ\カートに入れるコントローラ;
 use カート\プレゼンテーション\コントローラ\カート内商品削除コントローラ;
 use カート\プレゼンテーション\コントローラ\一覧コントローラ as カート一覧コントローラ;
-use カート\プレゼンテーション\コントローラ\注文済みにするコントローラ;
 use 注文\プレゼンテーション\コントローラ\注文を確定するコントローラ;
 use 特集\プレゼンテーション\コントローラ\一覧コントローラ as 特集一覧コントローラ;
 use 特集\プレゼンテーション\コントローラ\登録コントローラ as 特集登録コントローラ;
@@ -88,7 +87,6 @@ Route::get('/cart/remove', function () {
     return view('カート.一覧');
 });
 Route::post('/cart/remove', カート内商品削除コントローラ::class);
-Route::get('/cart/ordered', 注文済みにするコントローラ::class);
 
 Route::post('/cart/complete', 'App\Http\Controllers\カートコントローラ@complete')->name('cart.complete');
 
