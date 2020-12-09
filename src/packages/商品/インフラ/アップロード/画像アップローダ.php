@@ -10,7 +10,7 @@ use 商品\ドメイン\モデル\商品ID;
 
 class 画像アップローダ implements 画像アップローダインターフェース
 {
-    public function アップロードする(ファイル $ファイル, 商品ID $商品id): ?ファイル
+    public function ストレージに送信する(ファイル $ファイル, 商品ID $商品id): ?ファイル
     {
         if ($ファイル === null) {
             return null;
