@@ -8,7 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use カート\ドメイン\モデル\カートリポジトリインターフェース;
 use カート\ドメイン\モデル\ユーザID;
-use 共通\イベント履歴リポジトリ;
+use 共通\イベント履歴\イベント履歴リポジトリ;
 use 注文\ドメイン\モデル\注文が確定された;
 
 class カート内商品を注文済みにする implements ShouldQueue

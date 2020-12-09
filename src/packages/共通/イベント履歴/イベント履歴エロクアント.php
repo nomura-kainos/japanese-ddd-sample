@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace 共通;
+namespace 共通\イベント履歴;
 
 use Illuminate\Database\Eloquent\Model;
 
