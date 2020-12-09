@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use カート\アプリ\ユースケース\カート内商品を注文済みにする;
-use 注文\ドメイン\モデル\メールインターフェース;
+use 注文\アプリ\ユースケース\メールを送信する;
 use 注文\ドメイン\モデル\注文が確定された;
 
 class イベントサービスプロバイダ extends ServiceProvider
@@ -16,7 +16,7 @@ class イベントサービスプロバイダ extends ServiceProvider
      */
     protected $listen = [
         注文が確定された::class => [
-            メールインターフェース::class,
+            メールを送信する::class,
             カート内商品を注文済みにする::class,
         ],
     ];

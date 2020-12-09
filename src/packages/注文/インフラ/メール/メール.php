@@ -10,11 +10,6 @@ use 注文\ドメイン\モデル\メールインターフェース;
 
 class メール implements ShouldQueue, メールインターフェース
 {
-    public function handle()
-    {
-        $this->送信する();
-    }
-
     public function 送信する()
     {
         // Mail::sendで送信できる.
