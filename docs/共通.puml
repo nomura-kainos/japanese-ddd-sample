@@ -5,6 +5,7 @@ package 共通 <<Folder>> {
   class エンティティ
   class ユニークキー
   class バリューオブジェクト
+  class ドメインイベント
   package イベント履歴 {
    class イベント履歴エロクアント
    class イベント履歴リポジトリ

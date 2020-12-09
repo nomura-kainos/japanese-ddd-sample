@@ -13,6 +13,7 @@ package カート <<Folder>> {
  }
  package アプリ {
   package ユースケース {
+   class メールを送信する
    class 注文を確定する
   }
  }
