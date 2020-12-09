@@ -4,11 +4,17 @@ declare(strict_types=1);
 
 namespace 注文\インフラ\メール;
 
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Mail;
 use 注文\ドメイン\モデル\メールインターフェース;
 
-class メール implements メールインターフェース
+class メール implements ShouldQueue, メールインターフェース
 {
+    public function handle()
+    {
+        $this->送信する();
+    }
+
     public function 送信する()
     {
         // Mail::sendで送信できる.
