@@ -17,11 +17,12 @@ class イベント履歴エロクアント extends Model
     // フィールドの属性キャストを指定(未指定の場合stringになる)
     protected $casts = [
         'イベントid' => 'int',
+        'イベント名' => 'string',
         '処理ステータス' => 'string',
     ];
 
     // 代入可能なフィールドを指定する
-    protected $fillable = ['イベントid', '処理ステータス'];
+    protected $fillable = ['イベントid', 'イベント名', '処理ステータス'];
 
     // 代入不可なフィールドを指定する
     protected $guarded = ['created_at', 'updated_at'];

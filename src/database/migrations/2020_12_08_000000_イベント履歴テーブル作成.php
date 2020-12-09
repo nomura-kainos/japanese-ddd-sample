@@ -15,6 +15,7 @@ class イベント履歴テーブル作成 extends Migration
     {
         Schema::create('イベント履歴', function (Blueprint $table) {
             $table->bigInteger('イベントid');
+            $table->string('イベント名')->nullable();
             $table->string('処理ステータス');
             $table->timestamps();
         });
