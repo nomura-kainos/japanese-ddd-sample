@@ -1,7 +1,5 @@
 <?php
 
-use 認証\インフラ\ドライバ\追加SNS\Amazonサービスプロバイダ;
-
 return [
 
     /*
@@ -184,7 +182,7 @@ return [
         /*
          * SNSログインプロバイダ
          */
-        Amazonサービスプロバイダ::class,
+        認証\インフラ\ドライバ\追加SNS\Amazonサービスプロバイダ::class,
     ],
 
     /*
