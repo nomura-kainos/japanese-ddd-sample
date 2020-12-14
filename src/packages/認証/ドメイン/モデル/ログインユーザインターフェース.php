@@ -1,0 +1,16 @@
+<?php
+
+declare(strict_types=1);
+
+namespace 認証\ドメイン\モデル;
+
+use 共通\ログインユーザ\ログインユーザインターフェース as 共通ログインユーザインターフェース;
+
+interface ログインユーザインターフェース extends 共通ログインユーザインターフェース
+{
+    public static function ログイン済みか(): bool;
+
+    public static function 自動ログイン情報削除();
+
+    public static function ユーザーIDのみで自動ログインする(int $id);
+}
