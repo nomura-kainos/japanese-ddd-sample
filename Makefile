@@ -1,5 +1,6 @@
 up:
 	docker-compose up -d
+	docker-compose exec -d app php artisan queue:work
 build:
 	docker-compose build
 create-project:
