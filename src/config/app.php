@@ -1,6 +1,5 @@
 <?php
 
-use App\Providers\ファイルサービスプロバイダ;
 use 認証\インフラ\ドライバ\追加SNS\Amazonサービスプロバイダ;
 
 return [
