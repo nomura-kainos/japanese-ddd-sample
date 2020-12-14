@@ -6,12 +6,16 @@ namespace Tests\packages\商品\インフラ\リポジトリ;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use 共通\ID採番\DBシーケンス;
+use 共通\ID採番\ID採番インターフェース;
 use 商品\インフラ\エロクアント\商品エロクアント;
+use 商品\インフラ\エロクアント\商品画像エロクアント;
 use 商品\インフラ\リポジトリ\商品リポジトリ;
 use 商品\ドメイン\モデル\カテゴリID;
 use 商品\ドメイン\モデル\レンタル料金;
 use 商品\ドメイン\モデル\商品;
 use 商品\ドメイン\モデル\商品ID;
+use Mockery;
 
 /**
  * @group 商品
@@ -24,6 +28,15 @@ class 商品リポジトリテスト extends TestCase
      */
     use RefreshDatabase;
 
+    private function 商品リポジトリのインスタンスを作成(): 商品リポジトリ
+    {
+        return new 商品リポジトリ(
+            new DBシーケンス(),
+            new 商品エロクアント(),
+            new 商品画像エロクアント()
+        );
+    }
+
     private function テスト用商品を作成(int $id, string $名前, int $レンタル料金, int $カテゴリid): 商品
     {
         return new 商品(
@@ -34,18 +47,19 @@ class 商品リポジトリテスト extends TestCase
         );
     }
 
-    /*
-     * id採番のテスト
-     * id採番の仕様を説明するために作成したが、DBファサードのテストできないためテストをスキップする
-     * TODO:SQLiteにLAST_INSERT_ID()がないためテストが実行できない
-     */
     public function test_登録用に次の商品IDが取得できること()
     {
-        $this->markTestSkipped();
-
-        // 通常使用する際は既に商品が登録されているため、同じ環境を考慮して事前に商品を登録する
-        $this->seed('商品が1件登録済シーダ');
-        $リポジトリ = new 商品リポジトリ(new 商品エロクアント());
+        $ID採番モック = $this->instance(ID採番インターフェース::class, Mockery::mock(DBシーケンス::class, function ($モック) {
+                $モック->shouldReceive('連番を発行する')
+                    ->once()
+                    ->andReturn(2);
+                })
+        );
+        $リポジトリ = new 商品リポジトリ(
+            $ID採番モック,
+            new 商品エロクアント(),
+            new 商品画像エロクアント()
+        );
 
         $レスポンスデータ = $リポジトリ->登録用に次の商品IDを取得する();
 
@@ -54,7 +68,7 @@ class 商品リポジトリテスト extends TestCase
 
     public function test_商品の新規登録ができること()
     {
-        $リポジトリ = new 商品リポジトリ(new 商品エロクアント());
+        $リポジトリ = $this->商品リポジトリのインスタンスを作成();
         $商品 = $this->テスト用商品を作成(1, '登録済', 1000, 1);
 
         $リポジトリ->保存($商品);
@@ -70,7 +84,7 @@ class 商品リポジトリテスト extends TestCase
     public function test_既に登録されている商品が更新できること()
     {
         $this->seed('商品が1件登録済シーダ');
-        $リポジトリ = new 商品リポジトリ(new 商品エロクアント());
+        $リポジトリ = $this->商品リポジトリのインスタンスを作成();
         $商品 = $this->テスト用商品を作成(1, '更新済', 2000, 2);
 
         $リポジトリ->保存($商品);
@@ -86,7 +100,7 @@ class 商品リポジトリテスト extends TestCase
     public function test_登録された商品が残っていないこと()
     {
         $this->seed('商品が1件登録済シーダ');
-        $リポジトリ = new 商品リポジトリ(new 商品エロクアント());
+        $リポジトリ = $this->商品リポジトリのインスタンスを作成();
         $商品 = $this->テスト用商品を作成(1, '更新済', 2000, 1);
 
         $リポジトリ->保存($商品);
@@ -102,7 +116,7 @@ class 商品リポジトリテスト extends TestCase
     public function test_商品IDで指定した商品が取得できること()
     {
         $this->seed('商品が1件登録済シーダ');
-        $リポジトリ = new 商品リポジトリ(new 商品エロクアント());
+        $リポジトリ = $this->商品リポジトリのインスタンスを作成();
 
         $レスポンスデータ = $リポジトリ->IDで1件取得(new 商品ID(1));
 
@@ -115,7 +129,7 @@ class 商品リポジトリテスト extends TestCase
     public function test_指定した商品が取得できない場合、nullを返す()
     {
         $this->seed('商品が1件登録済シーダ');
-        $リポジトリ = new 商品リポジトリ(new 商品エロクアント());
+        $リポジトリ = $this->商品リポジトリのインスタンスを作成();
 
         $レスポンスデータ = $リポジトリ->IDで1件取得(new 商品ID(2));
 
@@ -125,7 +139,7 @@ class 商品リポジトリテスト extends TestCase
     public function test_全ての商品が取得できること()
     {
         $this->seed('商品が複数登録済シーダ');
-        $リポジトリ = new 商品リポジトリ(new 商品エロクアント());
+        $リポジトリ = $this->商品リポジトリのインスタンスを作成();
 
         $コレクションレスポンスデータ = $リポジトリ->全件取得();
 
@@ -134,7 +148,7 @@ class 商品リポジトリテスト extends TestCase
 
     public function test_商品が0件の場合、空の配列を返却すること()
     {
-        $リポジトリ = new 商品リポジトリ(new 商品エロクアント());
+        $リポジトリ = $this->商品リポジトリのインスタンスを作成();
 
         $コレクションレスポンスデータ = $リポジトリ->全件取得();
 
