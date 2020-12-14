@@ -53,8 +53,7 @@ class 商品リポジトリテスト extends TestCase
                 $モック->shouldReceive('連番を発行する')
                     ->once()
                     ->andReturn(2);
-                })
-        );
+        }));
         $リポジトリ = new 商品リポジトリ(
             $ID採番モック,
             new 商品エロクアント(),
