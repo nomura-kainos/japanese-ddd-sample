@@ -4,10 +4,14 @@ declare(strict_types=1);
 
 namespace Tests\packages\商品\アプリ\ユースケース;
 
-use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Collection;
 use Tests\TestCase;
+use 共通\トランザクション\DBトランザクション;
 use 商品\アプリ\ユースケース\登録;
+use 商品\インフラ\アップロード\画像アップローダ;
 use 商品\インフラ\リポジトリ\商品リポジトリ;
+use 商品\ドメイン\モデル\アップロード\ファイル;
 use 商品\ドメイン\モデル\カテゴリID;
 use 商品\ドメイン\モデル\レンタル料金;
 use 商品\ドメイン\モデル\商品;
@@ -35,10 +39,15 @@ class 登録テスト extends TestCase
             $モック->shouldReceive('作成する')
                 ->andReturn($this->テスト商品を作成());
         });
-        $ユースケース = new 登録($リポジトリスパイ, $ファクトリモック);
+        $画像アップローダモック = $this->mock(画像アップローダ::class, function ($モック) {
+            $モック->shouldReceive('ストレージに送信する')
+                ->andReturn($this->mock(ファイル::class));
+        });
+        $ユースケース = new 登録(new DBトランザクション(), $リポジトリスパイ, $ファクトリモック, $画像アップローダモック);
+        $複数画像ファイル = new Collection([$this->mock(UploadedFile::class)]);
 
-        $ユースケース->実行('名前', 1000, 1);
+        $ユースケース->実行('名前', 1000, 1, $複数画像ファイル);
 
-        $リポジトリスパイ->shouldHaveReceived('保存');
+        $リポジトリスパイ->shouldHaveReceived('画像を保存');
     }
 }
