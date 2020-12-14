@@ -2,6 +2,7 @@
 !include color.inc
 
 イベント履歴 -[hidden]-> ログインユーザ
+ログインユーザ -[hidden]-> トランザクション
 
 package 共通 <<Folder>> {
   class エンティティ
@@ -15,6 +16,10 @@ package 共通 <<Folder>> {
   package ログインユーザ {
    class ログインユーザ
    interface ログインユーザインターフェース
+  }
+  package トランザクション {
+   class DBトランザクション
+   interface トランザクションインターフェース
   }
 }
 @enduml

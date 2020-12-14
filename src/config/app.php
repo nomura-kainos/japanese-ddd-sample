@@ -179,6 +179,7 @@ return [
         App\Providers\メールサービスプロバイダ::class,
         App\Providers\ファイルサービスプロバイダ::class,
         App\Providers\ログインユーザサービスプロバイダ::class,
+        App\Providers\トランザクションサービスプロバイダ::class,
 
         /*
          * SNSログインプロバイダ
