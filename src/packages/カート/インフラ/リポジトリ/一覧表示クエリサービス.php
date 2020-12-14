@@ -18,7 +18,7 @@ class 一覧表示クエリサービス implements 一覧表示クエリサー�
         $this->カート内商品エロクアント = $カート内商品エロクアント;
     }
 
-    public function 全件取得(): カート内商品コレクションレスポンスデータ
+    public function 全件取得(ユーザID $ユーザid): カート内商品コレクションレスポンスデータ
     {
         $カート内商品 = $this->カート内商品エロクアント::select(
             'カート内商品.カートid',
