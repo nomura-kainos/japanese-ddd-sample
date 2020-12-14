@@ -48,10 +48,10 @@ package 認証 <<Folder>> {
    class ユーザ
    class ユーザID
    class SNSアカウント
-   class ログインユーザ
    class ユーザファクトリ
    class 会員ユーザ紐付けドメインサービス
    interface ドライバインターフェース
+   interface ログインユーザインターフェース
    interface ユーザリポジトリインターフェース
   }
  }

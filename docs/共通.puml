@@ -1,6 +1,8 @@
 @startuml
 !include color.inc
 
+イベント履歴 -[hidden]-> ログインユーザ
+
 package 共通 <<Folder>> {
   class エンティティ
   class ユニークキー
@@ -9,6 +11,10 @@ package 共通 <<Folder>> {
   package イベント履歴 {
    class イベント履歴エロクアント
    class イベント履歴リポジトリ
+  }
+  package ログインユーザ {
+   class ログインユーザ
+   interface ログインユーザインターフェース
   }
 }
 @enduml
