@@ -6,6 +6,8 @@ namespace Tests\packages\商品\プレゼンテーション\ビューモデル;
 
 use Illuminate\Support\Collection;
 use Tests\TestCase;
+use 商品\インフラ\エロクアント\商品画像エロクアント;
+use 商品\インフラ\レスポンスデータ\商品画像コレクションレスポンスデータ;
 use 商品\プレゼンテーション\ビューモデル\詳細ビューモデル;
 use 商品カテゴリ\インフラ\エロクアント\商品カテゴリエロクアント;
 use 商品カテゴリ\インフラ\レスポンスデータ\商品カテゴリコレクションレスポンスデータ;
@@ -32,6 +34,7 @@ class 詳細ビューモデルテスト extends TestCase
             $this->商品['カテゴリid'],
             $this->商品['カテゴリ名'],
             new 商品カテゴリコレクションレスポンスデータ(new Collection()),
+            new 商品画像コレクションレスポンスデータ(new Collection()),
         );
 
         $レンタル料金 = $ビューモデル->レンタル料金();
@@ -48,6 +51,7 @@ class 詳細ビューモデルテスト extends TestCase
             $this->商品['カテゴリid'],
             $this->商品['カテゴリ名'],
             new 商品カテゴリコレクションレスポンスデータ(new Collection()),
+            new 商品画像コレクションレスポンスデータ(new Collection()),
         );
 
         $id = $ビューモデル->id();
@@ -64,6 +68,7 @@ class 詳細ビューモデルテスト extends TestCase
             $this->商品['カテゴリid'],
             $this->商品['カテゴリ名'],
             new 商品カテゴリコレクションレスポンスデータ(new Collection()),
+            new 商品画像コレクションレスポンスデータ(new Collection()),
         );
 
         $名前 = $ビューモデル->名前();
@@ -80,6 +85,7 @@ class 詳細ビューモデルテスト extends TestCase
             $this->商品['カテゴリid'],
             $this->商品['カテゴリ名'],
             new 商品カテゴリコレクションレスポンスデータ(new Collection()),
+            new 商品画像コレクションレスポンスデータ(new Collection()),
         );
 
         $レンタル料金 = $ビューモデル->レンタル料金();
@@ -96,6 +102,7 @@ class 詳細ビューモデルテスト extends TestCase
             $this->商品['カテゴリid'],
             $this->商品['カテゴリ名'],
             new 商品カテゴリコレクションレスポンスデータ(new Collection()),
+            new 商品画像コレクションレスポンスデータ(new Collection()),
         );
 
         $カテゴリid = $ビューモデル->カテゴリid();
@@ -112,6 +119,7 @@ class 詳細ビューモデルテスト extends TestCase
             $this->商品['カテゴリid'],
             $this->商品['カテゴリ名'],
             new 商品カテゴリコレクションレスポンスデータ(new Collection()),
+            new 商品画像コレクションレスポンスデータ(new Collection()),
         );
 
         $カテゴリ名 = $ビューモデル->カテゴリ名();
@@ -134,11 +142,35 @@ class 詳細ビューモデルテスト extends TestCase
             $this->商品['カテゴリid'],
             $this->商品['カテゴリ名'],
             new 商品カテゴリコレクションレスポンスデータ($コレクション),
+            new 商品画像コレクションレスポンスデータ(new Collection()),
         );
 
         $カテゴリコレクション = $ビューモデル->カテゴリコレクション();
 
         self::assertSame(1, $カテゴリコレクション->first()->id());
         self::assertSame('カテゴリ名1', $カテゴリコレクション->first()->名前());
+    }
+
+    public function test_画像コレクションが取得できること()
+    {
+        $エロクアントモック = $this->mock(商品画像エロクアント::class, function ($モック) {
+            $モック->shouldReceive('getAttribute')
+                ->andReturn('ファイルパス1');
+        });
+        $コレクション = new Collection([$エロクアントモック]);
+
+        $ビューモデル = new 詳細ビューモデル(
+            $this->商品['id'],
+            $this->商品['名前'],
+            $this->商品['レンタル料金'],
+            $this->商品['カテゴリid'],
+            $this->商品['カテゴリ名'],
+            new 商品カテゴリコレクションレスポンスデータ(new Collection()),
+            new 商品画像コレクションレスポンスデータ($コレクション),
+            );
+
+        $画像コレクション = $ビューモデル->画像コレクション();
+
+        self::assertSame('ファイルパス1', $画像コレクション->first()->ファイルパス());
     }
 }
