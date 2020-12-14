@@ -180,6 +180,7 @@ return [
         App\Providers\ファイルサービスプロバイダ::class,
         App\Providers\ログインユーザサービスプロバイダ::class,
         App\Providers\トランザクションサービスプロバイダ::class,
+        App\Providers\ID採番サービスプロバイダ::class,
 
         /*
          * SNSログインプロバイダ

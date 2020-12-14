@@ -3,6 +3,7 @@
 
 イベント履歴 -[hidden]-> ログインユーザ
 ログインユーザ -[hidden]-> トランザクション
+トランザクション -[hidden]-> ID採番
 
 package 共通 <<Folder>> {
   class エンティティ
@@ -20,6 +21,10 @@ package 共通 <<Folder>> {
   package トランザクション {
    class DBトランザクション
    interface トランザクションインターフェース
+  }
+  package ID採番 {
+   class DBシーケンス
+   interface ID採番インターフェース
   }
 }
 @enduml

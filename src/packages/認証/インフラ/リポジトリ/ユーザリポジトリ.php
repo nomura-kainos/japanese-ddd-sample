@@ -6,6 +6,7 @@ namespace 認証\インフラ\リポジトリ;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use 共通\ID採番\ID採番インターフェース;
 use 認証\インフラ\エロクアント\SNSアカウントエロクアント;
 use 認証\インフラ\レスポンスデータ\ユーザIDレスポンスデータ;
 use 認証\インフラ\レスポンスデータ\ユーザレスポンスデータ;
@@ -17,27 +18,23 @@ use 認証\インフラ\エロクアント\ユーザエロクアント;
 
 class ユーザリポジトリ implements ユーザリポジトリインターフェース
 {
+    private $ID採番;
     private $ユーザエロクアント;
     private $SNSアカウントエロクアント;
 
     public function __construct(
+        ID採番インターフェース $ID採番,
         ユーザエロクアント $ユーザエロクアント,
         SNSアカウントエロクアント $SNSアカウントエロクアント
     ) {
+        $this->ID採番 = $ID採番;
         $this->ユーザエロクアント = $ユーザエロクアント;
         $this->SNSアカウントエロクアント = $SNSアカウントエロクアント;
     }
 
     public function 登録用に次のユーザIDを取得する(): ユーザIDレスポンスデータ
     {
-        $テーブル名 = $this->ユーザエロクアント->getTable();
-        $シーケンス名 = $テーブル名 . 'シーケンス';
-
-        //idカラムに現在の値 + 1を挿入
-        DB::table($シーケンス名)->update(['id' => DB::raw('LAST_INSERT_ID(id + 1)')]);
-
-        $新規採番id = DB::table($シーケンス名)->selectRaw('LAST_INSERT_ID() as id')->first()->id;
-
+        $新規採番id = $this->ID採番->連番を発行する($this->ユーザエロクアント->getTable());
         return new ユーザIDレスポンスデータ($新規採番id);
     }
 

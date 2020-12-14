@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace 商品\インフラ\リポジトリ;
 
-use Illuminate\Support\Facades\DB;
+use 共通\ID採番\ID採番インターフェース;
 use 商品\インフラ\エロクアント\商品画像エロクアント;
 use 商品\インフラ\レスポンスデータ\商品IDレスポンスデータ;
 use 商品\インフラ\レスポンスデータ\商品レスポンスデータ;
@@ -18,27 +18,23 @@ use 商品\ドメイン\モデル\商品リポジトリインターフェース;
 
 class 商品リポジトリ implements 商品リポジトリインターフェース
 {
+    private $ID採番;
     private $商品エロクアント;
     private $商品画像エロクアント;
 
     public function __construct(
+        ID採番インターフェース $ID採番,
         商品エロクアント $商品エロクアント,
         商品画像エロクアント $商品画像エロクアント
     ) {
+        $this->ID採番 = $ID採番;
         $this->商品エロクアント = $商品エロクアント;
         $this->商品画像エロクアント = $商品画像エロクアント;
     }
 
     public function 登録用に次の商品IDを取得する(): 商品IDレスポンスデータ
     {
-        $テーブル名 = $this->商品エロクアント->getTable();
-        $シーケンス名 = $テーブル名 . 'シーケンス';
-
-        //idカラムに現在の値 + 1を挿入
-        DB::table($シーケンス名)->update(['id' => DB::raw('LAST_INSERT_ID(id + 1)')]);
-
-        $新規採番id = DB::table($シーケンス名)->selectRaw('LAST_INSERT_ID() as id')->first()->id;
-
+        $新規採番id = $this->ID採番->連番を発行する($this->商品エロクアント->getTable());
         return new 商品IDレスポンスデータ($新規採番id);
     }
 

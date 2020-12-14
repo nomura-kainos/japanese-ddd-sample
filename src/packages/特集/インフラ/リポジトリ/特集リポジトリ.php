@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace 特集\インフラ\リポジトリ;
 
-use Illuminate\Support\Facades\DB;
+use 共通\ID採番\ID採番インターフェース;
 use 特集\インフラ\エロクアント\タイトル画像エロクアント;
 use 特集\ドメイン\モデル\アップロード\ファイル;
 use 特集\ドメイン\モデル\特集ID;
@@ -15,24 +15,20 @@ use 特集\ドメイン\モデル\特集リポジトリインターフェース;
 
 class 特集リポジトリ implements 特集リポジトリインターフェース
 {
+    private $ID採番;
     private $特集エロクアント;
 
     public function __construct(
+        ID採番インターフェース $ID採番,
         特集エロクアント $特集エロクアント
     ) {
+        $this->ID採番 = $ID採番;
         $this->特集エロクアント = $特集エロクアント;
     }
 
     public function 登録用に次の特集IDを取得する(): 特集IDレスポンスデータ
     {
-        $テーブル名 = $this->特集エロクアント->getTable();
-        $シーケンス名 = $テーブル名 . 'シーケンス';
-
-        //idカラムに現在の値 + 1を挿入
-        DB::table($シーケンス名)->update(['id' => DB::raw('LAST_INSERT_ID(id + 1)')]);
-
-        $新規採番id = DB::table($シーケンス名)->selectRaw('LAST_INSERT_ID() as id')->first()->id;
-
+        $新規採番id = $this->ID採番->連番を発行する($this->特集エロクアント->getTable());
         return new 特集IDレスポンスデータ($新規採番id);
     }
 
