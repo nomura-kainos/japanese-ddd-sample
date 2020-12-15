@@ -21,7 +21,7 @@ RUN apk update && \
     gcc=9.3.0-r2\
     g++=9.3.0-r2 \
     make=4.3-r0\
-    tzdata=2020c-r0 \
+    tzdata=2020c-r1 \
     git=2.26.2-r0 && \
   apk add --update --no-cache \
     icu-dev=67.1-r0 \
