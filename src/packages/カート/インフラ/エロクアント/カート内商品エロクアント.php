@@ -5,12 +5,15 @@ declare(strict_types=1);
 namespace カート\インフラ\エロクアント;
 
 use Illuminate\Database\Eloquent\Model;
+use 共通\エロクアント拡張\複合主キー設定;
 
 /*
  * https://readouble.com/laravel/5.7/ja/eloquent-mutators.html
  */
 class カート内商品エロクアント extends Model
 {
+    use 複合主キー設定;
+
     // テーブル名を指定する
     protected $table = 'カート内商品';
 
