@@ -1,4 +1,4 @@
-FROM php:7.4-fpm-alpine
+FROM php:8.0.0-fpm-alpine
 LABEL maintainer="ucan-lab <info@u-can.tech>"
 
 SHELL ["/bin/ash", "-oeux", "pipefail", "-c"]
