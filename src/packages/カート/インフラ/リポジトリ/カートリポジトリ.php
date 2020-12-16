@@ -4,10 +4,11 @@ declare(strict_types=1);
 
 namespace カート\インフラ\リポジトリ;
 
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Collection;
 use カート\インフラ\エロクアント\カート内商品エロクアント;
 use カート\インフラ\レスポンスデータ\カートIDレスポンスデータ;
 use カート\インフラ\レスポンスデータ\カートレスポンスデータ;
+use カート\インフラ\レスポンスデータ\カート内商品コレクションレスポンスデータ;
 use カート\インフラ\レスポンスデータ\カート内商品レスポンスデータ;
 use カート\ドメイン\モデル\カート;
 use カート\インフラ\エロクアント\カートエロクアント;
@@ -47,6 +48,17 @@ class カートリポジトリ implements カートリポジトリインター�
             return null;
         }
         return new カートレスポンスデータ($カート);
+    }
+
+    public function カート内商品を全件取得(カートID $カートid): カート内商品コレクションレスポンスデータ
+    {
+        $カート内複数商品 = $this->カート内商品エロクアント::where('カートid', $カートid->値)
+            ->get();
+
+        if ($カート内複数商品->isEmpty()) {
+            return new カート内商品コレクションレスポンスデータ(new Collection());
+        }
+        return new カート内商品コレクションレスポンスデータ($カート内複数商品);
     }
 
     public function カート内商品を1件取得(カートID $カートid, カート内商品ID $カート内商品id): ?カート内商品レスポンスデータ
