@@ -7,7 +7,7 @@ namespace 認証\アプリ\ユースケース;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
-class 手動ログイン
+class 入力してログイン
 {
     use AuthenticatesUsers;
 

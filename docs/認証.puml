@@ -19,8 +19,8 @@ package 認証 <<Folder>> {
     }
    class SNSログインコントローラ
    class 会員ユーザ紐付けコントローラ
-   class 手動ログインフォーム表示コントローラ
-   class 手動ログインコントローラ
+   class ログインフォーム表示コントローラ
+   class 入力してログインコントローラ
    class ユーザ登録フォーム表示コントローラ
    class ユーザ登録コントローラ
    class ログアウトコントローラ
@@ -36,8 +36,8 @@ package 認証 <<Folder>> {
     }
    class SNSログイン
    class 会員ユーザ紐付け
-   class 手動ログインフォーム表示
-   class 手動ログイン
+   class ログインフォーム表示
+   class 入力してログイン
    class ユーザ登録フォーム表示
    class ユーザ登録
    class ログアウト
