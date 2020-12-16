@@ -12,5 +12,5 @@ interface ログインユーザインターフェース extends 共通ログイ�
 
     public static function 自動ログイン情報削除();
 
-    public static function ユーザーIDのみで自動ログインする(int $id);
+    public static function ログインする(int $ユーザid);
 }

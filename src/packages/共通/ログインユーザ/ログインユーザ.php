@@ -29,7 +29,7 @@ class ログインユーザ implements ログインユーザインターフェ�
 
     public static function ユーザーIDのみで自動ログインする(int $ユーザid)
     {
-        $自動ログインの設定 = true;
-        Auth::loginUsingId($ユーザid, $自動ログインの設定);
+        $パスワードを保存する = true;
+        Auth::loginUsingId($ユーザid, $パスワードを保存する);
     }
 }
