@@ -38,11 +38,10 @@ rectangle 宅配レンタル予約システム {
   usecase 詳細表示 as 特集詳細表示
  }
  together {
-  package 注文 {
-   usecase 注文を確定する
-  }
-  together {
-   usecase メールを送信する
+   package 注文 {
+    usecase 注文を確定する
+    usecase メールを送信する
+   }
    package カート {
     usecase カートに入れる
     usecase カート内商品を削除
