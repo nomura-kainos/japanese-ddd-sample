@@ -22,7 +22,10 @@ class ログインユーザ implements ログインユーザインターフェ�
         return true;
     }
 
-    public static function 自動ログイン情報削除()
+    /*
+     * ログイン情報を記憶しておく際に保存するcookie情報(remember_token)を削除する
+     */
+    public static function 自動ログイン情報を削除する()
     {
         Auth::logout();
     }

@@ -10,7 +10,7 @@ interface ログインユーザインターフェース extends 共通ログイ�
 {
     public static function ログイン済みか(): bool;
 
-    public static function 自動ログイン情報削除();
+    public static function 自動ログイン情報を削除する();
 
     public static function ログインする(int $ユーザid, bool $パスワードを保存する = true);
 }
