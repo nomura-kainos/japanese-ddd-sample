@@ -22,22 +22,22 @@ rectangle 宅配レンタル予約システム {
   usecase ログアウト
  }
  together {
- package 商品 {
-  usecase 一覧表示 as 商品一覧表示
-  usecase 登録 as 商品登録
-  usecase 編集 as 商品編集
-  usecase 詳細表示 as 商品詳細表示
- }
- package 商品カテゴリ {
-  usecase 一覧表示 as 商品カテゴリ一覧表示
-  usecase 登録 as 商品カテゴリ登録
- }
- package 特集 {
-  usecase 一覧表示 as 特集一覧
-  usecase 登録 as 特集登録
-  usecase 詳細表示 as 特集詳細表示
- }
- together {
+  package 商品 {
+   usecase 一覧表示 as 商品一覧表示
+   usecase 登録 as 商品登録
+   usecase 編集 as 商品編集
+   usecase 詳細表示 as 商品詳細表示
+  }
+  package 商品カテゴリ {
+   usecase 一覧表示 as 商品カテゴリ一覧表示
+   usecase 登録 as 商品カテゴリ登録
+  }
+  package 特集 {
+   usecase 一覧表示 as 特集一覧
+   usecase 登録 as 特集登録
+   usecase 詳細表示 as 特集詳細表示
+  }
+  together {
    package 注文 {
     usecase 注文を確定する
     usecase メールを送信する
