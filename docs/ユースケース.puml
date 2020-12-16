@@ -21,7 +21,7 @@ rectangle 宅配レンタル予約システム {
   usecase ユーザ登録
   usecase ログアウト
  }
- together {
+ together <商品> {
   package 商品 {
    usecase 一覧表示 as 商品一覧表示
    usecase 登録 as 商品登録
@@ -37,7 +37,7 @@ rectangle 宅配レンタル予約システム {
    usecase 登録 as 特集登録
    usecase 詳細表示 as 特集詳細表示
   }
-  together {
+  together <注文> {
    package 注文 {
     usecase 注文を確定する
     usecase メールを送信する
@@ -49,8 +49,11 @@ rectangle 宅配レンタル予約システム {
     usecase カート内商品を注文済みにする
    }
   }
+  '<注文>
  }
+ '<商品>
 }
+'宅配レンタル予約システム
 カート内商品を注文済みにする -[hidden]> カートに入れる
 SNSログイン -left-> 会員ユーザ紐付け
 注文を確定する ..> カート内商品を注文済みにする
