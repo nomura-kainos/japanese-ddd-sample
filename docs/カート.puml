@@ -43,6 +43,7 @@ package カート <<Folder>> {
    class カート内商品コレクションレスポンスデータ
    class カートレスポンスデータ
    class カートIDレスポンスデータ
+   class 一覧表示クエリレスポンスデータ
   }
   package エロクアント {
    class カート内商品エロクアント
