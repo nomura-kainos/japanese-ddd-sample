@@ -17,5 +17,5 @@ interface ユーザリポジトリインターフェース
 
     public function 保存(ユーザ $ユーザ): ユーザレスポンスデータ;
 
-    public function SNSアカウント紐付け(ユーザID $ユーザid, SNSアカウント $SNSアカウント);
+    public function SNSアカウントを保存(ユーザID $ユーザid, SNSアカウント $SNSアカウント);
 }
