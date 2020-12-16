@@ -29,7 +29,6 @@ package カート <<Folder>> {
   package モデル {
    class カート
    class カートID
-   class カートドメインサービス
    interface カートリポジトリインターフェース
    class カートファクトリ
    class カート内商品ID
