@@ -20,9 +20,9 @@ class カート内商品コレクションレスポンスデータ
         $this->商品コレクション = $商品コレクション;
     }
 
-    public function 取得()
+    public function 取得(): array
     {
-        return $this->商品コレクション;
+        return $this->商品コレクション->toArray();
     }
 }
 
