@@ -27,9 +27,8 @@ class ログインユーザ implements ログインユーザインターフェ�
         Auth::logout();
     }
 
-    public static function ユーザーIDのみで自動ログインする(int $ユーザid)
+    public static function ログインする(int $ユーザid, bool $パスワードを保存する = true)
     {
-        $パスワードを保存する = true;
         Auth::loginUsingId($ユーザid, $パスワードを保存する);
     }
 }
