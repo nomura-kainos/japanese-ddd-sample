@@ -9,7 +9,6 @@ use 共通\ユニークキー;
 
 class カート内商品 extends エンティティ
 {
-
     private カートID $カートid;
     private カート内商品ID $商品id;
     private int $数量;
