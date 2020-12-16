@@ -37,13 +37,7 @@ class 会員ユーザ紐付け
     public function 実行(string $SNS名)
     {
         $this->トランザクション->スコープ(function () use ($SNS名) {
-            $SNSから取得したアカウント = $this->ドライバ->アカウント取得($SNS名);
-            $SNSアカウント = new SNSアカウント(
-                $SNS名,
-                $SNSから取得したアカウント->getId(),
-                $SNSから取得したアカウント->getEmail(),
-            );
-
+            $SNSアカウント = $this->SNSアカウント取得($SNS名);
             $登録済みユーザ = $this->ユーザリポ->登録済みユーザを1件取得($SNSアカウント->SNS名(), $SNSアカウント->id());
             if ($登録済みユーザ !== null) {
                 $this->ログインユーザ::ログインする($登録済みユーザ->id());
@@ -58,6 +52,16 @@ class 会員ユーザ紐付け
             $ユーザid = $this->新規ユーザ登録($SNSアカウント);
             $this->ログインユーザ::ログインする($ユーザid->値);
         });
+    }
+
+    private function SNSアカウント取得(string $SNS名): SNSアカウント
+    {
+        $SNSから取得したアカウント = $this->ドライバ->アカウント取得($SNS名);
+        return new SNSアカウント(
+            $SNS名,
+            $SNSから取得したアカウント->getId(),
+            $SNSから取得したアカウント->getEmail(),
+        );
     }
 
     private function 既存ユーザ更新(SNSアカウント $SNSアカウント)
