@@ -10,6 +10,9 @@ interface ログインユーザインターフェース extends 共通ログイ�
 {
     public static function ログイン済みか(): bool;
 
+    /*
+     * ログイン情報を記憶しておく際に保存するcookie情報(remember_token)を削除する
+     */
     public static function 自動ログイン情報を削除する();
 
     public static function ログインする(int $ユーザid, bool $パスワードを保存する = true);
