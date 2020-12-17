@@ -21,7 +21,7 @@ class 空カート仕様
         }
 
         $カート内複数商品 = $this->カートリポ->カート内商品を全件取得($カートid)->取得();
-        $未注文商品 = array_filter($カート内複数商品, function ($カート内商品){
+        $未注文商品 = array_filter($カート内複数商品, function ($カート内商品) {
             return !$カート内商品->注文済みか();
         });
         if ($this->全て注文済みか($未注文商品)) {
@@ -33,7 +33,7 @@ class 空カート仕様
 
     private function 全て注文済みか(array $未注文商品): bool
     {
-        if(count($未注文商品) > 0) {
+        if (count($未注文商品) > 0) {
             return false;
         }
         return true;
