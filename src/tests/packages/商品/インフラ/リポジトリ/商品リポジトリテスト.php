@@ -8,6 +8,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 use 共通\ID採番\DBシーケンス;
 use 共通\ID採番\ID採番インターフェース;
+use 共通\集約ルート\集約ルートチェッカー;
 use 商品\インフラ\エロクアント\商品エロクアント;
 use 商品\インフラ\エロクアント\商品カテゴリエロクアント;
 use 商品\インフラ\エロクアント\商品画像エロクアント;
@@ -32,6 +33,7 @@ class 商品リポジトリテスト extends TestCase
     private function 商品リポジトリのインスタンスを作成(): 商品リポジトリ
     {
         return new 商品リポジトリ(
+            new 集約ルートチェッカー(),
             new DBシーケンス(),
             new 商品エロクアント(),
             new 商品カテゴリエロクアント(),
@@ -57,6 +59,7 @@ class 商品リポジトリテスト extends TestCase
                     ->andReturn(2);
         }));
         $リポジトリ = new 商品リポジトリ(
+            new 集約ルートチェッカー(),
             $ID採番モック,
             new 商品エロクアント(),
             new 商品カテゴリエロクアント(),
