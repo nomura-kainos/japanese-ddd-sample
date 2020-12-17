@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace 商品カテゴリ\ドメイン\モデル;
 
 use 共通\エンティティ;
+use 共通\集約ルート;
 
-class 商品カテゴリ extends エンティティ
+class 商品カテゴリ extends エンティティ implements 集約ルート
 {
     private 商品カテゴリID $id;
     private string $名前;

@@ -4,12 +4,18 @@ declare(strict_types=1);
 
 namespace 注文\ドメイン\モデル;
 
+use 共通\集約ルート\集約ルートチェッカーインターフェース;
+
 class 注文ファクトリ
 {
+    private 集約ルートチェッカーインターフェース $集約ルートチェッカー;
     private ?注文リポジトリインターフェース $注文リポ;
 
-    public function __construct(注文リポジトリインターフェース $注文リポ = null)
-    {
+    public function __construct(
+        集約ルートチェッカーインターフェース $集約ルートチェッカー,
+        注文リポジトリインターフェース $注文リポ = null
+    ) {
+        $this->集約ルートチェッカー = $集約ルートチェッカー;
         $this->注文リポ = $注文リポ;
     }
 
@@ -36,11 +42,14 @@ class 注文ファクトリ
             $this->インデックス($注文商品)
         );
 
-        return new 注文(
+        $集約ルート = new 注文(
             $登録用注文id,
             $ユーザid,
             $注文明細
         );
+
+        $this->集約ルートチェッカー::チェック($集約ルート);
+        return $集約ルート;
     }
 
     private function インデックス(array $注文商品)

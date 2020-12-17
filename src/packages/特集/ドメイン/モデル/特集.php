@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace 特集\ドメイン\モデル;
 
 use 共通\エンティティ;
+use 共通\集約ルート;
 
-class 特集 extends エンティティ
+class 特集 extends エンティティ implements 集約ルート
 {
     private 特集ID $id;
     private string $タイトル;

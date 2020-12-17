@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace 認証\ドメイン\モデル;
 
 use 共通\エンティティ;
+use 共通\集約ルート;
 
-class ユーザ extends エンティティ
+class ユーザ extends エンティティ implements 集約ルート
 {
     private ユーザID $id;
     private string $メール;
