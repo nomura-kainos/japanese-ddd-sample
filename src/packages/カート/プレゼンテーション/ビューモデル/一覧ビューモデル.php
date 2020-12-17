@@ -10,9 +10,9 @@ class 一覧ビューモデル
 {
     private $カートコレクション;
 
-    public function __construct(一覧表示クエリレスポンスデータ $コレクション)
+    public function __construct(一覧表示クエリレスポンスデータ $レスポンスデータ)
     {
-        $詰め替え後のコレクション = $コレクション->取得()->map(function ($カート) {
+        $詰め替え後のコレクション = $レスポンスデータ->取得()->map(function ($カート) {
 
             return new カート内商品(
                 $カート->カートid(),

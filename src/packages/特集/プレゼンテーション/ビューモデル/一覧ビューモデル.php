@@ -10,9 +10,9 @@ class 一覧ビューモデル
 {
     private $特集コレクション;
 
-    public function __construct(一覧表示クエリレスポンスデータ $コレクション)
+    public function __construct(一覧表示クエリレスポンスデータ $レスポンスデータ)
     {
-        $詰め替え後のコレクション = $コレクション->取得()->map(function ($特集) {
+        $詰め替え後のコレクション = $レスポンスデータ->取得()->map(function ($特集) {
 
             return new 特集(
                 $特集->id(),

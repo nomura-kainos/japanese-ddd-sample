@@ -10,9 +10,9 @@ class 一覧ビューモデル
 {
     private $商品カテゴリコレクション;
 
-    public function __construct(一覧表示クエリレスポンスデータ $コレクション)
+    public function __construct(一覧表示クエリレスポンスデータ $レスポンスデータ)
     {
-        $詰め替え後のコレクション = $コレクション->取得()->map(function ($商品カテゴリ) {
+        $詰め替え後のコレクション = $レスポンスデータ->取得()->map(function ($商品カテゴリ) {
 
             return new 商品カテゴリ(
                 $商品カテゴリ->id(),
