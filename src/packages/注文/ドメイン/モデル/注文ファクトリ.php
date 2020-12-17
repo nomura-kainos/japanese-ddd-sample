@@ -25,12 +25,12 @@ class 注文ファクトリ
         $登録用注文id = new 注文ID($注文id->値());
 
         $注文明細 = array_map(
-            function ($商品, $インデックス) use ($登録用注文id) {
+            function ($商品, $行番号) use ($登録用注文id) {
                 $値段表記を消した総額 = (int)str_replace(',', '', $商品["総額"]);
 
                 $明細 = new 注文明細(
                     $登録用注文id,
-                    $インデックス,
+                    $行番号,
                     new 商品ID((int)$商品["商品id"]),
                     $商品["名前"],
                     (int)$商品["数量"],
@@ -39,7 +39,7 @@ class 注文ファクトリ
                 return $明細->連想配列();
             },
             $注文商品,
-            $this->インデックス($注文商品)
+            $this->行番号の範囲を取得する($注文商品)
         );
 
         $集約ルート = new 注文(
@@ -52,7 +52,7 @@ class 注文ファクトリ
         return $集約ルート;
     }
 
-    private function インデックス(array $注文商品)
+    private function 行番号の範囲を取得する(array $注文商品)
     {
         return range(1, count($注文商品));
     }
