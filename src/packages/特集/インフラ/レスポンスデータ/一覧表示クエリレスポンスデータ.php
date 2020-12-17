@@ -7,7 +7,7 @@ namespace 特集\インフラ\レスポンスデータ;
 use Illuminate\Support\Collection;
 use 特集\インフラ\エロクアント\特集エロクアント;
 
-class 特集コレクションレスポンスデータ
+class 一覧表示クエリレスポンスデータ
 {
     private $特集コレクション;
 

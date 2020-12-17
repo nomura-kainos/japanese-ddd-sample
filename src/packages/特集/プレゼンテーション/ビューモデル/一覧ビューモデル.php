@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace 特集\プレゼンテーション\ビューモデル;
 
-use 特集\インフラ\レスポンスデータ\特集コレクションレスポンスデータ;
+use 特集\インフラ\レスポンスデータ\一覧表示クエリレスポンスデータ;
 
 class 一覧ビューモデル
 {
     private $特集コレクション;
 
-    public function __construct(特集コレクションレスポンスデータ $コレクション)
+    public function __construct(一覧表示クエリレスポンスデータ $コレクション)
     {
         $詰め替え後のコレクション = $コレクション->取得()->map(function ($特集) {
 

@@ -6,7 +6,7 @@ namespace 商品\インフラ\レスポンスデータ;
 
 use Illuminate\Support\Collection;
 
-class 商品コレクションレスポンスデータ
+class 一覧表示クエリレスポンスデータ
 {
 
     private $商品コレクション;

@@ -8,7 +8,7 @@ use Illuminate\Support\Collection;
 use Tests\TestCase;
 use 商品\アプリ\ユースケース\一覧表示;
 use 商品\インフラ\リポジトリ\一覧表示クエリサービス;
-use 商品\インフラ\レスポンスデータ\商品コレクションレスポンスデータ;
+use 商品\インフラ\レスポンスデータ\一覧表示クエリレスポンスデータ;
 use 商品\プレゼンテーション\ビューモデル\一覧ビューモデル;
 
 /**
@@ -22,7 +22,7 @@ class 一覧表示テスト extends TestCase
             $空の配列 = new Collection();
 
             $モック->shouldReceive('全件取得')
-                ->andReturn(new 商品コレクションレスポンスデータ($空の配列));
+                ->andReturn(new 一覧表示クエリレスポンスデータ($空の配列));
         });
         $ユースケース = new 一覧表示($クエリサービスモック);
 
