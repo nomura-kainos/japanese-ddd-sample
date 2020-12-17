@@ -19,7 +19,7 @@ class 商品カテゴリコレクションレスポンスデータ
         $this->商品コレクション = $商品コレクション;
     }
 
-    public function 取得()
+    public function 取得(): Collection
     {
         return $this->商品コレクション;
     }

@@ -20,7 +20,7 @@ class 商品画像コレクションレスポンスデータ
         $this->商品画像コレクション = $商品画像コレクション;
     }
 
-    public function 取得()
+    public function 取得(): Collection
     {
         return $this->商品画像コレクション;
     }
