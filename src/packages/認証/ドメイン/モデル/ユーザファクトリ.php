@@ -19,7 +19,7 @@ class ユーザファクトリ
         $this->ユーザリポ = $ユーザリポ;
     }
 
-    public function 作成する(string $メール, ?string $パスワード)
+    public function 作成する(string $メール, ?string $パスワード): ユーザ
     {
         $ユーザID = $this->ユーザリポ->登録用に次のユーザIDを取得する();
 

@@ -19,7 +19,7 @@ class 商品ファクトリ
         $this->商品リポ = $商品リポ;
     }
 
-    public function 作成する(string $名前, レンタル料金 $レンタル料金, カテゴリID $カテゴリid)
+    public function 作成する(string $名前, レンタル料金 $レンタル料金, カテゴリID $カテゴリid): 商品
     {
         $商品ID = $this->商品リポ->登録用に次の商品IDを取得する();
         $集約ルート = new 商品(
@@ -33,7 +33,7 @@ class 商品ファクトリ
         return $集約ルート;
     }
 
-    public function 再構成する(商品ID $id, string $名前, レンタル料金 $レンタル料金, カテゴリID $カテゴリid)
+    public function 再構成する(商品ID $id, string $名前, レンタル料金 $レンタル料金, カテゴリID $カテゴリid): 商品
     {
         $集約ルート = new 商品(
             $id,

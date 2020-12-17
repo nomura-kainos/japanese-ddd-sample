@@ -19,7 +19,7 @@ class 注文ファクトリ
         $this->注文リポ = $注文リポ;
     }
 
-    public function 作成する(ユーザID $ユーザid, array $注文商品)
+    public function 作成する(ユーザID $ユーザid, array $注文商品): 注文
     {
         $注文id = $this->注文リポ->登録用に次の注文IDを取得する();
         $登録用注文id = new 注文ID($注文id->値());
