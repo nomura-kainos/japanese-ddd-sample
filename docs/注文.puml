@@ -27,6 +27,7 @@ package カート <<Folder>> {
    class 注文ID
    class 注文ファクトリ
    class 注文明細
+   class 注文が確定された
   }
  }
  package インフラ {

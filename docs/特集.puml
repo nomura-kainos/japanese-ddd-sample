@@ -47,8 +47,8 @@ package 特集 <<Folder>> {
   }
   package レスポンスデータ {
    class 特集IDレスポンスデータ
-   class 特集コレクションレスポンスデータ
    class 特集レスポンスデータ
+   class 一覧表示クエリレスポンスデータ
   }
   package エロクアント {
    class 特集エロクアント
