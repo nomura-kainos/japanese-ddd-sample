@@ -17,7 +17,8 @@ package 商品カテゴリ <<Folder>> {
  }
  package アプリ {
   package ユースケース {
-   class 一覧表示
+   class 一覧表示クエリサービス
+   interface 一覧表示クエリサービスインターフェース
    class 登録
   }
  }
@@ -39,6 +40,7 @@ package 商品カテゴリ <<Folder>> {
    class 商品カテゴリエロクアント
   }
   package リポジトリ {
+   class 一覧表示クエリサービス
    class 商品カテゴリリポジトリ
   }
  }

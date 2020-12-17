@@ -14,7 +14,5 @@ interface 商品カテゴリリポジトリインターフェース
 
     public function IDで1件取得(商品カテゴリID $id): ?商品カテゴリレスポンスデータ;
 
-    public function 全件取得(): 商品カテゴリコレクションレスポンスデータ;
-
     public function 保存(商品カテゴリ $商品カテゴリ);
 }
