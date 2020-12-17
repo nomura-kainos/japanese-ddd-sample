@@ -33,7 +33,6 @@ package 商品カテゴリ <<Folder>> {
  package インフラ {
   package レスポンスデータ {
    class 商品カテゴリIDレスポンスデータ
-   class 商品カテゴリコレクションレスポンスデータ
    class 商品カテゴリレスポンスデータ
    class 一覧表示クエリレスポンスデータ
   }
