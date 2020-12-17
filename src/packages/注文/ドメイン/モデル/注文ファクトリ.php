@@ -52,7 +52,7 @@ class 注文ファクトリ
         return $集約ルート;
     }
 
-    private function 行番号の範囲を取得する(array $注文商品)
+    private function 行番号の範囲を取得する(array $注文商品): array
     {
         return range(1, count($注文商品));
     }
