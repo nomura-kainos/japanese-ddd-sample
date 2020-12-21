@@ -53,7 +53,7 @@ package 商品 <<Folder>> {
    class 商品カテゴリレスポンスデータ
    class 商品画像コレクションレスポンスデータ
    class 商品画像レスポンスデータ
-   class一覧表示クエリレスポンスデータ
+   class 一覧表示クエリレスポンスデータ
   }
   package エロクアント {
    class 商品エロクアント
