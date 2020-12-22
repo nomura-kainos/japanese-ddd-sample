@@ -13,6 +13,7 @@ package 共通 <<Folder>> {
   class ユニークキー
   class バリューオブジェクト
   class ドメインイベント
+  class 仕様
   package 集約ルート as _集約ルート {
    class 集約ルートチェッカー
    interface 集約ルートチェッカーインターフェース

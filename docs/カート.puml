@@ -35,6 +35,7 @@ package カート <<Folder>> {
    class カート内商品
    class ユーザID
    class 空カート仕様
+   class 最新カート仕様
   }
  }
  package インフラ {
