@@ -9,7 +9,7 @@ ID採番 -[hidden]-> エロクアント拡張
 
 package 共通 <<Folder>> {
   class エンティティ
-  class 集約ルート
+  interface 集約ルート
   class ユニークキー
   class バリューオブジェクト
   class ドメインイベント
