@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace カート\ドメイン\モデル;
 
-class 空カート仕様
+use 共通\検証;
+
+class 空カート仕様 implements 検証
 {
     private $カートリポ;
 
@@ -14,7 +16,7 @@ class 空カート仕様
         $this->カートリポ = $カートリポ;
     }
 
-    public function 満たすか(?カートID $カートid): bool
+    public function 満たすか($カートid): bool
     {
         if ($カートid === null) {
             return true;
