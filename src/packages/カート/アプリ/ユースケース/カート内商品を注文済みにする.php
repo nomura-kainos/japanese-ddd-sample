@@ -11,7 +11,7 @@ use カート\ドメイン\モデル\カートリポジトリインターフェ�
 use カート\ドメイン\モデル\ユーザID;
 use カート\ドメイン\モデル\最新カート仕様;
 use 共通\イベント履歴\イベント履歴リポジトリ;
-use 注文\ドメイン\モデル\注文が確定された;
+use 注文\ドメイン\モデル\注文が確定された時;
 
 class カート内商品を注文済みにする implements ShouldQueue
 {
@@ -25,7 +25,7 @@ class カート内商品を注文済みにする implements ShouldQueue
         $this->カートリポ = $カートリポ;
     }
 
-    public function handle(注文が確定された $ドメインイベント)
+    public function handle(注文が確定された時 $ドメインイベント)
     {
         $this->イベント履歴 = new イベント履歴リポジトリ((int)$this->job->getJobId(), $this);
         $this->イベント履歴->登録する('開始');

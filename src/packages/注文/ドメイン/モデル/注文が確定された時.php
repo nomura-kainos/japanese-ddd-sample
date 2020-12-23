@@ -6,7 +6,7 @@ namespace 注文\ドメイン\モデル;
 
 use 共通\ドメインイベント;
 
-class 注文が確定された extends ドメインイベント
+class 注文が確定された時 extends ドメインイベント
 {
     private ユーザID $ユーザid;
 
