@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace カート\ドメイン\モデル;
 
-use 共通\選択;
+use 共通\仕様\選択;
 
 class 最新カート仕様 implements 選択
 {

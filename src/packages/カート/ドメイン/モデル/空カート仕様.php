@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace カート\ドメイン\モデル;
 
-use 共通\検証;
+use 共通\仕様\検証;
 
 class 空カート仕様 implements 検証
 {
