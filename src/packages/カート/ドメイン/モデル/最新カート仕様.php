@@ -29,7 +29,7 @@ class 最新カート仕様 implements 選択
         }
 
         if ($this->最新日付 != $カート->created_at) {
-           return false;
+            return false;
         }
 
         return true;
