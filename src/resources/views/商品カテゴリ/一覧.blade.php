@@ -14,7 +14,7 @@
                 <table>
                     @foreach ($複数カテゴリ->取得() as $商品カテゴリ)
                     <tr>
-                        <td><a href="/item_detail/{{ $商品カテゴリ->id() }}"> {{ $商品カテゴリ->名前() }} </a></td>
+                        <td><a href="/category_detail/{{ $商品カテゴリ->id() }}"> {{ $商品カテゴリ->名前() }} </a></td>
                     </tr>
                     @endforeach
                 </table>
