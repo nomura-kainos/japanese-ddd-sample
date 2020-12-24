@@ -77,7 +77,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('category_register') }}">{{ __('商品カテゴリ登録') }}</a>
+                                <a class="nav-link" href="{{ route('category') }}">{{ __('商品カテゴリ') }}</a>
                             </li>
 
                             <li class="nav-item">

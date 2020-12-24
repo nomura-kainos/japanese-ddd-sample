@@ -76,7 +76,7 @@ Route::post('/report/register', 特集登録コントローラ::class);
 
 Route::post('/order', 注文を確定するコントローラ::class);
 
-Route::get('/category', 商品カテゴリ一覧コントローラ::class)->name('category_register');
+Route::get('/category', 商品カテゴリ一覧コントローラ::class)->name('category');
 Route::get('/category_detail/{id}', 商品カテゴリ詳細コントローラ::class);
 Route::get('/category/register', function () {
     return view('商品カテゴリ.登録');
