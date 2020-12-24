@@ -32,12 +32,7 @@ rectangle 宅配レンタル予約システム {
    usecase 一覧表示 as 商品カテゴリ一覧表示
    usecase 登録 as 商品カテゴリ登録
   }
-  package 特集 {
-   usecase 一覧表示 as 特集一覧
-   usecase 登録 as 特集登録
-   usecase 詳細表示 as 特集詳細表示
-  }
-  together <注文> {
+  together <商品関連> {
    package 注文 {
     usecase 注文を確定する
     usecase メールを送信する
@@ -48,8 +43,13 @@ rectangle 宅配レンタル予約システム {
     usecase 一覧表示 as カート一覧
     usecase カート内商品を注文済みにする
    }
+   package 特集 {
+    usecase 一覧表示 as 特集一覧
+    usecase 登録 as 特集登録
+    usecase 詳細表示 as 特集詳細表示
+   }
   }
-  '<注文>
+  '<商品関連>
  }
  '<商品>
 }
