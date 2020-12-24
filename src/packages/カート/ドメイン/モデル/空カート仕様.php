@@ -16,13 +16,13 @@ class 空カート仕様 implements 検証
         $this->カートリポ = $カートリポ;
     }
 
-    public function 満たすか($カートid): bool
+    public function 満たすか($カート): bool
     {
-        if ($カートid === null) {
+        if ($カート === null) {
             return true;
         }
 
-        $カート内複数商品 = $this->カートリポ->カート内商品を全件取得($カートid)->取得();
+        $カート内複数商品 = $this->カートリポ->カート内商品を全件取得(new カートID($カート->id()))->取得();
         $未注文商品 = array_filter($カート内複数商品, function ($カート内商品) {
             return !$カート内商品->注文済みか();
         });
