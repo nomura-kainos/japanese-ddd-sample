@@ -14,7 +14,7 @@ class カート内商品コレクションレスポンスデータ
     public function __construct(Collection $コレクション)
     {
         $商品コレクション = $コレクション->map(function ($商品) {
-            return new カート内商品($商品);
+            return new _カート内商品($商品);
         });
 
         $this->商品コレクション = $商品コレクション;
@@ -30,7 +30,7 @@ class カート内商品コレクションレスポンスデータ
  * phpでインナークラスが使えないため、privateにできない
  * このビューモデル以外で使わないこと
  */
-class カート内商品
+class _カート内商品
 {
     private int $カートid;
     private int $商品id;
