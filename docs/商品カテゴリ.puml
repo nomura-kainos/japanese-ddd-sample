@@ -40,10 +40,10 @@ package 商品カテゴリ <<Folder>> {
  }
  package ドメイン {
   package モデル {
-   class 商品カテゴリ
+   class 大カテゴリ
    class 商品カテゴリID
-   class 商品カテゴリファクトリ
-   interface 商品カテゴリリポジトリインターフェース
+   class 大カテゴリファクトリ
+   interface 大カテゴリリポジトリインターフェース
   }
  }
  package インフラ {
