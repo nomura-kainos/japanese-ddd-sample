@@ -11,10 +11,10 @@ class 商品カテゴリレスポンスデータ
     private int $id;
     private string $名前;
 
-    public function __construct(商品カテゴリエロクアント $商品)
+    public function __construct(商品カテゴリエロクアント $カテゴリ)
     {
-        $this->id = $商品->id;
-        $this->名前 = $商品->名前;
+        $this->id = $カテゴリ->id;
+        $this->名前 = $カテゴリ->名前;
     }
 
     public function id(): int
