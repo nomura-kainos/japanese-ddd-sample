@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace 商品カテゴリ\インフラ\レスポンスデータ;
+namespace 商品カテゴリ\インフラ\レスポンスデータ\大カテゴリ;
 
 use Illuminate\Support\Collection;
 

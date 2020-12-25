@@ -13,7 +13,7 @@ class 商品カテゴリエロクアント extends Model
 {
 
     // テーブル名を指定する
-    protected $table = '商品カテゴリ';
+    protected $table = '大カテゴリ';
 
     // INSERT時の自動採番の有無を指定する
     public $incrementing = false;

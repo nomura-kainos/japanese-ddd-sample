@@ -74,10 +74,10 @@ Route::post('/report/register', 特集登録コントローラ::class);
 
 Route::post('/order', 注文を確定するコントローラ::class);
 
-Route::get('/category', 商品カテゴリ一覧コントローラ::class)->name('category');
-Route::get('/category/small/{id}', 商品小カテゴリ一覧コントローラ::class);
-Route::get('/category/register', function () {
-    return view('商品カテゴリ.登録');
+Route::get('/category/big', 大カテゴリ一覧コントローラ::class)->name('category');
+Route::get('/category/small/{id}', 小カテゴリ一覧コントローラ::class);
+Route::get('/category/big/register', function () {
+    return view('商品カテゴリ.大カテゴリ.登録');
 });
 Route::post('/category/big/register', 大カテゴリ登録コントローラ::class);
 

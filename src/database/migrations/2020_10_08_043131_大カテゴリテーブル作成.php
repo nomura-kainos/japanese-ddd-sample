@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class 商品カテゴリテーブル作成 extends Migration
+class 大カテゴリテーブル作成 extends Migration
 {
     /**
      * Run the migrations.
@@ -14,7 +14,7 @@ class 商品カテゴリテーブル作成 extends Migration
      */
     public function up()
     {
-        Schema::create('商品カテゴリ', function (Blueprint $table) {
+        Schema::create('大カテゴリ', function (Blueprint $table) {
             $table->bigInteger('id');
             $table->string('名前');
             $table->timestamps();
@@ -28,6 +28,6 @@ class 商品カテゴリテーブル作成 extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('商品カテゴリ');
+        Schema::dropIfExists('大カテゴリ');
     }
 }

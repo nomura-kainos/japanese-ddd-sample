@@ -8,27 +8,33 @@
 package 商品カテゴリ <<Folder>> {
  package プレゼンテーション {
   package ビューモデル {
-   class 一覧ビューモデル
    namespace 小カテゴリ {
+    class 一覧ビューモデル
+   }
+   namespace 大カテゴリ {
     class 一覧ビューモデル
    }
   }
   namespace コントローラ {
-   class 一覧コントローラ
-   class 登録コントローラ
-    namespace 小カテゴリ {
-     class 一覧コントローラ
-    }
+   namespace 小カテゴリ {
+    class 一覧コントローラ
+   }
+   namespace 大カテゴリ {
+    class 一覧コントローラ
+    class 登録コントローラ
+   }
   }
  }
  package アプリ {
   namespace ユースケース {
-   class 一覧表示クエリサービス
-   interface 一覧表示クエリサービスインターフェース
-   class 登録
    namespace 小カテゴリ {
     class 一覧表示クエリサービス
     interface 一覧表示クエリサービスインターフェース
+   }
+   namespace 大カテゴリ {
+    class 一覧表示クエリサービス
+    interface 一覧表示クエリサービスインターフェース
+    class 登録
    }
   }
  }
@@ -44,19 +50,24 @@ package 商品カテゴリ <<Folder>> {
   namespace レスポンスデータ {
    class 商品カテゴリIDレスポンスデータ
    class 商品カテゴリレスポンスデータ
-   class 一覧表示クエリレスポンスデータ
    namespace 小カテゴリ {
     class 小カテゴリレスポンスデータ
+    class 一覧表示クエリレスポンスデータ
+   }
+   namespace 大カテゴリ {
+    class 商品カテゴリレスポンスデータ
     class 一覧表示クエリレスポンスデータ
    }
   }
   package エロクアント {
    class 小カテゴリエロクアント
-   class 商品カテゴリエロクアント
+   class 大カテゴリエロクアント
   }
   namespace リポジトリ {
-   class 一覧表示クエリサービス
    namespace 小カテゴリ {
+    class 一覧表示クエリレスポンスデータ
+   }
+   namespace 大カテゴリ {
     class 一覧表示クエリレスポンスデータ
    }
   }

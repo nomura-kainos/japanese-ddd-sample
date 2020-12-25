@@ -9,10 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 /*
  * https://readouble.com/laravel/5.7/ja/eloquent-mutators.html
  */
-class 商品カテゴリエロクアント extends Model
+class 大カテゴリエロクアント extends Model
 {
     // テーブル名を指定する
-    protected $table = '商品カテゴリ';
+    protected $table = '大カテゴリ';
 
     // INSERT時の自動採番の有無を指定する
     public $incrementing = false;
