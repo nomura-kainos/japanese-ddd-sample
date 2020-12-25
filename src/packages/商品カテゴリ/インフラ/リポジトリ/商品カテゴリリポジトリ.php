@@ -37,21 +37,21 @@ class 商品カテゴリリポジトリ implements 商品カテゴリリポジ�
 
     public function IDで1件取得(商品カテゴリID $id): ?商品カテゴリレスポンスデータ
     {
-        $単品 = $this->商品カテゴリエロクアント::find($id->値);
-        if ($単品 === null) {
+        $カテゴリ = $this->大カテゴリエロクアント::find($id->値);
+        if ($カテゴリ === null) {
             return null;
         }
-        return new 商品カテゴリレスポンスデータ($単品);
+        return new 商品カテゴリレスポンスデータ($カテゴリ);
     }
 
-    public function 保存(商品カテゴリ $商品カテゴリ)
+    public function 保存(商品カテゴリ $カテゴリ)
     {
-        $this->集約ルートチェッカー::チェック($商品カテゴリ);
+        $this->集約ルートチェッカー::チェック($カテゴリ);
 
-        $this->商品カテゴリエロクアント::updateOrCreate(
-            ['id' => $商品カテゴリ->id()],
+        $this->大カテゴリエロクアント::updateOrCreate(
+            ['id' => $カテゴリ->id()],
             [
-                '名前' => $商品カテゴリ->名前(),
+                '名前' => $カテゴリ->名前(),
             ]
         );
     }
