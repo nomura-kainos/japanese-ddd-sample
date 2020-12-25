@@ -7,10 +7,6 @@
             <div class="card">
                 <div class="card-header">カテゴリ一覧</div>
 
-                <div class="card-body">
-                    You are logged in!
-                </div>
-                <p>A list of items.</p>
                 <table>
                     @foreach ($複数カテゴリ->取得() as $商品カテゴリ)
                     <tr>
