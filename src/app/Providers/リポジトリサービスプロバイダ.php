@@ -57,8 +57,8 @@ class リポジトリサービスプロバイダ extends ServiceProvider
         );
 
         $this->app->bind(
-            商品カテゴリリポジトリインターフェース::class,
-            商品カテゴリリポジトリ::class
+            大カテゴリリポジトリインターフェース::class,
+            大カテゴリリポジトリ::class
         );
 
         $this->app->bind(
