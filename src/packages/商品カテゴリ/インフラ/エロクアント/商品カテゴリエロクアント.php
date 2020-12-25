@@ -11,7 +11,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class 商品カテゴリエロクアント extends Model
 {
-
     // テーブル名を指定する
     protected $table = '商品カテゴリ';
 
