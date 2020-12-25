@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">商品詳細</div>
 
                 @foreach($複数画像 as $画像)
                     <div style="width: 18rem; float:left; margin: 16px;">

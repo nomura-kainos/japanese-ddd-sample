@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">商品登録</div>
 
                 <form action="{{ url("/item/register")}}" method="POST" enctype="multipart/form-data">
                     {{ csrf_field() }}
