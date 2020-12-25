@@ -9,7 +9,9 @@ package 商品カテゴリ <<Folder>> {
  package プレゼンテーション {
   package ビューモデル {
    class 一覧ビューモデル
-   class 詳細ビューモデル
+   namespace 小カテゴリ {
+    class 一覧ビューモデル
+   }
   }
   namespace コントローラ {
    class 一覧コントローラ
