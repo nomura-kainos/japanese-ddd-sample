@@ -8,19 +8,19 @@ use Illuminate\Support\Collection;
 
 class 一覧表示クエリレスポンスデータ
 {
-    private $商品コレクション;
+    private $カテゴリコレクション;
 
     public function __construct(Collection $コレクション)
     {
-        $商品コレクション = $コレクション->map(function ($商品) {
-            return new 商品カテゴリレスポンスデータ($商品);
+        $カテゴリコレクション = $コレクション->map(function ($カテゴリ) {
+            return new 商品カテゴリレスポンスデータ($カテゴリ);
         });
 
-        $this->商品コレクション = $商品コレクション;
+        $this->カテゴリコレクション = $カテゴリコレクション;
     }
 
     public function 取得()
     {
-        return $this->商品コレクション;
+        return $this->カテゴリコレクション;
     }
 }
