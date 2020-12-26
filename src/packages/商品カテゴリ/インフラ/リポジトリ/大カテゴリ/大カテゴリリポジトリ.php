@@ -35,15 +35,6 @@ class 大カテゴリリポジトリ implements 大カテゴリリポジトリ�
         return new 商品カテゴリIDレスポンスデータ($新規採番id);
     }
 
-    public function IDで1件取得(商品カテゴリID $id): ?商品カテゴリレスポンスデータ
-    {
-        $カテゴリ = $this->大カテゴリエロクアント::find($id->値);
-        if ($カテゴリ === null) {
-            return null;
-        }
-        return new 商品カテゴリレスポンスデータ($カテゴリ);
-    }
-
     public function 保存(大カテゴリ $カテゴリ)
     {
         $this->集約ルートチェッカー::チェック($カテゴリ);

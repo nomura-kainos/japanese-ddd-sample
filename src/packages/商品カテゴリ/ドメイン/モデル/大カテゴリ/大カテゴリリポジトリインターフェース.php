@@ -11,7 +11,5 @@ interface 大カテゴリリポジトリインターフェース
 {
     public function 登録用に次の商品カテゴリIDを取得する(): 商品カテゴリIDレスポンスデータ;
 
-    public function IDで1件取得(商品カテゴリID $id): ?商品カテゴリレスポンスデータ;
-
     public function 保存(大カテゴリ $カテゴリ);
 }
