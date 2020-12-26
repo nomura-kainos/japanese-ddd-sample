@@ -20,13 +20,15 @@
                     ID:{{ $商品->id() }}<br>
                     名前：<input type="text" name="名前" value="{{ $商品->名前() }}"><br>
                     レンタル料金：<input type="text" name="レンタル料金" value="{{ $商品->レンタル料金() }}"><br>
-                    カテゴリ:<select name="カテゴリid">
+                    カテゴリ:<select name="カテゴリ">
                         <option value = "" selected>選択なし</option>
                         @foreach($複数カテゴリ as $カテゴリ)
-                            @if(!empty($商品->カテゴリid()) && $商品->カテゴリid() == $カテゴリ->id())
-                                <option value = "{{ $カテゴリ->id() }}" selected>{{ $カテゴリ->名前() }}</option>
+                            @if($カテゴリ->大カテゴリ == true)
+                                <option value = "">{{ $カテゴリ->名前 }}</option>
+                            @elseif(!empty($商品->カテゴリid()) && $商品->カテゴリid() == $カテゴリ->小カテゴリid)
+                                <option value = '{"大カテゴリid":{{ $カテゴリ->大カテゴリid }},"小カテゴリid":{{ $カテゴリ->小カテゴリid }}}' selected>{{ $カテゴリ->名前 }}</option>
                             @else
-                                <option value = "{{ $カテゴリ->id() }}">{{ $カテゴリ->名前() }}</option>
+                                <option value = '{"大カテゴリid":{{ $カテゴリ->大カテゴリid }},"小カテゴリid":{{ $カテゴリ->小カテゴリid }}}'>{{ $カテゴリ->名前 }}</option>
                             @endif
                         @endforeach
                     </select><br>
