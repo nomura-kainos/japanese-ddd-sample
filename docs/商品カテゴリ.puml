@@ -18,6 +18,7 @@ package 商品カテゴリ <<Folder>> {
   namespace コントローラ {
    namespace 小カテゴリ {
     class 一覧コントローラ
+    class 登録コントローラ
    }
    namespace 大カテゴリ {
     class 一覧コントローラ
@@ -30,6 +31,7 @@ package 商品カテゴリ <<Folder>> {
    namespace 小カテゴリ {
     class 一覧表示クエリサービス
     interface 一覧表示クエリサービスインターフェース
+    class 登録
    }
    namespace 大カテゴリ {
     class 一覧表示クエリサービス
@@ -39,11 +41,19 @@ package 商品カテゴリ <<Folder>> {
   }
  }
  package ドメイン {
-  package モデル {
-   class 大カテゴリ
+  namespace モデル {
    class 商品カテゴリID
-   class 大カテゴリファクトリ
-   interface 大カテゴリリポジトリインターフェース
+   namespace 小カテゴリ {
+    class 小カテゴリ
+    class 小カテゴリファクトリ
+    interface 小カテゴリリポジトリインターフェース
+    class 最後尾小カテゴリ仕様
+   }
+   namespace 大カテゴリ {
+    class 大カテゴリ
+    class 大カテゴリファクトリ
+    interface 大カテゴリリポジトリインターフェース
+   }
   }
  }
  package インフラ {
@@ -65,9 +75,11 @@ package 商品カテゴリ <<Folder>> {
   }
   namespace リポジトリ {
    namespace 小カテゴリ {
+    class 小カテゴリリポジトリ
     class 一覧表示クエリレスポンスデータ
    }
    namespace 大カテゴリ {
+    class 大カテゴリリポジトリ
     class 一覧表示クエリレスポンスデータ
    }
   }

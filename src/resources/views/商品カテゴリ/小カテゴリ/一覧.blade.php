@@ -10,10 +10,13 @@
                 <table>
                     @foreach ($複数小カテゴリ->取得() as $小カテゴリ)
                         <tr>
-                            <td><a href="/category_detail/small/{{ $小カテゴリ->id() }}"> {{ $小カテゴリ->名前() }} </a></td>
+                            <td>{{ $小カテゴリ->id() }}</td>
+                            <td>{{ $小カテゴリ->名前() }}</td>
                         </tr>
                     @endforeach
                 </table>
+                <br>
+                <a href="/category/small/register/{{ $大カテゴリid }}">登録</a></td>
             </div>
         </div>
     </div>

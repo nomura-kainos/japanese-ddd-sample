@@ -13,7 +13,7 @@ class 小カテゴリレスポンスデータ
 
     public function __construct(小カテゴリエロクアント $カテゴリ)
     {
-        $this->id = $カテゴリ->id;
+        $this->id = $カテゴリ->小カテゴリid;
         $this->名前 = $カテゴリ->名前;
     }
 

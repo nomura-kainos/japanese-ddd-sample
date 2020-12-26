@@ -16,12 +16,13 @@ class 一覧コントローラ extends Controller
         $this->一覧表示 = $一覧表示;
     }
 
-    public function __invoke(int $id)
+    public function __invoke(string $大カテゴリid)
     {
-        $複数小カテゴリ = $this->一覧表示->実行($id);
+        $複数小カテゴリ = $this->一覧表示->実行((int)$大カテゴリid);
 
         return view('商品カテゴリ.小カテゴリ.一覧', [
             '複数小カテゴリ' => $複数小カテゴリ,
+            '大カテゴリid' => $大カテゴリid,
         ]);
     }
 }

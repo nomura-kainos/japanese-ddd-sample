@@ -2,10 +2,11 @@
 
 declare(strict_types=1);
 
-namespace 商品カテゴリ\ドメイン\モデル;
+namespace 商品カテゴリ\ドメイン\モデル\大カテゴリ;
 
 use 共通\エンティティ;
 use 共通\集約ルート;
+use 商品カテゴリ\ドメイン\モデル\商品カテゴリID;
 
 class 大カテゴリ extends エンティティ implements 集約ルート
 {

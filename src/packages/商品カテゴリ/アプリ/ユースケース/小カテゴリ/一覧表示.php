@@ -16,9 +16,9 @@ class 一覧表示
         $this->一覧表示クエリサービス = $一覧表示クエリサービス;
     }
 
-    public function 実行(int $id): 一覧ビューモデル
+    public function 実行(int $大カテゴリid): 一覧ビューモデル
     {
-        $複数商品 = $this->一覧表示クエリサービス->全件取得(new カテゴリID($id));
+        $複数商品 = $this->一覧表示クエリサービス->全件取得(new カテゴリID($大カテゴリid));
 
         return new 一覧ビューモデル($複数商品);
     }
