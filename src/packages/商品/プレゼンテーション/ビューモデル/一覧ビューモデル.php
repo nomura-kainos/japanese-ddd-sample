@@ -18,7 +18,6 @@ class 一覧ビューモデル
                 $商品->id(),
                 $商品->名前(),
                 $商品->レンタル料金(),
-                $商品->カテゴリid(),
                 $商品->カテゴリ名()
             );
         });
@@ -40,15 +39,13 @@ class 商品
     private int $id;
     private string $名前;
     private int $レンタル料金;
-    private int $カテゴリid;
     private string $カテゴリ名;
 
-    public function __construct(int $id, string $名前, int $レンタル料金, int $カテゴリid, string $カテゴリ名)
+    public function __construct(int $id, string $名前, int $レンタル料金, string $カテゴリ名)
     {
         $this->id = $id;
         $this->名前 = $名前;
         $this->レンタル料金 = $レンタル料金;
-        $this->カテゴリid = $カテゴリid;
         $this->カテゴリ名 = $カテゴリ名;
     }
 
@@ -65,11 +62,6 @@ class 商品
     public function レンタル料金(): string
     {
         return number_format($this->レンタル料金);
-    }
-
-    public function カテゴリid(): string
-    {
-        return (string)$this->カテゴリid;
     }
 
     public function カテゴリ名(): string
