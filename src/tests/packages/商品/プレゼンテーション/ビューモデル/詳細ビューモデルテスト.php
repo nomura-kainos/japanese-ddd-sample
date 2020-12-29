@@ -121,7 +121,7 @@ class 詳細ビューモデルテスト extends TestCase
             $this->商品['小カテゴリid'],
             new 商品カテゴリコレクションレスポンスデータ(new Collection()),
             new 商品画像コレクションレスポンスデータ(new Collection()),
-            );
+        );
 
         $小カテゴリid = $ビューモデル->小カテゴリid();
 
