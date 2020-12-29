@@ -3,9 +3,12 @@
 namespace 認証\インフラ\エロクアント;
 
 use Illuminate\Database\Eloquent\Model;
+use 共通\エロクアント拡張\複合主キー設定;
 
 class SNSアカウントエロクアント extends Model
 {
+    use 複合主キー設定;
+
     // テーブル名を指定する
     protected $table = 'SNSアカウント';
 

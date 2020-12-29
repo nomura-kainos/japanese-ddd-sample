@@ -19,6 +19,7 @@ class 小カテゴリテーブル作成 extends Migration
             $table->bigInteger('小カテゴリid');
             $table->string('名前');
             $table->timestamps();
+            $table->primary(['大カテゴリid', '小カテゴリid']);
         });
     }
 
