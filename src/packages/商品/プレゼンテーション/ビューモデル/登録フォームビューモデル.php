@@ -57,7 +57,7 @@ class 登録フォームビューモデル
         return $大小カテゴリ ;
     }
 
-    private function 大カテゴリの追加($小カテゴリ): stdClass
+    private function 大カテゴリの追加(stdClass $小カテゴリ): stdClass
     {
         $カテゴリ = new stdClass();
         $カテゴリ->大カテゴリ = true;
@@ -65,7 +65,7 @@ class 登録フォームビューモデル
         return $カテゴリ;
     }
 
-    private function 小カテゴリの追加($小カテゴリ): stdClass
+    private function 小カテゴリの追加(stdClass $小カテゴリ): stdClass
     {
         $カテゴリ = new stdClass();
         $カテゴリ->大カテゴリ = false;
