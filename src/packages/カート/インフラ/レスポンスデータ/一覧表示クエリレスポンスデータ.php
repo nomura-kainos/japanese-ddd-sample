@@ -20,7 +20,7 @@ class 一覧表示クエリレスポンスデータ
         $this->商品コレクション = $商品コレクション;
     }
 
-    public function 取得()
+    public function 取得(): Collection
     {
         return $this->商品コレクション;
     }

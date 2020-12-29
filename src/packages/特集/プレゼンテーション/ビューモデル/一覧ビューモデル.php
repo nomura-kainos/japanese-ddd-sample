@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace 特集\プレゼンテーション\ビューモデル;
 
+use Illuminate\Support\Collection;
 use 特集\インフラ\レスポンスデータ\一覧表示クエリレスポンスデータ;
 
 class 一覧ビューモデル
@@ -24,7 +25,7 @@ class 一覧ビューモデル
         $this->特集コレクション = $詰め替え後のコレクション;
     }
 
-    public function 取得()
+    public function 取得(): Collection
     {
         return $this->特集コレクション;
     }

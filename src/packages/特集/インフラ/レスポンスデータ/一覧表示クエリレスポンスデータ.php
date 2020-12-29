@@ -20,7 +20,7 @@ class 一覧表示クエリレスポンスデータ
         $this->特集コレクション = $特集コレクション;
     }
 
-    public function 取得()
+    public function 取得(): Collection
     {
         return $this->特集コレクション;
     }

@@ -19,7 +19,7 @@ class 一覧表示クエリレスポンスデータ
         $this->カテゴリコレクション = $カテゴリコレクション;
     }
 
-    public function 取得()
+    public function 取得(): Collection
     {
         return $this->カテゴリコレクション;
     }

@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace 商品\プレゼンテーション\ビューモデル;
 
+use Illuminate\Support\Collection;
 use 商品\インフラ\レスポンスデータ\一覧表示クエリレスポンスデータ;
 
 class 一覧ビューモデル
@@ -25,7 +26,7 @@ class 一覧ビューモデル
         $this->商品コレクション = $詰め替え後のコレクション;
     }
 
-    public function 取得()
+    public function 取得(): Collection
     {
         return $this->商品コレクション;
     }

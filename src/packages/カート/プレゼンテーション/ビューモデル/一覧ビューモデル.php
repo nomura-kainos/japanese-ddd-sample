@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace カート\プレゼンテーション\ビューモデル;
 
+use Illuminate\Support\Collection;
 use カート\インフラ\レスポンスデータ\一覧表示クエリレスポンスデータ;
 
 class 一覧ビューモデル
@@ -26,7 +27,7 @@ class 一覧ビューモデル
         $this->カートコレクション = $詰め替え後のコレクション;
     }
 
-    public function 取得()
+    public function 取得(): Collection
     {
         return $this->カートコレクション;
     }
