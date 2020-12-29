@@ -31,7 +31,6 @@
                                 <option value = '{"大カテゴリid":{{ $カテゴリ->大カテゴリid }},"小カテゴリid":{{ $カテゴリ->小カテゴリid }}}'>{{ $カテゴリ->名前 }}</option>
                             @endif
                         @endforeach
-                        <option value = '1'>1</option>
                     </select><br>
                     商品画像（複数可）：<input type="file" name="複数商品画像[]" accept="image/png, image/jpeg" multiple><br>
                     <div><input type="submit" value="登録"></div>
