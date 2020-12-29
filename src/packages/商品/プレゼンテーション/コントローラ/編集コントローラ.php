@@ -19,11 +19,13 @@ class 編集コントローラ extends Controller
 
     public function __invoke(Request $リクエスト)
     {
+        $カテゴリ= json_decode($リクエスト->カテゴリ,true);
+
         $this->編集->実行(
             (int)$リクエスト->id,
             $リクエスト->名前,
             $リクエスト->レンタル料金,
-            (int)$リクエスト->カテゴリid
+            $カテゴリ
         );
 
         return redirect('/item/');

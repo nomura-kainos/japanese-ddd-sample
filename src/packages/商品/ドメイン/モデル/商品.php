@@ -12,15 +12,15 @@ class 商品 extends エンティティ implements 集約ルート
     private 商品ID $id;
     private string $名前;
     private レンタル料金 $レンタル料金;
-    private カテゴリID $カテゴリid;
+    private カテゴリ $カテゴリ;
 
-    public function __construct(商品ID $id, string $名前, レンタル料金 $レンタル料金, カテゴリID $カテゴリid)
+    public function __construct(商品ID $id, string $名前, レンタル料金 $レンタル料金, カテゴリ $カテゴリ)
     {
         parent::ユニークキーを設定する($id);
         $this->id = $id;
         $this->名前を変更する($名前);
         $this->レンタル料金を変更する($レンタル料金);
-        $this->カテゴリid = $カテゴリid;
+        $this->カテゴリ = $カテゴリ;
     }
 
     public function id(): int
@@ -38,9 +38,9 @@ class 商品 extends エンティティ implements 集約ルート
         return $this->レンタル料金->値;
     }
 
-    public function カテゴリid(): int
+    public function カテゴリ(): カテゴリ
     {
-        return $this->カテゴリid->値;
+        return $this->カテゴリ;
     }
 
     public function 名前を変更する(string $名前)

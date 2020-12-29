@@ -34,7 +34,7 @@ package 商品 <<Folder>> {
     class ファイル
     interface 画像アップローダインターフェース
    }
-   class カテゴリID
+   class カテゴリ
    class レンタル料金
    class 商品
    class 商品ID
