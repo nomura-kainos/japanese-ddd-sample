@@ -9,7 +9,8 @@ use 共通\仕様\選択;
 class 最新カート仕様 implements 選択
 {
     private $ユーザid;
-    private $最新日付;
+    private $最新日時;
+    private $処理を終了するか = false;
 
     public function __construct(
         ユーザID $ユーザid
@@ -60,7 +61,7 @@ class 最新カート仕様 implements 選択
             return false;
         }
 
-        if ($this->最新日付 != $カート->created_at) {
+        if ($this->最新日時 != $カート->created_at) {
             return false;
         }
 
