@@ -36,8 +36,6 @@ class ルートテスト extends TestCase
     {
         return [
             ['/item'],
-            ['/item_detail/1'],
-            ['/item/register']
         ];
     }
 
