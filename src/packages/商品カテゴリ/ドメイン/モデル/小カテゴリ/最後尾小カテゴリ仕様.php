@@ -42,9 +42,9 @@ class 最後尾小カテゴリ仕様 implements 選択
         });
     }
 
-    private function 小カテゴリidのみ抽出する(array $複数小カテゴリid): array
+    private function 小カテゴリidのみ抽出する(array $複数小カテゴリ): array
     {
-        return array_column($複数小カテゴリid, '小カテゴリid');
+        return array_column($複数小カテゴリ, '小カテゴリid');
     }
 
     private function 最後尾の小カテゴリidを抽出する(array $小カテゴリidリスト): int
