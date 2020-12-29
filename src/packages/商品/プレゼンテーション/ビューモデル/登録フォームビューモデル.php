@@ -43,7 +43,6 @@ class 登録フォームビューモデル
 
     private function 大小カテゴリの階層をあわせる(array $カテゴリコレクション): array
     {
-
         $大小カテゴリ = [];
         $大カテゴリ名 = null;
 
