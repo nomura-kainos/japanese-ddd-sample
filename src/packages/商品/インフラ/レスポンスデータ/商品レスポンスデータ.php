@@ -13,7 +13,6 @@ class 商品レスポンスデータ
     private int $レンタル料金;
     private int $大カテゴリid;
     private int $小カテゴリid;
-    private string $カテゴリ名;
 
     public function __construct(商品エロクアント $商品)
     {
@@ -22,7 +21,6 @@ class 商品レスポンスデータ
         $this->レンタル料金 = $商品->レンタル料金;
         $this->大カテゴリid = $商品->大カテゴリid ?? 0;
         $this->小カテゴリid = $商品->小カテゴリid ?? 0;
-        $this->カテゴリ名 = $商品->カテゴリ名 ?? 'カテゴリ未所属';
     }
 
     public function id(): int
@@ -48,10 +46,5 @@ class 商品レスポンスデータ
     public function 小カテゴリid(): int
     {
         return $this->小カテゴリid;
-    }
-
-    public function カテゴリ名(): string
-    {
-        return $this->カテゴリ名;
     }
 }

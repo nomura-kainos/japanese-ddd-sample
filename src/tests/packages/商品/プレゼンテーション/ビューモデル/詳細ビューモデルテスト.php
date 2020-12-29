@@ -21,7 +21,8 @@ class 詳細ビューモデルテスト extends TestCase
             'id' => 1,
             '名前' => '登録済',
             'レンタル料金' => 1000,
-            'カテゴリid' => 1,
+            '大カテゴリid' => 1,
+            '小カテゴリid' => 2,
             'カテゴリ名' => 'カテゴリ名1',
     ];
 
@@ -31,8 +32,8 @@ class 詳細ビューモデルテスト extends TestCase
             $this->商品['id'],
             $this->商品['名前'],
             $this->商品['レンタル料金'],
-            $this->商品['カテゴリid'],
-            $this->商品['カテゴリ名'],
+            $this->商品['大カテゴリid'],
+            $this->商品['小カテゴリid'],
             new 商品カテゴリコレクションレスポンスデータ(new Collection()),
             new 商品画像コレクションレスポンスデータ(new Collection()),
         );
@@ -48,8 +49,8 @@ class 詳細ビューモデルテスト extends TestCase
             $this->商品['id'],
             $this->商品['名前'],
             $this->商品['レンタル料金'],
-            $this->商品['カテゴリid'],
-            $this->商品['カテゴリ名'],
+            $this->商品['大カテゴリid'],
+            $this->商品['小カテゴリid'],
             new 商品カテゴリコレクションレスポンスデータ(new Collection()),
             new 商品画像コレクションレスポンスデータ(new Collection()),
         );
@@ -65,8 +66,8 @@ class 詳細ビューモデルテスト extends TestCase
             $this->商品['id'],
             $this->商品['名前'],
             $this->商品['レンタル料金'],
-            $this->商品['カテゴリid'],
-            $this->商品['カテゴリ名'],
+            $this->商品['大カテゴリid'],
+            $this->商品['小カテゴリid'],
             new 商品カテゴリコレクションレスポンスデータ(new Collection()),
             new 商品画像コレクションレスポンスデータ(new Collection()),
         );
@@ -82,8 +83,8 @@ class 詳細ビューモデルテスト extends TestCase
             $this->商品['id'],
             $this->商品['名前'],
             500,
-            $this->商品['カテゴリid'],
-            $this->商品['カテゴリ名'],
+            $this->商品['大カテゴリid'],
+            $this->商品['小カテゴリid'],
             new 商品カテゴリコレクションレスポンスデータ(new Collection()),
             new 商品画像コレクションレスポンスデータ(new Collection()),
         );
@@ -93,45 +94,45 @@ class 詳細ビューモデルテスト extends TestCase
         self::assertSame('500', $レンタル料金);
     }
 
-    public function test_カテゴリidが取得できること()
+    public function test_大カテゴリidが取得できること()
     {
         $ビューモデル = new 詳細ビューモデル(
             $this->商品['id'],
             $this->商品['名前'],
             $this->商品['レンタル料金'],
-            $this->商品['カテゴリid'],
-            $this->商品['カテゴリ名'],
+            $this->商品['大カテゴリid'],
+            $this->商品['小カテゴリid'],
             new 商品カテゴリコレクションレスポンスデータ(new Collection()),
             new 商品画像コレクションレスポンスデータ(new Collection()),
         );
 
-        $カテゴリid = $ビューモデル->カテゴリid();
+        $大カテゴリid = $ビューモデル->大カテゴリid();
 
-        self::assertSame('1', $カテゴリid);
+        self::assertSame('1', $大カテゴリid);
     }
 
-    public function test_カテゴリ名が取得できること()
+    public function test_小カテゴリidが取得できること()
     {
         $ビューモデル = new 詳細ビューモデル(
             $this->商品['id'],
             $this->商品['名前'],
             $this->商品['レンタル料金'],
-            $this->商品['カテゴリid'],
-            $this->商品['カテゴリ名'],
+            $this->商品['大カテゴリid'],
+            $this->商品['小カテゴリid'],
             new 商品カテゴリコレクションレスポンスデータ(new Collection()),
             new 商品画像コレクションレスポンスデータ(new Collection()),
-        );
+            );
 
-        $カテゴリ名 = $ビューモデル->カテゴリ名();
+        $小カテゴリid = $ビューモデル->小カテゴリid();
 
-        self::assertSame('カテゴリ名1', $カテゴリ名);
+        self::assertSame('2', $小カテゴリid);
     }
 
     public function test_カテゴリコレクションが取得できること()
     {
         $エロクアントモック = $this->mock(商品カテゴリエロクアント::class, function ($モック) {
             $モック->shouldReceive('getAttribute')
-                ->andReturn(1, 'カテゴリ名1');
+                ->andReturn(1, '大カテゴリ名', 2, '小カテゴリ名',);
         });
         $コレクション = new Collection([$エロクアントモック]);
 
@@ -139,16 +140,19 @@ class 詳細ビューモデルテスト extends TestCase
             $this->商品['id'],
             $this->商品['名前'],
             $this->商品['レンタル料金'],
-            $this->商品['カテゴリid'],
-            $this->商品['カテゴリ名'],
+            $this->商品['大カテゴリid'],
+            $this->商品['小カテゴリid'],
             new 商品カテゴリコレクションレスポンスデータ($コレクション),
             new 商品画像コレクションレスポンスデータ(new Collection()),
         );
 
         $カテゴリコレクション = $ビューモデル->カテゴリコレクション();
 
-        self::assertSame(1, $カテゴリコレクション->first()->id());
-        self::assertSame('カテゴリ名1', $カテゴリコレクション->first()->名前());
+        self::assertSame('■大カテゴリ名', $カテゴリコレクション[0]->名前);
+
+        self::assertSame('－　小カテゴリ名', $カテゴリコレクション[1]->名前);
+        self::assertSame(1, $カテゴリコレクション[1]->大カテゴリid);
+        self::assertSame(2, $カテゴリコレクション[1]->小カテゴリid);
     }
 
     public function test_画像コレクションが取得できること()
@@ -163,8 +167,8 @@ class 詳細ビューモデルテスト extends TestCase
             $this->商品['id'],
             $this->商品['名前'],
             $this->商品['レンタル料金'],
-            $this->商品['カテゴリid'],
-            $this->商品['カテゴリ名'],
+            $this->商品['大カテゴリid'],
+            $this->商品['小カテゴリid'],
             new 商品カテゴリコレクションレスポンスデータ(new Collection()),
             new 商品画像コレクションレスポンスデータ($コレクション),
         );

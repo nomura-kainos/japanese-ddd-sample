@@ -26,7 +26,7 @@ class 一覧ビューモデルテスト extends TestCase
     {
         $エロクアントモック = $this->mock(商品エロクアント::class, function ($モック) {
             $モック->shouldReceive('getAttribute')
-                ->andReturn(100, '登録', 500, 1, 'カテゴリ名1');
+                ->andReturn(100, '登録', 500, 'カテゴリ名1');
             $this->Null合体演算子の返却値($モック, true);
         });
         $コレクション = new Collection([$エロクアントモック]);
@@ -39,7 +39,6 @@ class 一覧ビューモデルテスト extends TestCase
         self::assertSame('100', $ビューモデル->first()->id());
         self::assertSame('登録', $ビューモデル->first()->名前());
         self::assertSame('500', $ビューモデル->first()->レンタル料金());
-        self::assertSame('1', $ビューモデル->first()->カテゴリid());
         self::assertSame('カテゴリ名1', $ビューモデル->first()->カテゴリ名());
     }
 
@@ -47,7 +46,6 @@ class 一覧ビューモデルテスト extends TestCase
         'id' => 1,
         '名前' => '登録済',
         'レンタル料金' => 1000,
-        'カテゴリid' => 1,
         'カテゴリ名' => 'カテゴリ名1'
     ];
 
@@ -57,7 +55,6 @@ class 一覧ビューモデルテスト extends TestCase
             $this->商品['id'],
             $this->商品['名前'],
             $this->商品['レンタル料金'],
-            $this->商品['カテゴリid'],
             $this->商品['カテゴリ名']
         );
 
@@ -73,7 +70,6 @@ class 一覧ビューモデルテスト extends TestCase
             $this->商品['id'],
             $this->商品['名前'],
             $this->商品['レンタル料金'],
-            $this->商品['カテゴリid'],
             $this->商品['カテゴリ名']
         );
 
@@ -88,7 +84,6 @@ class 一覧ビューモデルテスト extends TestCase
             $this->商品['id'],
             $this->商品['名前'],
             $this->商品['レンタル料金'],
-            $this->商品['カテゴリid'],
             $this->商品['カテゴリ名']
         );
 
@@ -103,7 +98,6 @@ class 一覧ビューモデルテスト extends TestCase
             $this->商品['id'],
             $this->商品['名前'],
             500,
-            $this->商品['カテゴリid'],
             $this->商品['カテゴリ名']
         );
 
@@ -112,28 +106,12 @@ class 一覧ビューモデルテスト extends TestCase
         self::assertSame('500', $レンタル料金);
     }
 
-    public function test_カテゴリidが取得できること()
-    {
-        $商品 = new 商品(
-            $this->商品['id'],
-            $this->商品['名前'],
-            $this->商品['レンタル料金'],
-            $this->商品['カテゴリid'],
-            $this->商品['カテゴリ名']
-        );
-
-        $カテゴリid = $商品->カテゴリid();
-
-        self::assertSame('1', $カテゴリid);
-    }
-
     public function test_カテゴリ名が取得できること()
     {
         $商品 = new 商品(
             $this->商品['id'],
             $this->商品['名前'],
             $this->商品['レンタル料金'],
-            $this->商品['カテゴリid'],
             $this->商品['カテゴリ名']
         );
 

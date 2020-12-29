@@ -19,24 +19,24 @@ class 商品レスポンスデータテスト extends TestCase
             ->andReturn($判定);
     }
 
-    public function test_カテゴリidとカテゴリ名がnullの場合に指定した値が設定されていること()
+    public function test_カテゴリidがnullの場合に指定した値が設定されていること()
     {
         $エロクアントモック = $this->mock(商品エロクアント::class, function ($モック) {
             $モック->shouldReceive('getAttribute')
-                ->andReturn(100, '0', 0, 0, '0');
+                ->andReturn(100, '0', 0, 0, 0);
             $this->Null合体演算子の返却値($モック, false);
         });
         $レスポンスデータ = new 商品レスポンスデータ($エロクアントモック);
 
-        self::assertSame(0, $レスポンスデータ->カテゴリid());
-        self::assertSame('カテゴリ未所属', $レスポンスデータ->カテゴリ名());
+        self::assertSame(0, $レスポンスデータ->大カテゴリid());
+        self::assertSame(0, $レスポンスデータ->小カテゴリid());
     }
 
     public function test_IDが取得できること()
     {
         $エロクアントモック = $this->mock(商品エロクアント::class, function ($モック) {
             $モック->shouldReceive('getAttribute')
-                ->andReturn(100, '0', 0, 0, '0');
+                ->andReturn(100, '0', 0, 0, 0);
             $this->Null合体演算子の返却値($モック, true);
         });
         $レスポンスデータ = new 商品レスポンスデータ($エロクアントモック);
@@ -50,7 +50,7 @@ class 商品レスポンスデータテスト extends TestCase
     {
         $エロクアントモック = $this->mock(商品エロクアント::class, function ($モック) {
             $モック->shouldReceive('getAttribute')
-                ->andReturn(0, '名前', 0, 0, '0');
+                ->andReturn(0, '名前', 0, 0, 0);
             $this->Null合体演算子の返却値($モック, true);
         });
         $レスポンスデータ = new 商品レスポンスデータ($エロクアントモック);
@@ -64,7 +64,7 @@ class 商品レスポンスデータテスト extends TestCase
     {
         $エロクアントモック = $this->mock(商品エロクアント::class, function ($モック) {
             $モック->shouldReceive('getAttribute')
-                ->andReturn(0, '0', 100, 0, '0');
+                ->andReturn(0, '0', 100, 0, 0);
             $this->Null合体演算子の返却値($モック, true);
         });
         $レスポンスデータ = new 商品レスポンスデータ($エロクアントモック);
@@ -74,31 +74,31 @@ class 商品レスポンスデータテスト extends TestCase
         self::assertSame(100, $レンタル料金);
     }
 
-    public function test_カテゴリidが取得できること()
+    public function test_大カテゴリidが取得できること()
     {
         $エロクアントモック = $this->mock(商品エロクアント::class, function ($モック) {
             $モック->shouldReceive('getAttribute')
-                ->andReturn(0, '0', 0, 1, '0');
+                ->andReturn(0, '0', 0, 1, 0);
             $this->Null合体演算子の返却値($モック, true);
         });
         $レスポンスデータ = new 商品レスポンスデータ($エロクアントモック);
 
-        $カテゴリid = $レスポンスデータ->カテゴリid();
+        $大カテゴリid = $レスポンスデータ->大カテゴリid();
 
-        self::assertSame(1, $カテゴリid);
+        self::assertSame(1, $大カテゴリid);
     }
 
-    public function test_カテゴリ名が取得できること()
+    public function test_小カテゴリidが取得できること()
     {
         $エロクアントモック = $this->mock(商品エロクアント::class, function ($モック) {
             $モック->shouldReceive('getAttribute')
-                ->andReturn(0, '0', 0, 0, 'カテゴリ名');
+                ->andReturn(0, '0', 0, 0, 1);
             $this->Null合体演算子の返却値($モック, true);
         });
         $レスポンスデータ = new 商品レスポンスデータ($エロクアントモック);
 
-        $カテゴリ名 = $レスポンスデータ->カテゴリ名();
+        $小カテゴリid = $レスポンスデータ->小カテゴリid();
 
-        self::assertSame('カテゴリ名', $カテゴリ名);
+        self::assertSame(1, $小カテゴリid);
     }
 }

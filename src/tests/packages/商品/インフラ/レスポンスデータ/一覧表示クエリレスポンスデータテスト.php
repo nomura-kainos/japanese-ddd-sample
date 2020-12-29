@@ -23,7 +23,7 @@ class 一覧表示クエリレスポンスデータテスト extends TestCase
     {
         $エロクアントモック = $this->mock(商品エロクアント::class, function ($モック) {
             $モック->shouldReceive('getAttribute')
-                ->andReturn(100, '登録', 1000, 1, 'カテゴリ名1');
+                ->andReturn(100, '登録', 1000, 'カテゴリ名1');
             $this->Null合体演算子の返却値($モック, true);
         });
         $コレクション = new Collection([$エロクアントモック]);
@@ -34,7 +34,6 @@ class 一覧表示クエリレスポンスデータテスト extends TestCase
         self::assertSame(100, $コレクションレスポンスデータ->first()->id());
         self::assertSame('登録', $コレクションレスポンスデータ->first()->名前());
         self::assertSame(1000, $コレクションレスポンスデータ->first()->レンタル料金());
-        self::assertSame(1, $コレクションレスポンスデータ->first()->カテゴリid());
         self::assertSame('カテゴリ名1', $コレクションレスポンスデータ->first()->カテゴリ名());
     }
 }
