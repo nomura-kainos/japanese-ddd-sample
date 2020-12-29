@@ -18,7 +18,8 @@ class 商品テーブル作成 extends Migration
             $table->bigInteger('id');
             $table->string('名前');
             $table->bigInteger('レンタル料金');
-            $table->bigInteger('カテゴリid');
+            $table->bigInteger('大カテゴリid');
+            $table->bigInteger('小カテゴリid');
             $table->timestamps();
         });
     }
