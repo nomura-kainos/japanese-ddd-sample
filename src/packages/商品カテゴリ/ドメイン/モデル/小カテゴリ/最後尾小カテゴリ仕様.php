@@ -49,7 +49,7 @@ class 最後尾小カテゴリ仕様 implements 選択
 
     private function 最後尾の小カテゴリidを抽出する(array $小カテゴリidリスト): int
     {
-        return max($小カテゴリidリスト);;
+        return max($小カテゴリidリスト);
     }
 
     public function 満たすか($小カテゴリ): bool
