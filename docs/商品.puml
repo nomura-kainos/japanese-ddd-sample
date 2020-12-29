@@ -2,17 +2,19 @@
 !include color.inc
 
 プレゼンテーション ---> アプリ
-アプリ ---> ドメイン
+アプリ ----> ドメイン
 ドメイン ---> インフラ
 
 package 商品 <<Folder>> {
  package プレゼンテーション {
   package ビューモデル {
    class 一覧ビューモデル
+   class 登録フォーム表示ビューモデル
    class 詳細ビューモデル
   }
   package コントローラ {
    class 一覧コントローラ
+   class 登録フォーム表示コントローラ
    class 登録コントローラ
    class 編集コントローラ
    class 詳細コントローラ
@@ -22,6 +24,7 @@ package 商品 <<Folder>> {
   package ユースケース {
    class 一覧表示
    interface 一覧表示クエリサービスインターフェース
+   class 登録フォーム表示
    class 登録
    class 編集
    class 詳細表示
