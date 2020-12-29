@@ -15,8 +15,8 @@ class 詳細ビューモデル
     private int $id;
     private string $名前;
     private int $レンタル料金;
-    private int $カテゴリid;
-    private string $カテゴリ名;
+    private int $大カテゴリid;
+    private int $小カテゴリid;
     private array $カテゴリコレクション;
     private 商品画像コレクションレスポンスデータ $画像コレクション;
 
@@ -24,16 +24,16 @@ class 詳細ビューモデル
         int $id,
         string $名前,
         int $レンタル料金,
-        int $カテゴリid,
-        string $カテゴリ名,
+        int $大カテゴリid,
+        int $小カテゴリid,
         商品カテゴリコレクションレスポンスデータ $カテゴリコレクション,
         商品画像コレクションレスポンスデータ $画像コレクション
     ) {
         $this->id = $id;
         $this->名前 = $名前;
         $this->レンタル料金 = $レンタル料金;
-        $this->カテゴリid = $カテゴリid;
-        $this->カテゴリ名 = $カテゴリ名;
+        $this->大カテゴリid = $大カテゴリid;
+        $this->小カテゴリid = $小カテゴリid;
         $this->カテゴリコレクション = $this->カテゴリ表示設定($カテゴリコレクション);
         $this->画像コレクション = $画像コレクション;
     }
@@ -112,14 +112,14 @@ class 詳細ビューモデル
         return number_format($this->レンタル料金);
     }
 
-    public function カテゴリid(): string
+    public function 大カテゴリid(): string
     {
-        return (string)$this->カテゴリid;
+        return (string)$this->大カテゴリid;
     }
 
-    public function カテゴリ名(): string
+    public function 小カテゴリid(): string
     {
-        return $this->カテゴリ名;
+        return (string)$this->小カテゴリid;
     }
 
     public function カテゴリコレクション(): array
