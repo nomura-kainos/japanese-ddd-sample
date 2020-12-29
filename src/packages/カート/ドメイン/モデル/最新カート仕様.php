@@ -23,8 +23,7 @@ class 最新カート仕様 implements 選択
         $抽出対象 = $複数カート;
 
         $複数カート = $this->ユーザidが一致するカートのみ抽出する($抽出対象);
-        if(empty($複数カート))
-        {
+        if (empty($複数カート)) {
             $this->処理を終了するか = true;
             return;
         }
@@ -53,7 +52,7 @@ class 最新カート仕様 implements 選択
 
     public function 満たすか($カート): bool
     {
-        if($this->処理を終了するか){
+        if ($this->処理を終了するか) {
             return false;
         }
 

@@ -19,7 +19,7 @@ class 登録コントローラ extends Controller
 
     public function __invoke(商品登録フォームリクエスト $リクエスト)
     {
-        $カテゴリ= json_decode($リクエスト->カテゴリ,true);
+        $カテゴリ = json_decode($リクエスト->カテゴリ, true);
 
         $this->登録->実行(
             $リクエスト->名前,
