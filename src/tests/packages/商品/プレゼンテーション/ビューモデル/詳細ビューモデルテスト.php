@@ -132,7 +132,7 @@ class 詳細ビューモデルテスト extends TestCase
     {
         $エロクアントモック = $this->mock(商品カテゴリエロクアント::class, function ($モック) {
             $モック->shouldReceive('getAttribute')
-                ->andReturn(1, '大カテゴリ名', 2, '小カテゴリ名',);
+                ->andReturn(1, '大カテゴリ名', 2, '小カテゴリ名');
         });
         $コレクション = new Collection([$エロクアントモック]);
 
