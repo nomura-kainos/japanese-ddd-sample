@@ -78,7 +78,7 @@ class 詳細ビューモデル
         return $大小カテゴリ ;
     }
 
-    private function 大カテゴリの追加($小カテゴリ)
+    private function 大カテゴリの追加($小カテゴリ): stdClass
     {
         $カテゴリ = new stdClass();
         $カテゴリ->大カテゴリ = true;
