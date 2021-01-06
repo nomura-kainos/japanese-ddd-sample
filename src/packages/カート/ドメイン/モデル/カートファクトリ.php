@@ -13,40 +13,35 @@ class カートファクトリ
         $this->カートリポ = $カートリポ;
     }
 
-    public function 作成する(ユーザID $ユーザid): カート
+    public function 作成する(ユーザID $ユーザid, カート内商品ID $商品id, int $数量): カート
     {
         $カートid = $this->カートリポ->登録用に次のカートIDを取得する();
-        return new カート(
-            new カートID($カートid->値()),
-            $ユーザid,
-        );
-    }
-
-    public function 再構成する(カートID $カートid, ユーザID $ユーザid): カート
-    {
-        return new カート(
-            $カートid,
-            $ユーザid,
-        );
-    }
-
-    public function カート内商品を作成する(カートID $カートid, カート内商品ID $商品id, int $数量): カート内商品
-    {
-        return new カート内商品(
+        $id = new カートID($カートid->値());
+        $カート内商品 = new カート内商品(
             $カートid,
             $商品id,
-            $数量,
-            false
+            $数量
+        );
+
+        return new カート(
+            $id,
+            $ユーザid,
+            $カート内商品,
         );
     }
 
-    public function カート内商品を再構成する(カートID $カートid, カート内商品ID $商品id, int $数量, bool $注文済みか): カート内商品
+    public function 再構成する(カートID $カートid, ユーザID $ユーザid, カート内商品ID $商品id, int $数量): カート
     {
-        return new カート内商品(
+        $カート内商品 = new カート内商品(
             $カートid,
             $商品id,
-            $数量,
-            $注文済みか
+            $数量
+        );
+
+        return new カート(
+            $カートid,
+            $ユーザid,
+            $カート内商品,
         );
     }
 }

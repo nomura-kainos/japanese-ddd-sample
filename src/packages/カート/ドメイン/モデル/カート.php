@@ -8,15 +8,16 @@ use 共通\エンティティ;
 
 class カート extends エンティティ
 {
-
     private カートID $id;
     private ユーザID $ユーザid;
+    private カート内商品 $商品;
 
-    public function __construct(カートID $id, ユーザID $ユーザid)
+    public function __construct(カートID $id, ユーザID $ユーザid, カート内商品 $商品)
     {
         parent::ユニークキーを設定する($id);
         $this->id = $id;
         $this->ユーザid = $ユーザid;
+        $this->商品 = $商品;
     }
 
     public function id(): int
@@ -27,5 +28,10 @@ class カート extends エンティティ
     public function ユーザid(): int
     {
         return $this->ユーザid->値;
+    }
+
+    public function 商品(): カート内商品
+    {
+        return $this->商品;
     }
 }

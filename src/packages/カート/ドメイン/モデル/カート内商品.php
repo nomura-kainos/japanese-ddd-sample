@@ -14,7 +14,7 @@ class カート内商品 extends エンティティ
     private int $数量;
     private bool $注文済みか;
 
-    public function __construct(カートID $カートid, カート内商品ID $商品id, int $数量, bool $注文済みか)
+    public function __construct(カートID $カートid, カート内商品ID $商品id, int $数量, bool $注文済みか = false)
     {
         parent::ユニークキーを設定する(new ユニークキー($カートid->値 . $商品id->値));
         $this->カートid = $カートid;
