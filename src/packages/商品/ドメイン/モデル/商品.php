@@ -6,6 +6,8 @@ namespace 商品\ドメイン\モデル;
 
 use 共通\エンティティ;
 use 共通\集約ルート;
+use 商品\ドメイン\モデル\アップロード\ファイル;
+use 商品\ドメイン\モデル\アップロード\画像アップローダインターフェース;
 
 class 商品 extends エンティティ implements 集約ルート
 {
@@ -13,6 +15,7 @@ class 商品 extends エンティティ implements 集約ルート
     private string $名前;
     private レンタル料金 $レンタル料金;
     private カテゴリ $カテゴリ;
+    private array $アップロード済み複数ファイル = [];
 
     public function __construct(商品ID $id, string $名前, レンタル料金 $レンタル料金, カテゴリ $カテゴリ)
     {
@@ -43,6 +46,11 @@ class 商品 extends エンティティ implements 集約ルート
         return $this->カテゴリ;
     }
 
+    public function アップロード済み複数ファイル()
+    {
+        return $this->アップロード済み複数ファイル;
+    }
+
     public function 名前を変更する(string $名前)
     {
         $this->名前 = $名前;
@@ -51,5 +59,13 @@ class 商品 extends エンティティ implements 集約ルート
     public function レンタル料金を変更する(レンタル料金 $レンタル料金)
     {
         $this->レンタル料金 = $レンタル料金;
+    }
+
+    public function 画像ファイルをストレージに保存する(画像アップローダインターフェース $画像アップローダ, array $複数画像ファイル)
+    {
+        foreach ($複数画像ファイル as $画像ファイル) {
+            $アップロード済みファイル = $画像アップローダ->ストレージに送信する(new ファイル($画像ファイル));
+            $this->アップロード済み複数ファイル[] = $アップロード済みファイル;
+        }
     }
 }
