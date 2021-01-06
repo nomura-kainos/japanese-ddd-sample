@@ -5,8 +5,9 @@ declare(strict_types=1);
 namespace カート\ドメイン\モデル;
 
 use 共通\エンティティ;
+use 共通\集約ルート;
 
-class カート extends エンティティ
+class カート extends エンティティ implements 集約ルート
 {
     private カートID $id;
     private ユーザID $ユーザid;
