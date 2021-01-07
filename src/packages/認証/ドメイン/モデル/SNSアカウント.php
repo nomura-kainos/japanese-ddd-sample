@@ -11,9 +11,9 @@ class SNSアカウント extends エンティティ
 {
     private string $SNS名;
     private string $id;
-    private string $メール;
+    private ?string $メール;
 
-    public function __construct(string $SNS名, string $id, string $メール)
+    public function __construct(string $SNS名, string $id, string $メール = null)
     {
         parent::ユニークキーを設定する(new ユニークキー($SNS名 . $id));
         $this->SNS名 = $SNS名;
