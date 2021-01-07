@@ -11,7 +11,7 @@ class 最後尾小カテゴリ仕様 implements 選択
 {
     private $大カテゴリid;
     private $最後尾小カテゴリid;
-    private $処理を終了するか = false;
+    private $処理を終了するか？ = false;
 
     public function __construct(
         商品カテゴリID $大カテゴリid
@@ -25,7 +25,7 @@ class 最後尾小カテゴリ仕様 implements 選択
 
         $複数小カテゴリ = $this->大カテゴリidが一致する小カテゴリのみ抽出する($抽出対象);
         if (empty($複数小カテゴリ)) {
-            $this->処理を終了するか = true;
+            $this->処理を終了するか？ = true;
             return;
         }
         $複数小カテゴリid = $this->小カテゴリidのみ抽出する($複数小カテゴリ);
@@ -51,9 +51,9 @@ class 最後尾小カテゴリ仕様 implements 選択
         return max($小カテゴリidリスト);
     }
 
-    public function 満たすか($小カテゴリ): bool
+    public function 満たすか？($小カテゴリ): bool
     {
-        if ($this->処理を終了するか) {
+        if ($this->処理を終了するか？) {
             return false;
         }
 

@@ -14,7 +14,7 @@ class ログインユーザ implements ログインユーザインターフェ�
         return Auth::id();
     }
 
-    public static function ログイン済みか(): bool
+    public static function ログイン済みか？(): bool
     {
         if (Auth::check() == null) {
             return false;

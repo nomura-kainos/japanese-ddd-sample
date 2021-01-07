@@ -27,7 +27,7 @@ class ファイル
         return $this->ファイルパス;
     }
 
-    public function 保存に成功したか(): bool
+    public function 保存に成功したか？(): bool
     {
         return $this->ファイル->isValid();
     }

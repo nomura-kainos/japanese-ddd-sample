@@ -27,11 +27,11 @@ class カート内商品エロクアント extends Model
         'カートid' => 'int',
         '商品id' => 'int',
         '数量' => 'int',
-        '注文済みか' => 'boolean',
+        '注文済みか？' => 'boolean',
     ];
 
     // 代入可能なフィールドを指定する
-    protected $fillable = ['カートid', '商品id', '数量', '注文済みか'];
+    protected $fillable = ['カートid', '商品id', '数量', '注文済みか？'];
 
     // 代入不可なフィールドを指定する
     protected $guarded = ['created_at', 'updated_at'];

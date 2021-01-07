@@ -8,7 +8,7 @@ use 共通\ログインユーザ\ログインユーザインターフェース a
 
 interface ログインユーザインターフェース extends 共通ログインユーザインターフェース
 {
-    public static function ログイン済みか(): bool;
+    public static function ログイン済みか？(): bool;
 
     /*
      * ログイン情報を記憶しておく際に保存するcookie情報(remember_token)を削除する

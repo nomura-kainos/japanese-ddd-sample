@@ -18,7 +18,7 @@ class エンティティ
         $this->ユニークキー = $ユニークキー;
     }
 
-    final public function 等しいか(self $エンティティ): bool
+    final public function 等しいか？(self $エンティティ): bool
     {
         return $this->ユニークキー() === $エンティティ->ユニークキー();
     }

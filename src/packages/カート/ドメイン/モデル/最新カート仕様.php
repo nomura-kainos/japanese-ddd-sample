@@ -10,7 +10,7 @@ class 最新カート仕様 implements 選択
 {
     private $ユーザid;
     private $最新日時;
-    private $処理を終了するか = false;
+    private $処理を終了するか？ = false;
 
     public function __construct(
         ユーザID $ユーザid
@@ -24,7 +24,7 @@ class 最新カート仕様 implements 選択
 
         $複数カート = $this->ユーザidが一致するカートのみ抽出する($抽出対象);
         if (empty($複数カート)) {
-            $this->処理を終了するか = true;
+            $this->処理を終了するか？ = true;
             return;
         }
         $複数作成日時 = $this->作成日時のみ抽出する($複数カート);
@@ -50,9 +50,9 @@ class 最新カート仕様 implements 選択
         return max($複数作成日時);
     }
 
-    public function 満たすか($カート): bool
+    public function 満たすか？($カート): bool
     {
-        if ($this->処理を終了するか) {
+        if ($this->処理を終了するか？) {
             return false;
         }
 
