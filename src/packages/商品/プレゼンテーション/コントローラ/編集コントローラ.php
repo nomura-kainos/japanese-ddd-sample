@@ -19,7 +19,7 @@ class 編集コントローラ extends Controller
 
     public function __invoke(Request $リクエスト)
     {
-        $カテゴリ = json_decode($リクエスト->カテゴリ, true);
+        $カテゴリ = json_decode($リクエスト->カテゴリ, $連想配列にするか？ = true);
 
         $this->編集->実行(
             (int)$リクエスト->id,

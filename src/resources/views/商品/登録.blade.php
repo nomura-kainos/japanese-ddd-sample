@@ -25,7 +25,7 @@
                     カテゴリ:<select name="カテゴリ">
                         <option value = "" selected>選択なし</option>
                         @foreach($複数カテゴリ as $カテゴリ)
-                            @if($カテゴリ->大カテゴリ == true)
+                            @if($カテゴリ->大カテゴリか？ == true)
                                 <option value = "">{{ $カテゴリ->名前 }}</option>
                             @else
                                 <option value = '{"大カテゴリid":{{ $カテゴリ->大カテゴリid }},"小カテゴリid":{{ $カテゴリ->小カテゴリid }}}'>{{ $カテゴリ->名前 }}</option>
