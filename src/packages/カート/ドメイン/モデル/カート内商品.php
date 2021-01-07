@@ -52,5 +52,4 @@ class カート内商品 extends エンティティ
     {
         $this->注文済みか = true;
     }
-
 }
