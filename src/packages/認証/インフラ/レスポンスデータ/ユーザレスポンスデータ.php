@@ -4,17 +4,21 @@ declare(strict_types=1);
 
 namespace 認証\インフラ\レスポンスデータ;
 
+use 認証\インフラ\エロクアント\ユーザエロクアント;
+
 class ユーザレスポンスデータ
 {
     private int $id;
     private string $メール;
     private ?string $パスワード;
+    private array $SNSアカウントコレクション;
 
-    public function __construct(array $ユーザ)
+    public function __construct(ユーザエロクアント $ユーザ, array $SNSアカウントコレクション = [])
     {
-        $this->id = $ユーザ['id'];
-        $this->メール = $ユーザ['email'];
-        $this->パスワード = $ユーザ['password'];
+        $this->id = $ユーザ->id;
+        $this->メール = $ユーザ->email;
+        $this->パスワード = $ユーザ->password;
+        $this->SNSアカウントコレクション = $SNSアカウントコレクション;
     }
 
     public function id(): int
@@ -30,5 +34,10 @@ class ユーザレスポンスデータ
     public function パスワード(): ?string
     {
         return $this->パスワード;
+    }
+
+    public function SNSアカウントコレクション(): array
+    {
+        return $this->SNSアカウントコレクション;
     }
 }
