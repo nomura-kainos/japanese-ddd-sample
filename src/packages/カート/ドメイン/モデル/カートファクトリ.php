@@ -36,8 +36,7 @@ class カートファクトリ
     public function 再構成する(カートID $カートid, ユーザID $ユーザid, array $複数商品): カート
     {
         $カート内商品 = [];
-        foreach ($複数商品 as $商品)
-        {
+        foreach ($複数商品 as $商品) {
             $カート内商品[] = new カート内商品(
                 $カートid,
                 new カート内商品ID($商品->商品id()),
