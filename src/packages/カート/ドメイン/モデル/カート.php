@@ -11,14 +11,14 @@ class カート extends エンティティ implements 集約ルート
 {
     private カートID $id;
     private ユーザID $ユーザid;
-    private カート内商品 $商品;
+    private array $商品コレクション;
 
-    public function __construct(カートID $id, ユーザID $ユーザid, カート内商品 $商品)
+    public function __construct(カートID $id, ユーザID $ユーザid, array $商品コレクション = [])
     {
         parent::ユニークキーを設定する($id);
         $this->id = $id;
         $this->ユーザid = $ユーザid;
-        $this->商品 = $商品;
+        $this->商品コレクション = $商品コレクション;
     }
 
     public function id(): int
@@ -31,8 +31,8 @@ class カート extends エンティティ implements 集約ルート
         return $this->ユーザid->値;
     }
 
-    public function 商品(): カート内商品
+    public function 商品コレクション(): array
     {
-        return $this->商品;
+        return $this->商品コレクション;
     }
 }
