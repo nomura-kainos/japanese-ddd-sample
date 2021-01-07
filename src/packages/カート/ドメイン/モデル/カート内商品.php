@@ -47,4 +47,10 @@ class カート内商品 extends エンティティ
     {
         $this->数量 = $数量;
     }
+
+    public function 注文済みにする()
+    {
+        $this->注文済みか = true;
+    }
+
 }
