@@ -67,7 +67,7 @@ class ユーザリポジトリ implements ユーザリポジトリインター�
             return null;
         }
 
-        return new ユーザレスポンスデータ((array)$ユーザ);
+        return new ユーザレスポンスデータ($ユーザ);
     }
 
     public function 保存(ユーザ $ユーザ)
