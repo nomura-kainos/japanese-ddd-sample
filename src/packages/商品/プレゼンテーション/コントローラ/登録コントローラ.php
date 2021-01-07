@@ -10,11 +10,8 @@ use 商品\プレゼンテーション\フォームリクエスト\商品登録�
 
 class 登録コントローラ extends Controller
 {
-    private $登録;
-
-    public function __construct(登録 $登録)
+    public function __construct(private 登録 $登録)
     {
-        $this->登録 = $登録;
     }
 
     public function __invoke(商品登録フォームリクエスト $リクエスト)

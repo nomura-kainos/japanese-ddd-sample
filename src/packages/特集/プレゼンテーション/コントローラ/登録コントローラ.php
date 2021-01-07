@@ -10,11 +10,8 @@ use 特集\プレゼンテーション\フォームリクエスト\特集登録�
 
 class 登録コントローラ extends Controller
 {
-    private $登録;
-
-    public function __construct(登録 $登録)
+    public function __construct(private 登録 $登録)
     {
-        $this->登録 = $登録;
     }
 
     public function __invoke(特集登録フォームリクエスト $リクエスト)

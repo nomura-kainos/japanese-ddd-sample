@@ -9,16 +9,12 @@ use 共通\ユニークキー;
 
 class SNSアカウント extends エンティティ
 {
-    private string $SNS名;
-    private string $id;
-    private ?string $メール;
-
-    public function __construct(string $SNS名, string $id, string $メール = null)
-    {
+    public function __construct(
+        private string $SNS名,
+        private string $id,
+        private ?string $メール = null
+    ) {
         parent::ユニークキーを設定する(new ユニークキー($SNS名 . $id));
-        $this->SNS名 = $SNS名;
-        $this->id = $id;
-        $this->メール = $メール;
     }
 
     public function SNS名(): string

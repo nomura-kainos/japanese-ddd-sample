@@ -10,11 +10,8 @@ use 認証\アプリ\ユースケース\パスワードリセット\パスワー
 
 class パスワードリセットコントローラ extends Controller
 {
-    private $パスワードリセット;
-
-    public function __construct(パスワードリセット $パスワードリセット)
+    public function __construct(private パスワードリセット $パスワードリセット)
     {
-        $this->パスワードリセット = $パスワードリセット;
     }
 
     public function __invoke(Request $リクエスト)

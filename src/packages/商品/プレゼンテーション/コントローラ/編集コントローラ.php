@@ -10,11 +10,8 @@ use 商品\アプリ\ユースケース\編集;
 
 class 編集コントローラ extends Controller
 {
-    private $編集;
-
-    public function __construct(編集 $編集)
+    public function __construct(private 編集 $編集)
     {
-        $this->編集 = $編集;
     }
 
     public function __invoke(Request $リクエスト)

@@ -6,11 +6,8 @@ namespace 注文\インフラ\レスポンスデータ;
 
 class 注文IDレスポンスデータ
 {
-    private int $id;
-
-    public function __construct(int $id)
+    public function __construct(private int $id)
     {
-        $this->id = $id;
     }
 
     public function 値(): int

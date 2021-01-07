@@ -9,11 +9,8 @@ use 認証\アプリ\ユースケース\パスワードリセット\リンク表
 
 class リンク表示コントローラ extends Controller
 {
-    private $リンク表示;
-
-    public function __construct(リンク表示 $リンク表示)
+    public function __construct(private リンク表示 $リンク表示)
     {
-        $this->リンク表示 = $リンク表示;
     }
 
     public function __invoke()

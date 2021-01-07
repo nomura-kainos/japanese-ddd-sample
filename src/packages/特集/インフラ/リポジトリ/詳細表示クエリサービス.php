@@ -11,11 +11,8 @@ use 特集\ドメイン\モデル\特集ID;
 
 class 詳細表示クエリサービス implements 詳細表示クエリサービスインターフェース
 {
-    private $特集エロクアント;
-
-    public function __construct(特集エロクアント $特集エロクアント)
+    public function __construct(private 特集エロクアント $特集エロクアント)
     {
-        $this->特集エロクアント = $特集エロクアント;
     }
 
     public function IDで1件取得(特集ID $id): ?特集レスポンスデータ

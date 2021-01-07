@@ -35,13 +35,10 @@ class 一覧ビューモデル
  */
 class 商品カテゴリ
 {
-    private int $id;
-    private string $名前;
-
-    public function __construct(int $id, string $名前)
-    {
-        $this->id = $id;
-        $this->名前 = $名前;
+    public function __construct(
+        private int $id,
+        private string $名前
+    ) {
     }
 
     public function id(): string

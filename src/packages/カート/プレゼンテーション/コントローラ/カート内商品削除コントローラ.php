@@ -10,11 +10,8 @@ use カート\アプリ\ユースケース\カート内商品を削除;
 
 class カート内商品削除コントローラ extends Controller
 {
-    private $カート内商品を削除;
-
-    public function __construct(カート内商品を削除 $カート内商品を削除)
+    public function __construct(private カート内商品を削除 $カート内商品を削除)
     {
-        $this->カート内商品を削除 = $カート内商品を削除;
     }
 
     public function __invoke(Request $リクエスト)

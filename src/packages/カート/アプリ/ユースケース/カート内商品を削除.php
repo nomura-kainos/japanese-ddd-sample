@@ -10,12 +10,9 @@ use カート\ドメイン\モデル\カート内商品ID;
 
 class カート内商品を削除
 {
-    private $カートリポ;
-
     public function __construct(
-        カートリポジトリインターフェース $カートリポ
+        private カートリポジトリインターフェース $カートリポ
     ) {
-        $this->カートリポ = $カートリポ;
     }
 
     public function 実行(int $カートid, int $商品id)

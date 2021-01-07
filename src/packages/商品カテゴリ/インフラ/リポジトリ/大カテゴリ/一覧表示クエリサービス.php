@@ -10,11 +10,8 @@ use 商品カテゴリ\インフラ\レスポンスデータ\大カテゴリ\一
 
 class 一覧表示クエリサービス implements 一覧表示クエリサービスインターフェース
 {
-    private $大カテゴリエロクアント;
-
-    public function __construct(大カテゴリエロクアント $大カテゴリエロクアント)
+    public function __construct(private 大カテゴリエロクアント $大カテゴリエロクアント)
     {
-        $this->大カテゴリエロクアント = $大カテゴリエロクアント;
     }
 
     public function 全件取得(): 一覧表示クエリレスポンスデータ

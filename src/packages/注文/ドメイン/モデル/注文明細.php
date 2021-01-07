@@ -9,22 +9,15 @@ use 共通\ユニークキー;
 
 class 注文明細 extends エンティティ
 {
-    private 注文ID $id;
-    private int $行番号;
-    private 商品ID $商品id;
-    private string $商品名;
-    private int $数量;
-    private int $総額;
-
-    public function __construct(注文ID $id, int $行番号, 商品ID $商品id, string $商品名, int $数量, int $総額)
-    {
+    public function __construct(
+        private 注文ID $id,
+        private int $行番号,
+        private 商品ID $商品id,
+        private string $商品名,
+        private int $数量,
+        private int $総額
+    ) {
         parent::ユニークキーを設定する(new ユニークキー($id->値 . $行番号));
-        $this->id = $id;
-        $this->行番号 = $行番号;
-        $this->商品id = $商品id;
-        $this->商品名 = $商品名;
-        $this->数量 = $数量;
-        $this->総額 = $総額;
     }
 
     public function id(): int

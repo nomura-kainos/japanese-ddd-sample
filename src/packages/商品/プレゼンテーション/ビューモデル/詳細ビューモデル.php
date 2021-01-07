@@ -12,30 +12,18 @@ use 商品\インフラ\レスポンスデータ\商品カテゴリコレクシ�
 
 class 詳細ビューモデル
 {
-    private int $id;
-    private string $名前;
-    private int $レンタル料金;
-    private int $大カテゴリid;
-    private int $小カテゴリid;
     private array $カテゴリコレクション;
-    private 商品画像コレクションレスポンスデータ $画像コレクション;
 
     public function __construct(
-        int $id,
-        string $名前,
-        int $レンタル料金,
-        int $大カテゴリid,
-        int $小カテゴリid,
+        private int $id,
+        private string $名前,
+        private int $レンタル料金,
+        private int $大カテゴリid,
+        private int $小カテゴリid,
         商品カテゴリコレクションレスポンスデータ $カテゴリコレクション,
-        商品画像コレクションレスポンスデータ $画像コレクション
+        private 商品画像コレクションレスポンスデータ $画像コレクション
     ) {
-        $this->id = $id;
-        $this->名前 = $名前;
-        $this->レンタル料金 = $レンタル料金;
-        $this->大カテゴリid = $大カテゴリid;
-        $this->小カテゴリid = $小カテゴリid;
         $this->カテゴリコレクション = $this->カテゴリ表示設定($カテゴリコレクション);
-        $this->画像コレクション = $画像コレクション;
     }
 
     private function カテゴリ表示設定(商品カテゴリコレクションレスポンスデータ $カテゴリコレクション): array

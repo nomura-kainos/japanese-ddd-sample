@@ -11,11 +11,8 @@ use カート\ドメイン\モデル\ユーザID;
 
 class 一覧表示クエリサービス implements 一覧表示クエリサービスインターフェース
 {
-    private $カート内商品エロクアント;
-
-    public function __construct(カート内商品エロクアント $カート内商品エロクアント)
+    public function __construct(private カート内商品エロクアント $カート内商品エロクアント)
     {
-        $this->カート内商品エロクアント = $カート内商品エロクアント;
     }
 
     public function 全件取得(ユーザID $ユーザid): 一覧表示クエリレスポンスデータ

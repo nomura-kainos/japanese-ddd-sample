@@ -10,11 +10,8 @@ use 商品カテゴリ\アプリ\ユースケース\大カテゴリ\登録;
 
 class 登録コントローラ extends Controller
 {
-    private $登録;
-
-    public function __construct(登録 $登録)
+    public function __construct(private 登録 $登録)
     {
-        $this->登録 = $登録;
     }
 
     public function __invoke(Request $リクエスト)

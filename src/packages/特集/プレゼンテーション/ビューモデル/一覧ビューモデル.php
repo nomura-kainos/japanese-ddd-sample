@@ -36,15 +36,11 @@ class 一覧ビューモデル
  */
 class 特集
 {
-    private int $id;
-    private string $タイトル;
-    private string $タイトル画像ファイルパス;
-
-    public function __construct(int $id, string $タイトル, string $タイトル画像ファイルパス)
-    {
-        $this->id = $id;
-        $this->タイトル = $タイトル;
-        $this->タイトル画像ファイルパス = $タイトル画像ファイルパス;
+    public function __construct(
+        private int $id,
+        private string $タイトル,
+        private string $タイトル画像ファイルパス
+    ) {
     }
 
     public function id(): string

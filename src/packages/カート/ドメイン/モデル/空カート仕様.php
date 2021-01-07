@@ -8,12 +8,9 @@ use 共通\仕様\検証;
 
 class 空カート仕様 implements 検証
 {
-    private $カートリポ;
-
     public function __construct(
-        カートリポジトリインターフェース $カートリポ
+        private カートリポジトリインターフェース $カートリポ
     ) {
-        $this->カートリポ = $カートリポ;
     }
 
     public function 満たすか？($カート): bool

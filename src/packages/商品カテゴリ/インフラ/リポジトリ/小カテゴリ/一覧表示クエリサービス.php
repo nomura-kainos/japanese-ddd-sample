@@ -11,11 +11,8 @@ use 商品カテゴリ\ドメイン\モデル\商品カテゴリID;
 
 class 一覧表示クエリサービス implements 一覧表示クエリサービスインターフェース
 {
-    private $小カテゴリエロクアント;
-
-    public function __construct(小カテゴリエロクアント $小カテゴリエロクアント)
+    public function __construct(private 小カテゴリエロクアント $小カテゴリエロクアント)
     {
-        $this->小カテゴリエロクアント = $小カテゴリエロクアント;
     }
 
     public function 全件取得(商品カテゴリID $id): 一覧表示クエリレスポンスデータ

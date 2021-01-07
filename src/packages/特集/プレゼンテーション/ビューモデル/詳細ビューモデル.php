@@ -6,18 +6,11 @@ namespace 特集\プレゼンテーション\ビューモデル;
 
 class 詳細ビューモデル
 {
-    private int $id;
-    private string $タイトル;
-    private string $本文;
-
     public function __construct(
-        int $id,
-        string $タイトル,
-        string $本文
+        private int $id,
+        private string $タイトル,
+        private string $本文
     ) {
-        $this->id = $id;
-        $this->タイトル = $タイトル;
-        $this->本文 = $本文;
     }
 
     public function id(): string

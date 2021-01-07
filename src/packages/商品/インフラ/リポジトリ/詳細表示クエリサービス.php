@@ -11,11 +11,9 @@ use 商品\ドメイン\モデル\商品ID;
 
 class 詳細表示クエリサービス implements 詳細表示クエリサービスインターフェース
 {
-    private $商品エロクアント;
-
-    public function __construct(商品エロクアント $商品エロクアント)
-    {
-        $this->商品エロクアント = $商品エロクアント;
+    public function __construct(
+        private 商品エロクアント $商品エロクアント
+    ) {
     }
 
     public function IDで1件取得(商品ID $id): ?商品レスポンスデータ

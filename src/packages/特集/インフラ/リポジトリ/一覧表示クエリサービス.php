@@ -10,11 +10,8 @@ use 特集\インフラ\レスポンスデータ\一覧表示クエリレスポ�
 
 class 一覧表示クエリサービス implements 一覧表示クエリサービスインターフェース
 {
-    private $特集エロクアント;
-
-    public function __construct(特集エロクアント $特集エロクアント)
+    public function __construct(private 特集エロクアント $特集エロクアント)
     {
-        $this->特集エロクアント = $特集エロクアント;
     }
 
     public function 全件取得(): 一覧表示クエリレスポンスデータ

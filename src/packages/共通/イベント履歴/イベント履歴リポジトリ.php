@@ -8,12 +8,10 @@ use ReflectionClass;
 
 class イベント履歴リポジトリ
 {
-    private $ジョブid;
     private $クラス名;
 
-    public function __construct(int $ジョブid, object $クラス)
+    public function __construct(private int $ジョブid, object $クラス)
     {
-        $this->ジョブid = $ジョブid;
         $this->クラス名 = $this->クラス名の取得($クラス);
     }
 

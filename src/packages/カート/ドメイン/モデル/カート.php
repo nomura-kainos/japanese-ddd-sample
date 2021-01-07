@@ -9,16 +9,12 @@ use 共通\集約ルート;
 
 class カート extends エンティティ implements 集約ルート
 {
-    private カートID $id;
-    private ユーザID $ユーザid;
-    private array $商品コレクション;
-
-    public function __construct(カートID $id, ユーザID $ユーザid, array $商品コレクション = [])
-    {
+    public function __construct(
+        private カートID $id,
+        private ユーザID $ユーザid,
+        private array $商品コレクション = []
+    ) {
         parent::ユニークキーを設定する($id);
-        $this->id = $id;
-        $this->ユーザid = $ユーザid;
-        $this->商品コレクション = $商品コレクション;
     }
 
     public function id(): int

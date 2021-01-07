@@ -9,12 +9,9 @@ use 商品\プレゼンテーション\ビューモデル\登録フォームビ�
 
 class 登録フォーム表示
 {
-    private $商品リポ;
-
     public function __construct(
-        商品リポジトリインターフェース $商品リポ
+        private 商品リポジトリインターフェース $商品リポ
     ) {
-        $this->商品リポ = $商品リポ;
     }
 
     public function 実行(): 登録フォームビューモデル

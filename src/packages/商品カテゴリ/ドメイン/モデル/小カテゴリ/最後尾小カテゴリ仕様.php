@@ -9,14 +9,11 @@ use 商品カテゴリ\ドメイン\モデル\商品カテゴリID;
 
 class 最後尾小カテゴリ仕様 implements 選択
 {
-    private $大カテゴリid;
     private $最後尾小カテゴリid;
     private $処理を終了するか？ = false;
 
-    public function __construct(
-        商品カテゴリID $大カテゴリid
-    ) {
-        $this->大カテゴリid = $大カテゴリid;
+    public function __construct(private 商品カテゴリID $大カテゴリid)
+    {
     }
 
     public function 基準を設定する($複数カテゴリ)

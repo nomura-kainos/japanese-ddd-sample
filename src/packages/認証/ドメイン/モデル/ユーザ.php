@@ -9,18 +9,13 @@ use 共通\集約ルート;
 
 class ユーザ extends エンティティ implements 集約ルート
 {
-    private ユーザID $id;
-    private string $メール;
-    private ?string $パスワード;
-    private array $SNSアカウントコレクション;
-
-    public function __construct(ユーザID $id, string $メール, ?string $パスワード, array $SNSアカウントコレクション = [])
-    {
+    public function __construct(
+        private ユーザID $id,
+        private string $メール,
+        private ?string $パスワード,
+        private array $SNSアカウントコレクション = []
+    ) {
         parent::ユニークキーを設定する($id);
-        $this->id = $id;
-        $this->メール = $メール;
-        $this->パスワード = $パスワード;
-        $this->SNSアカウントコレクション = $SNSアカウントコレクション;
     }
 
     public function id(): int

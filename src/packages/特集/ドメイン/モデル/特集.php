@@ -11,17 +11,14 @@ use 特集\ドメイン\モデル\アップロード\画像アップローダイ
 
 class 特集 extends エンティティ implements 集約ルート
 {
-    private 特集ID $id;
-    private string $タイトル;
-    private string $本文;
     private ファイル $アップロード済みファイル;
 
-    public function __construct(特集ID $id, string $タイトル, string $本文)
-    {
+    public function __construct(
+        private 特集ID $id,
+        private string $タイトル,
+        private string $本文
+    ) {
         parent::ユニークキーを設定する($id);
-        $this->id = $id;
-        $this->タイトル = $タイトル;
-        $this->本文 = $本文;
     }
 
     public function id(): int

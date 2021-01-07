@@ -38,19 +38,13 @@ class 一覧ビューモデル
  */
 class カート内商品
 {
-    private int $カートid;
-    private int $商品id;
-    private string $名前;
-    private int $価格;
-    private int $数量;
-
-    public function __construct(int $カートid, int $商品id, string $名前, int $価格, int $数量)
-    {
-        $this->カートid = $カートid;
-        $this->商品id = $商品id;
-        $this->名前 = $名前;
-        $this->価格 = $価格;
-        $this->数量 = $数量;
+    public function __construct(
+        private int $カートid,
+        private int $商品id,
+        private string $名前,
+        private int $価格,
+        private int $数量
+    ) {
     }
 
     public function カートid(): string

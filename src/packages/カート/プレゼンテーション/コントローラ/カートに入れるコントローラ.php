@@ -10,11 +10,8 @@ use カート\アプリ\ユースケース\カートに入れる;
 
 class カートに入れるコントローラ extends Controller
 {
-    private $カートに入れる;
-
-    public function __construct(カートに入れる $カートに入れる)
+    public function __construct(private カートに入れる $カートに入れる)
     {
-        $this->カートに入れる = $カートに入れる;
     }
 
     public function __invoke(Request $リクエスト)

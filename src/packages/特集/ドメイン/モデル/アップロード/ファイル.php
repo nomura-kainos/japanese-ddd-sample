@@ -8,12 +8,10 @@ use Illuminate\Http\UploadedFile;
 
 class ファイル
 {
-    private UploadedFile $ファイル;
     private string $ファイルパス;
 
-    public function __construct(UploadedFile $ファイル)
+    public function __construct(private UploadedFile $ファイル)
     {
-        $this->ファイル = $ファイル;
     }
 
     public function ファイルを保存する()

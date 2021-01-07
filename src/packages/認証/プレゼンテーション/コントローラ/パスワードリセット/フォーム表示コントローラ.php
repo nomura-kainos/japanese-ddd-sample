@@ -10,11 +10,8 @@ use 認証\アプリ\ユースケース\パスワードリセット\フォーム
 
 class フォーム表示コントローラ extends Controller
 {
-    private $フォーム表示;
-
-    public function __construct(フォーム表示 $フォーム表示)
+    public function __construct(private フォーム表示 $フォーム表示)
     {
-        $this->フォーム表示 = $フォーム表示;
     }
 
     public function __invoke(Request $リクエスト, $トークン = null)

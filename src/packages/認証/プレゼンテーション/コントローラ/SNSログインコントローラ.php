@@ -10,11 +10,8 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class SNSログインコントローラ extends Controller
 {
-    private $SNSログイン;
-
-    public function __construct(SNSログイン $SNSログイン)
+    public function __construct(private SNSログイン $SNSログイン)
     {
-        $this->SNSログイン = $SNSログイン;
     }
 
     public function __invoke(string $SNS名): RedirectResponse

@@ -10,11 +10,8 @@ use 認証\アプリ\ユースケース\入力してログイン;
 
 class 入力してログインコントローラ extends Controller
 {
-    private $入力してログイン;
-
-    public function __construct(入力してログイン $入力してログイン)
+    public function __construct(private 入力してログイン $入力してログイン)
     {
-        $this->入力してログイン = $入力してログイン;
     }
 
     public function __invoke(Request $リクエスト)

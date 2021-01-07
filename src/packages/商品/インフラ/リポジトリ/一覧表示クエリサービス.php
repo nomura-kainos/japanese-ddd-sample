@@ -10,11 +10,8 @@ use 商品\インフラ\レスポンスデータ\一覧表示クエリレスポ�
 
 class 一覧表示クエリサービス implements 一覧表示クエリサービスインターフェース
 {
-    private $商品エロクアント;
-
-    public function __construct(商品エロクアント $商品エロクアント)
+    public function __construct(private 商品エロクアント $商品エロクアント)
     {
-        $this->商品エロクアント = $商品エロクアント;
     }
 
     public function 全件取得(): 一覧表示クエリレスポンスデータ

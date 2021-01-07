@@ -18,16 +18,12 @@ class カート内商品を注文済みにする implements ShouldQueue
 {
     use InteractsWithQueue;
 
-    private $カートリポ;
-    private $カートファクトリ;
     private $イベント履歴;
 
     public function __construct(
-        カートリポジトリインターフェース $カートリポ,
-        カートファクトリ $カートファクトリ
+        private カートリポジトリインターフェース $カートリポ,
+        private カートファクトリ $カートファクトリ
     ) {
-        $this->カートリポ = $カートリポ;
-        $this->カートファクトリ = $カートファクトリ;
     }
 
     public function handle(注文が確定された時 $ドメインイベント)

@@ -10,11 +10,8 @@ use 認証\アプリ\ユースケース\パスワードリセット\リセット
 
 class リセット用メール送信コントローラ extends Controller
 {
-    private $リセット用メール送信;
-
-    public function __construct(リセット用メール送信 $リセット用メール送信)
+    public function __construct(private リセット用メール送信 $リセット用メール送信)
     {
-        $this->リセット用メール送信 = $リセット用メール送信;
     }
 
     public function __invoke(Request $リクエスト)

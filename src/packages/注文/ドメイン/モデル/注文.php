@@ -9,16 +9,12 @@ use 共通\集約ルート;
 
 class 注文 extends エンティティ implements 集約ルート
 {
-    private 注文ID $id;
-    private ユーザID $ユーザid;
-    private array $注文明細;
-
-    public function __construct(注文ID $id, ユーザID $ユーザid, array $注文明細)
-    {
+    public function __construct(
+        private 注文ID $id,
+        private ユーザID $ユーザid,
+        private array $注文明細
+    ) {
         parent::ユニークキーを設定する($id);
-        $this->id = $id;
-        $this->ユーザid = $ユーザid;
-        $this->注文明細 = $注文明細;
     }
 
     public function id(): int

@@ -9,11 +9,8 @@ use 認証\アプリ\ユースケース\会員ユーザ紐付け;
 
 class 会員ユーザ紐付けコントローラ extends Controller
 {
-    private $会員ユーザ紐付け;
-
-    public function __construct(会員ユーザ紐付け $会員ユーザ紐付け)
+    public function __construct(private 会員ユーザ紐付け $会員ユーザ紐付け)
     {
-        $this->会員ユーザ紐付け = $会員ユーザ紐付け;
     }
 
     public function __invoke(string $SNS名)

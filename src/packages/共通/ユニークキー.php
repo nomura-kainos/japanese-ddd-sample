@@ -11,10 +11,7 @@ class ユニークキー
 {
     use 値オブジェクト;
 
-    private $値;
-
-    final public function __construct($値)
+    final public function __construct(private $値)
     {
-        $this->値 = $値;
     }
 }

@@ -37,17 +37,12 @@ class 一覧ビューモデル
  */
 class 商品
 {
-    private int $id;
-    private string $名前;
-    private int $レンタル料金;
-    private string $カテゴリ名;
-
-    public function __construct(int $id, string $名前, int $レンタル料金, string $カテゴリ名)
-    {
-        $this->id = $id;
-        $this->名前 = $名前;
-        $this->レンタル料金 = $レンタル料金;
-        $this->カテゴリ名 = $カテゴリ名;
+    public function __construct(
+        private int $id,
+        private string $名前,
+        private int $レンタル料金,
+        private string $カテゴリ名
+    ) {
     }
 
     public function id(): string

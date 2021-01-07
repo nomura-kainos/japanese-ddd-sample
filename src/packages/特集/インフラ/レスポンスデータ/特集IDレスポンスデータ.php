@@ -6,11 +6,8 @@ namespace 特集\インフラ\レスポンスデータ;
 
 class 特集IDレスポンスデータ
 {
-    private int $id;
-
-    public function __construct(int $id)
+    public function __construct(private int $id)
     {
-        $this->id = $id;
     }
 
     public function 値(): int

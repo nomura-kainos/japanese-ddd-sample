@@ -12,13 +12,10 @@ use 商品\ドメイン\モデル\商品リポジトリインターフェース;
 
 class 編集
 {
-    private $商品リポ;
-    private $商品ファクトリ;
-
-    public function __construct(商品リポジトリインターフェース $商品リポ, 商品ファクトリ $商品ファクトリ)
-    {
-        $this->商品リポ = $商品リポ;
-        $this->商品ファクトリ = $商品ファクトリ;
+    public function __construct(
+        private 商品リポジトリインターフェース $商品リポ,
+        private 商品ファクトリ $商品ファクトリ
+    ) {
     }
 
     public function 実行(int $商品id, string $名前, string $レンタル料金, array $カテゴリ)

@@ -10,13 +10,11 @@ use 商品カテゴリ\ドメイン\モデル\商品カテゴリID;
 
 class 大カテゴリ extends エンティティ implements 集約ルート
 {
-    private 商品カテゴリID $id;
     private string $名前;
 
-    public function __construct(商品カテゴリID $id, string $名前)
+    public function __construct(private 商品カテゴリID $id, string $名前)
     {
         parent::ユニークキーを設定する($id);
-        $this->id = $id;
         $this->名前を変更する($名前);
     }
 

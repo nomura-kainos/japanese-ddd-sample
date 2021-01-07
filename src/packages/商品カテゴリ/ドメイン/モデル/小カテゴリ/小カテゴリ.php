@@ -11,16 +11,12 @@ use 商品カテゴリ\ドメイン\モデル\商品カテゴリID;
 
 class 小カテゴリ extends エンティティ implements 集約ルート
 {
-    private 商品カテゴリID $大カテゴリid;
-    private 商品カテゴリID $小カテゴリid;
-    private string $名前;
-
-    public function __construct(商品カテゴリID $大カテゴリid, 商品カテゴリID $小カテゴリid, string $名前)
-    {
+    public function __construct(
+        private 商品カテゴリID $大カテゴリid,
+        private 商品カテゴリID $小カテゴリid,
+        private string $名前
+    ) {
         parent::ユニークキーを設定する(new ユニークキー($大カテゴリid->値 . $小カテゴリid->値));
-        $this->大カテゴリid = $大カテゴリid;
-        $this->小カテゴリid = $小カテゴリid;
-        $this->名前 = $名前;
     }
 
     public function 大カテゴリid(): int

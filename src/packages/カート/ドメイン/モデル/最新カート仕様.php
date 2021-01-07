@@ -8,14 +8,12 @@ use 共通\仕様\選択;
 
 class 最新カート仕様 implements 選択
 {
-    private $ユーザid;
     private $最新日時;
     private $処理を終了するか？ = false;
 
     public function __construct(
-        ユーザID $ユーザid
+        private ユーザID $ユーザid
     ) {
-        $this->ユーザid = $ユーザid;
     }
 
     public function 基準を設定する($複数カート)

@@ -9,11 +9,8 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 class SNSログイン
 {
-    private $ドライバ;
-
-    public function __construct(ドライバインターフェース $ドライバ)
+    public function __construct(private ドライバインターフェース $ドライバ)
     {
-        $this->ドライバ = $ドライバ;
     }
 
     public function 実行(string $SNS名): RedirectResponse

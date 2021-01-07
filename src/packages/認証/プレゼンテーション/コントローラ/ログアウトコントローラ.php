@@ -10,11 +10,8 @@ use 認証\アプリ\ユースケース\ログアウト;
 
 class ログアウトコントローラ extends Controller
 {
-    private $ログアウト;
-
-    public function __construct(ログアウト $ログアウト)
+    public function __construct(private ログアウト $ログアウト)
     {
-        $this->ログアウト = $ログアウト;
     }
 
     public function __invoke(Request $リクエスト)
