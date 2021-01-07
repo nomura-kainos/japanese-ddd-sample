@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace カート\ドメイン\モデル;
 
-use 共通\バリューオブジェクト;
+use 共通\値オブジェクト;
 
 /**
  * @property-read int $値
  */
 final class カート内商品ID
 {
-    use バリューオブジェクト;
+    use 値オブジェクト;
 
     private int $値;
 

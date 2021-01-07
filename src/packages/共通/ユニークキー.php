@@ -9,7 +9,7 @@ namespace 共通;
  */
 class ユニークキー
 {
-    use バリューオブジェクト;
+    use 値オブジェクト;
 
     private $値;
 

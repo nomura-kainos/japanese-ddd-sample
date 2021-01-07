@@ -12,7 +12,7 @@ package 共通 <<Folder>> {
   class エンティティ
   interface 集約ルート
   class ユニークキー
-  class バリューオブジェクト
+  class 値オブジェクト
   class ドメインイベント
   interface 仕様
   package 仕様 as _仕様 {
