@@ -38,7 +38,7 @@ class カート extends エンティティ implements 集約ルート
 
     public function 商品を全て注文済みにする()
     {
-        $注文済み商品コレクション = array_map(function (カート内商品 $商品){
+        $注文済み商品コレクション = array_map(function (カート内商品 $商品) {
             $商品->注文済みにする();
             return $商品;
         }, $this->商品コレクション);
