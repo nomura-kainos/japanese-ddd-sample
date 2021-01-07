@@ -10,6 +10,7 @@
         <exclude name="PSR1.Methods.CamelCapsMethodName.NotCamelCaps"/><!--キャメルケースか-->
         <exclude name="PSR1.Classes.ClassDeclaration.MultipleClasses"/><!--ファイル内に複数クラスの宣言不可か-->
         <exclude name="Squiz.Classes.ValidClassName"/><!--単語の先頭文字を大文字で表記する記法か-->
+        <exclude name="Generic.WhiteSpace.ScopeIndent"/><!--スペースが4つでインデントが揃っているか-->
     </rule>
 
 </ruleset>
