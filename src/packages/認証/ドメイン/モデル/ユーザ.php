@@ -12,13 +12,15 @@ class ユーザ extends エンティティ implements 集約ルート
     private ユーザID $id;
     private string $メール;
     private ?string $パスワード;
+    private array $SNSアカウントコレクション;
 
-    public function __construct(ユーザID $id, string $メール, ?string $パスワード)
+    public function __construct(ユーザID $id, string $メール, ?string $パスワード, array $SNSアカウントコレクション = [])
     {
         parent::ユニークキーを設定する($id);
         $this->id = $id;
         $this->メール = $メール;
         $this->パスワード = $パスワード;
+        $this->SNSアカウントコレクション = $SNSアカウントコレクション;
     }
 
     public function id(): int
@@ -34,5 +36,15 @@ class ユーザ extends エンティティ implements 集約ルート
     public function パスワード(): ?string
     {
         return $this->パスワード;
+    }
+
+    public function SNSアカウントコレクション(): array
+    {
+        return $this->SNSアカウントコレクション;
+    }
+
+    public function 紐付け済みSNSアカウントを追加する(string $SNS名, string $SNSアカウントid, string $メール)
+    {
+        $this->SNSアカウントコレクション[] = new SNSアカウント($SNS名, $SNSアカウントid, $メール);
     }
 }
