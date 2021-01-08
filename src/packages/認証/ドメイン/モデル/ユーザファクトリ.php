@@ -8,8 +8,10 @@ use 共通\集約ルート\集約ルートチェッカーインターフェー�
 
 class ユーザファクトリ
 {
-    public function __construct(private 集約ルートチェッカーインターフェース $集約ルートチェッカー, private ユーザリポジトリインターフェース $ユーザリポ)
-    {
+    public function __construct(
+        private 集約ルートチェッカーインターフェース $集約ルートチェッカー,
+        private ユーザリポジトリインターフェース $ユーザリポ
+    ) {
     }
 
     public function 作成する(string $メール, ?string $パスワード): ユーザ

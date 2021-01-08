@@ -11,14 +11,14 @@ class ユーザレスポンスデータ
     private int $id;
     private string $メール;
     private ?string $パスワード;
-    private array $SNSアカウントコレクション;
 
-    public function __construct(ユーザエロクアント $ユーザ, array $SNSアカウントコレクション = [])
-    {
+    public function __construct(
+        ユーザエロクアント $ユーザ,
+        private array $SNSアカウントコレクション = []
+    ) {
         $this->id = $ユーザ->id;
         $this->メール = $ユーザ->email;
         $this->パスワード = $ユーザ->password;
-        $this->SNSアカウントコレクション = $SNSアカウントコレクション;
     }
 
     public function id(): int

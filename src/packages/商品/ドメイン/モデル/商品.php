@@ -12,19 +12,19 @@ use 商品\ドメイン\モデル\アップロード\画像アップローダイ
 
 class 商品 extends エンティティ implements 集約ルート
 {
-    private 商品ID $id;
     private string $名前;
     private レンタル料金 $レンタル料金;
-    private カテゴリ $カテゴリ;
     private array $アップロード済み複数ファイル = [];
 
-    public function __construct(商品ID $id, string $名前, レンタル料金 $レンタル料金, カテゴリ $カテゴリ)
-    {
+    public function __construct(
+        private 商品ID $id,
+        string $名前,
+        レンタル料金 $レンタル料金,
+        private カテゴリ $カテゴリ
+    ) {
         parent::ユニークキーを設定する($id);
-        $this->id = $id;
         $this->名前を変更する($名前);
         $this->レンタル料金を変更する($レンタル料金);
-        $this->カテゴリ = $カテゴリ;
     }
 
     public function id(): int

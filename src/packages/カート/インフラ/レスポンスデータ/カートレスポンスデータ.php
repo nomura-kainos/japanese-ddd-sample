@@ -8,8 +8,10 @@ use カート\インフラ\エロクアント\カートエロクアント;
 
 class カートレスポンスデータ
 {
-    public function __construct(private カートエロクアント $カート, private array $商品コレクション)
-    {
+    public function __construct(
+        private カートエロクアント $カート,
+        private array $商品コレクション
+    ) {
     }
 
     public function id(): int

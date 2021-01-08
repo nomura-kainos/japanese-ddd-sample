@@ -13,8 +13,10 @@ class 大カテゴリ extends エンティティ implements 集約ルート
 {
     private string $名前;
 
-    public function __construct(private 商品カテゴリID $id, string $名前)
-    {
+    public function __construct(
+        private 商品カテゴリID $id,
+        string $名前
+    ) {
         parent::ユニークキーを設定する($id);
         $this->名前を変更する($名前);
     }
