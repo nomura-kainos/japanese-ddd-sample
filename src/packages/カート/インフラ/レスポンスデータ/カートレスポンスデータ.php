@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace カート\インフラ\レスポンスデータ;
 
-use カート\インフラ\エロクアント\カートエロクアント;
-
 class カートレスポンスデータ
 {
     public function __construct(
