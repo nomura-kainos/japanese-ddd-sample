@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace 注文\ドメイン\モデル;
 
 use 共通\エンティティ;
+use 共通\ユニークキー\単一ユニークキー;
 use 共通\集約ルート;
 
 class 注文 extends エンティティ implements 集約ルート

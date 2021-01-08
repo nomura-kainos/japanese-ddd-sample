@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace カート\ドメイン\モデル;
 
 use 共通\エンティティ;
-use 共通\ユニークキー;
+use 共通\ユニークキー\複合ユニークキー;
 
 class カート内商品 extends エンティティ
 {
@@ -17,7 +17,7 @@ class カート内商品 extends エンティティ
         int $数量,
         private bool $注文済みか？ = false
     ) {
-        parent::ユニークキーを設定する(new ユニークキー($カートid->値 . $商品id->値));
+        parent::ユニークキーを設定する(new 複合ユニークキー($カートid, $商品id));
         $this->数量を変更する($数量);
     }
 

@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace 注文\ドメイン\モデル;
 
 use 共通\エンティティ;
-use 共通\ユニークキー;
+use 共通\ユニークキー\複合ユニークキー;
 
 class 注文明細 extends エンティティ
 {
@@ -17,7 +17,7 @@ class 注文明細 extends エンティティ
         private int $数量,
         private int $総額
     ) {
-        parent::ユニークキーを設定する(new ユニークキー($id->値 . $行番号));
+        parent::ユニークキーを設定する(new 複合ユニークキー($id, $行番号));
     }
 
     public function id(): int

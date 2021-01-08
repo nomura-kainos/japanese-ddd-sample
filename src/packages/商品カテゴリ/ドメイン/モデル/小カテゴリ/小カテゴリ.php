@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace 商品カテゴリ\ドメイン\モデル\小カテゴリ;
 
 use 共通\エンティティ;
-use 共通\ユニークキー;
+use 共通\ユニークキー\複合ユニークキー;
 use 共通\集約ルート;
 use 商品カテゴリ\ドメイン\モデル\商品カテゴリID;
 
@@ -16,7 +16,7 @@ class 小カテゴリ extends エンティティ implements 集約ルート
         private 商品カテゴリID $小カテゴリid,
         private string $名前
     ) {
-        parent::ユニークキーを設定する(new ユニークキー($大カテゴリid->値 . $小カテゴリid->値));
+        parent::ユニークキーを設定する(new 複合ユニークキー($大カテゴリid, $小カテゴリid));
     }
 
     public function 大カテゴリid(): int

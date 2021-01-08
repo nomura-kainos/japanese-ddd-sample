@@ -1,7 +1,8 @@
 @startuml
 !include color.inc
 
-_仕様 -[hidden]-> _集約ルート
+_仕様 -[hidden]-> _ユニークキー
+_ユニークキー -[hidden]--> _集約ルート
 _集約ルート -[hidden]--> イベント履歴
 イベント履歴 -[hidden]-> ログインユーザ
 ログインユーザ -[hidden]-> トランザクション
@@ -11,13 +12,17 @@ ID採番 -[hidden]-> エロクアント拡張
 package 共通 <<Folder>> {
   class エンティティ
   interface 集約ルート
-  class ユニークキー
   class 値オブジェクト
   class ドメインイベント
   interface 仕様
   package 仕様 as _仕様 {
    interface 検証
    interface 選択
+  }
+  package ユニークキー as _ユニークキー {
+   interface ユニークキー
+   class 単一ユニークキー
+   class 複合ユニークキー
   }
   package 集約ルート as _集約ルート {
    class 集約ルートチェッカー

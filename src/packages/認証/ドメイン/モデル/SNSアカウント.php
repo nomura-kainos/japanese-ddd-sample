@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace 認証\ドメイン\モデル;
 
 use 共通\エンティティ;
-use 共通\ユニークキー;
+use 共通\ユニークキー\複合ユニークキー;
 
 class SNSアカウント extends エンティティ
 {
@@ -14,7 +14,7 @@ class SNSアカウント extends エンティティ
         private string $id,
         private ?string $メール = null
     ) {
-        parent::ユニークキーを設定する(new ユニークキー($SNS名 . $id));
+        parent::ユニークキーを設定する(new 複合ユニークキー($SNS名, $id));
     }
 
     public function SNS名(): string

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace 共通;
 
+use 共通\ユニークキー\ユニークキー;
+
 class エンティティ
 {
     private ユニークキー $ユニークキー;
