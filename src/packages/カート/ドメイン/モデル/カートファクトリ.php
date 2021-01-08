@@ -28,7 +28,7 @@ class カートファクトリ
         return $集約ルート;
     }
 
-    public function 再構成する(カートID $カートid, ユーザID $ユーザid, array $複数商品): カート
+    public function 再構成する(カートID $カートid, ユーザID $ユーザid, array $複数商品 = []): カート
     {
         $カート内商品 = [];
         foreach ($複数商品 as $商品) {
