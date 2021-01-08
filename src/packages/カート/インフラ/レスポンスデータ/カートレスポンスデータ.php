@@ -9,7 +9,7 @@ use カート\インフラ\エロクアント\カートエロクアント;
 class カートレスポンスデータ
 {
     public function __construct(
-        private カートエロクアント $カート,
+        private int $id,
         private array $商品コレクション
     ) {
     }
