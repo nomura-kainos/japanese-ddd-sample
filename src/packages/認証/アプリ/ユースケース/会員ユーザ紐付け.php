@@ -31,7 +31,7 @@ class 会員ユーザ紐付け
     public function 実行(string $SNS名)
     {
         $SNSアカウント = $this->接続したSNSアカウントの取得($SNS名);
-        if($this->既に紐付いているか？($SNSアカウント)) {
+        if ($this->既に紐付いているか？($SNSアカウント)) {
             $this->登録済みの会員ユーザでログインする($SNSアカウント);
             return;
         }
