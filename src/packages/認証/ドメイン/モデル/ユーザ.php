@@ -38,7 +38,7 @@ class ユーザ extends エンティティ implements 集約ルート
         return $this->SNSアカウントコレクション;
     }
 
-    public function 紐付け済みSNSアカウントを追加する(string $SNS名, string $SNSアカウントid)
+    public function SNSアカウントを追加する(string $SNS名, string $SNSアカウントid)
     {
         $this->SNSアカウントコレクション[] = new SNSアカウント($SNS名, $SNSアカウントid);
     }
