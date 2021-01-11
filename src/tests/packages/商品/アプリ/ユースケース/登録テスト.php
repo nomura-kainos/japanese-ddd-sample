@@ -25,10 +25,10 @@ class 登録テスト extends TestCase
     private function テスト商品を作成(): 商品
     {
         return new 商品(
-            new 商品ID(1),
-            '登録',
-            new レンタル料金(1000),
-            new カテゴリ(1, 1)
+            id: new 商品ID(1),
+            名前: '登録',
+            レンタル料金: new レンタル料金(1000),
+            カテゴリ: new カテゴリ(1, 1),
         );
     }
     public function test_最後のメソッドが実行されること()
