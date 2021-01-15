@@ -34,7 +34,7 @@ class 最新カート仕様 implements 選択
     private function ユーザidが一致するカートのみ抽出する(array $複数カート): array
     {
         return array_filter($複数カート, function ($カート) {
-            return $カート['ユーザid'] === $this->ユーザid->値;
+            return $カート->ユーザid === $this->ユーザid->値;
         });
     }
 
