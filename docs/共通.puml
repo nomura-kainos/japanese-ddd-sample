@@ -1,7 +1,7 @@
 @startuml
 !include color.inc
 
-_仕様 -[hidden]-> _ユニークキー
+_仕様 -[hidden]--> _ユニークキー
 _ユニークキー -[hidden]--> _集約ルート
 _集約ルート -[hidden]--> イベント履歴
 イベント履歴 -[hidden]-> ログインユーザ
@@ -18,6 +18,8 @@ package 共通 <<Folder>> {
   package 仕様 as _仕様 {
    interface 検証
    interface 選択
+   interface 選択リポジトリインターフェース
+   class 選択リポジトリ
   }
   package ユニークキー as _ユニークキー {
    interface ユニークキー
