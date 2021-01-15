@@ -13,7 +13,5 @@ interface ユーザリポジトリインターフェース
 
     public function IDで1件取得(ユーザID $id): ?ユーザレスポンスデータ;
 
-    public function 登録済みユーザを1件取得(string $SNS名, string $SNSアカウントid): ?ユーザレスポンスデータ;
-
     public function 保存(ユーザ $ユーザ);
 }
