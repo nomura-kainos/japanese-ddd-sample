@@ -13,7 +13,7 @@ class 一覧表示クエリレスポンスデータ
     public function __construct(Collection $コレクション)
     {
         $カテゴリコレクション = $コレクション->map(function ($カテゴリ) {
-            return new 小カテゴリレスポンスデータ($カテゴリ);
+            return new 小カテゴリレスポンスデータ($カテゴリ->小カテゴリid, $カテゴリ->名前);
         });
 
         $this->カテゴリコレクション = $カテゴリコレクション;
