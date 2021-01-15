@@ -34,7 +34,7 @@ class 最後尾小カテゴリ仕様 implements 選択
     private function 大カテゴリidが一致する小カテゴリのみ抽出する(array $複数小カテゴリ): array
     {
         return array_filter($複数小カテゴリ, function ($小カテゴリ) {
-            return $小カテゴリ['大カテゴリid'] === $this->大カテゴリid->値;
+            return $小カテゴリ->大カテゴリid === $this->大カテゴリid->値;
         });
     }
 
