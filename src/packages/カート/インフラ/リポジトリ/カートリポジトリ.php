@@ -40,6 +40,9 @@ class カートリポジトリ implements カートリポジトリインター�
     public function 仕様で取得(選択 $仕様): ?カートレスポンスデータ
     {
         $単カートid = $this->選択リポ->満たすレコードを1件取得($this->カートエロクアント->getTable(), $仕様)?->id;
+        if($単カートid === null) {
+            return null;
+        }
         $商品コレクション = $this->カート内商品を全件取得(new カートID($単カートid));
 
         return new カートレスポンスデータ($単カートid, $商品コレクション->取得());
