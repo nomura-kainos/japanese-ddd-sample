@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace 商品\インフラ\レスポンスデータ;
 
 use Illuminate\Support\Collection;
+use 商品\インフラ\エロクアント\商品カテゴリエロクアント;
 
 class 商品カテゴリコレクションレスポンスデータ
 {
@@ -12,7 +13,7 @@ class 商品カテゴリコレクションレスポンスデータ
 
     public function __construct(Collection $コレクション)
     {
-        $商品コレクション = $コレクション->map(function ($商品) {
+        $商品コレクション = $コレクション->map(function (商品カテゴリエロクアント $商品) {
             return new 商品カテゴリレスポンスデータ($商品);
         });
 

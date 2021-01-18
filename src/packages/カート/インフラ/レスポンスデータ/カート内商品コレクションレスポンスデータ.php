@@ -13,7 +13,7 @@ class カート内商品コレクションレスポンスデータ
 
     public function __construct(Collection $コレクション)
     {
-        $商品コレクション = $コレクション->map(function ($商品) {
+        $商品コレクション = $コレクション->map(function (カート内商品エロクアント $商品) {
             return new _カート内商品($商品);
         });
 

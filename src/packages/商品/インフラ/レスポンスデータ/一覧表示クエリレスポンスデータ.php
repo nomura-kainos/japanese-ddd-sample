@@ -14,7 +14,7 @@ class 一覧表示クエリレスポンスデータ
 
     public function __construct(Collection $コレクション)
     {
-        $商品コレクション = $コレクション->map(function ($商品) {
+        $商品コレクション = $コレクション->map(function (商品エロクアント $商品) {
             return new 商品($商品);
         });
 

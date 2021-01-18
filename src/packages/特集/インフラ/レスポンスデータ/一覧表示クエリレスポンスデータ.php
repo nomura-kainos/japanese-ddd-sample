@@ -13,7 +13,7 @@ class 一覧表示クエリレスポンスデータ
 
     public function __construct(Collection $コレクション)
     {
-        $特集コレクション = $コレクション->map(function ($特集) {
+        $特集コレクション = $コレクション->map(function (特集エロクアント $特集) {
             return new 特集($特集);
         });
 

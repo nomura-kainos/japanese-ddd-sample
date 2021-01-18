@@ -13,7 +13,7 @@ class SNSアカウントコレクションレスポンスデータ
 
     public function __construct(Collection $コレクション)
     {
-        $SNSアカウントコレクション = $コレクション->map(function ($SNSアカウント) {
+        $SNSアカウントコレクション = $コレクション->map(function (SNSアカウントエロクアント $SNSアカウント) {
             return new SNSアカウント($SNSアカウント);
         });
 
