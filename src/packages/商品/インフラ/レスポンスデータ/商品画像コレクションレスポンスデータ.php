@@ -22,6 +22,6 @@ class 商品画像コレクションレスポンスデータ
 
     public function 取得(): Collection
     {
-        return $this->商品画像コレクション;
+        return new Collection($this->商品画像コレクション);
     }
 }

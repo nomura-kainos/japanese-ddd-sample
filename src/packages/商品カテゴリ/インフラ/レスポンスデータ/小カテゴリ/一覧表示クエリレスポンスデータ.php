@@ -21,6 +21,6 @@ class 一覧表示クエリレスポンスデータ
 
     public function 取得(): Collection
     {
-        return $this->カテゴリコレクション;
+        return new Collection($this->カテゴリコレクション);
     }
 }

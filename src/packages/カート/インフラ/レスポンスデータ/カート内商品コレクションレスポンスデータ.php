@@ -22,7 +22,7 @@ class カート内商品コレクションレスポンスデータ
 
     public function 取得(): array
     {
-        return $this->商品コレクション->toArray();
+        return (new Collection($this->商品コレクション))->toArray();
     }
 }
 

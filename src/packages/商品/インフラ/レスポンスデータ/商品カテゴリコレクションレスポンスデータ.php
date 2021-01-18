@@ -19,8 +19,8 @@ class 商品カテゴリコレクションレスポンスデータ
         $this->商品コレクション = $商品コレクション;
     }
 
-    public function 取得(): Collection
+    public function 取得(): array
     {
-        return $this->商品コレクション;
+        return (new Collection($this->商品コレクション))->toArray();
     }
 }

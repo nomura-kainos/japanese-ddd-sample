@@ -28,7 +28,7 @@ class 一覧ビューモデル
 
     public function 取得(): Collection
     {
-        return $this->商品コレクション;
+        return new Collection($this->商品コレクション);
     }
 }
 /*

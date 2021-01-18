@@ -27,7 +27,7 @@ class 一覧ビューモデル
 
     public function 取得(): Collection
     {
-        return $this->特集コレクション;
+        return new Collection($this->特集コレクション);
     }
 }
 /*

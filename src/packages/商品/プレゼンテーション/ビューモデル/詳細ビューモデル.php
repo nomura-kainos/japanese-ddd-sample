@@ -119,6 +119,6 @@ class 詳細ビューモデル
 
     public function 画像コレクション(): Collection
     {
-        return $this->画像コレクション->取得();
+        return new Collection($this->画像コレクション->取得());
     }
 }

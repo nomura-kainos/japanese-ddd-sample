@@ -22,7 +22,7 @@ class 一覧表示クエリレスポンスデータ
 
     public function 取得(): Collection
     {
-        return $this->商品コレクション;
+        return new Collection($this->商品コレクション);
     }
 }
 
