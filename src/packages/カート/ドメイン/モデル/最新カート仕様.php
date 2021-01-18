@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace カート\ドメイン\モデル;
 
 use 共通\仕様\選択;
+use 共通\配列コピー\ディープコピー;
 
 class 最新カート仕様 implements 選択
 {
@@ -33,14 +34,16 @@ class 最新カート仕様 implements 選択
 
     private function ユーザidが一致するカートのみ抽出する(array $複数カート): array
     {
-        return array_filter($複数カート, function ($カート) {
+        $ユーザ別カート = array_filter($複数カート, function ($カート) {
             return $カート->ユーザid === $this->ユーザid->値;
         });
+        return ディープコピー::実行($ユーザ別カート);
     }
 
     private function 作成日時のみ抽出する(array $複数カート): array
     {
-        return array_column($複数カート, 'created_at');
+        $作成日時リスト = array_column($複数カート, 'created_at');
+        return ディープコピー::実行($作成日時リスト);
     }
 
     private function 最新の作成日時を抽出する(array $複数作成日時): string

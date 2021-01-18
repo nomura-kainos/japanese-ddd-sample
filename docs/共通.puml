@@ -8,6 +8,7 @@ _集約ルート -[hidden]--> イベント履歴
 ログインユーザ -[hidden]-> トランザクション
 トランザクション -[hidden]-> ID採番
 ID採番 -[hidden]-> エロクアント拡張
+エロクアント拡張 -[hidden]-> 配列コピー
 
 package 共通 <<Folder>> {
   class エンティティ
@@ -49,6 +50,9 @@ package 共通 <<Folder>> {
   }
   package エロクアント拡張 {
    class 複合主キー設定
+  }
+  package 配列コピー {
+   class ディープコピー
   }
 }
 @enduml

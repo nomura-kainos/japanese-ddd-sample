@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace カート\ドメイン\モデル;
 
 use 共通\エンティティ;
+use 共通\配列コピー\ディープコピー;
 use 共通\集約ルート;
 
 class カート extends エンティティ implements 集約ルート
@@ -29,7 +30,7 @@ class カート extends エンティティ implements 集約ルート
 
     public function 商品コレクション(): array
     {
-        return $this->商品コレクション;
+        return ディープコピー::実行($this->商品コレクション);
     }
 
     public function 商品を全て注文済みにする()

@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace カート\インフラ\レスポンスデータ;
 
+use 共通\配列コピー\ディープコピー;
+
 class カートレスポンスデータ
 {
     public function __construct(
@@ -19,6 +21,6 @@ class カートレスポンスデータ
 
     public function 商品コレクション(): array
     {
-        return $this->商品コレクション;
+        return ディープコピー::実行($this->商品コレクション);;
     }
 }

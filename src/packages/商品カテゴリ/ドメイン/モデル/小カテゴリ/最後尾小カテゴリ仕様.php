@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace 商品カテゴリ\ドメイン\モデル\小カテゴリ;
 
 use 共通\仕様\選択;
+use 共通\配列コピー\ディープコピー;
 use 商品カテゴリ\ドメイン\モデル\商品カテゴリID;
 
 class 最後尾小カテゴリ仕様 implements 選択
@@ -33,14 +34,16 @@ class 最後尾小カテゴリ仕様 implements 選択
 
     private function 大カテゴリidが一致する小カテゴリのみ抽出する(array $複数小カテゴリ): array
     {
-        return array_filter($複数小カテゴリ, function ($小カテゴリ) {
+        $大カテゴリ別の小カテゴリ = array_filter($複数小カテゴリ, function ($小カテゴリ) {
             return $小カテゴリ->大カテゴリid === $this->大カテゴリid->値;
         });
+        return ディープコピー::実行($大カテゴリ別の小カテゴリ);
     }
 
     private function 小カテゴリidのみ抽出する(array $複数小カテゴリ): array
     {
-        return array_column($複数小カテゴリ, '小カテゴリid');
+        $小カテゴリidリスト = array_column($複数小カテゴリ, '小カテゴリid');
+        return ディープコピー::実行($小カテゴリidリスト);
     }
 
     private function 最後尾の小カテゴリidを抽出する(array $小カテゴリidリスト): int

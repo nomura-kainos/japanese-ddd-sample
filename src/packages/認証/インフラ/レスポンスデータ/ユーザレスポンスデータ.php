@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace 認証\インフラ\レスポンスデータ;
 
+use 共通\配列コピー\ディープコピー;
 use 認証\インフラ\エロクアント\ユーザエロクアント;
 
 class ユーザレスポンスデータ
@@ -38,6 +39,6 @@ class ユーザレスポンスデータ
 
     public function SNSアカウントコレクション(): array
     {
-        return $this->SNSアカウントコレクション;
+        return ディープコピー::実行($this->SNSアカウントコレクション);
     }
 }
