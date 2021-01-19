@@ -57,14 +57,9 @@ class 最新カート仕様 implements 選択
             return false;
         }
 
-        if ($this->ユーザid->値 != $カート->ユーザid) {
-            return false;
-        }
+        $同じユーザか？ = $this->ユーザid->値 == $カート->ユーザid;
+        $最新日時か？ = $this->最新日時 == $カート->created_at;
 
-        if ($this->最新日時 != $カート->created_at) {
-            return false;
-        }
-
-        return true;
+        return $同じユーザか？ and $最新日時か？;
     }
 }

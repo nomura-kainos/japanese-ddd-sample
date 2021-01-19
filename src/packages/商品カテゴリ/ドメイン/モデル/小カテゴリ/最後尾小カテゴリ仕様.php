@@ -57,14 +57,9 @@ class 最後尾小カテゴリ仕様 implements 選択
             return false;
         }
 
-        if ($this->大カテゴリid->値 !== $小カテゴリ->大カテゴリid) {
-            return false;
-        }
+        $同じ大カテゴリか？ = $this->大カテゴリid->値 === $小カテゴリ->大カテゴリid;
+        $最後尾の小カテゴリidか？ = $this->最後尾小カテゴリid === $小カテゴリ->小カテゴリid;
 
-        if ($this->最後尾小カテゴリid !== $小カテゴリ->小カテゴリid) {
-            return false;
-        }
-
-        return true;
+        return $同じ大カテゴリか？ and $最後尾の小カテゴリidか？;
     }
 }
