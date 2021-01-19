@@ -21,6 +21,6 @@ class カートレスポンスデータ
 
     public function 商品コレクション(): array
     {
-        return ディープコピー::実行($this->商品コレクション);;
+        return ディープコピー::実行($this->商品コレクション);
     }
 }

@@ -30,6 +30,6 @@ class 注文 extends エンティティ implements 集約ルート
 
     public function 注文明細(): array
     {
-        return ディープコピー::実行($this->注文明細);;
+        return ディープコピー::実行($this->注文明細);
     }
 }
