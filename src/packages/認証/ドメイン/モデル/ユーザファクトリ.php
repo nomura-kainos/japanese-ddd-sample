@@ -10,13 +10,13 @@ class ユーザファクトリ
 {
     public function __construct(
         private 集約ルートチェッカーインターフェース $集約ルートチェッカー,
-        private ユーザリポジトリインターフェース $ユーザリポ
+        private ユーザクエリサービスインターフェース $ユーザクエリ,
     ) {
     }
 
     public function 作成する(string $メール, ?string $パスワード): ユーザ
     {
-        $ユーザID = $this->ユーザリポ->登録用に次のユーザIDを取得する();
+        $ユーザID = $this->ユーザクエリ->登録用に次のユーザIDを取得する();
 
         $集約ルート = new ユーザ(
             new ユーザID($ユーザID->値()),

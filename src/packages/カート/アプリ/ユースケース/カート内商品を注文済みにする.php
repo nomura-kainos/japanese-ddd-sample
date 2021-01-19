@@ -7,6 +7,7 @@ namespace カート\アプリ\ユースケース;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
 use カート\ドメイン\モデル\カートID;
+use カート\ドメイン\モデル\カートクエリサービスインターフェース;
 use カート\ドメイン\モデル\カートファクトリ;
 use カート\ドメイン\モデル\カートリポジトリインターフェース;
 use カート\ドメイン\モデル\ユーザID;
@@ -22,7 +23,8 @@ class カート内商品を注文済みにする implements ShouldQueue
 
     public function __construct(
         private カートリポジトリインターフェース $カートリポ,
-        private カートファクトリ $カートファクトリ
+        private カートクエリサービスインターフェース $カートクエリ,
+        private カートファクトリ $カートファクトリ,
     ) {
     }
 
@@ -32,7 +34,7 @@ class カート内商品を注文済みにする implements ShouldQueue
         $this->イベント履歴->登録する('開始');
 
         $ユーザid = new ユーザID($ドメインイベント->ユーザid());
-        $最新カート = $this->カートリポ->仕様で取得(new 最新カート仕様($ユーザid));
+        $最新カート = $this->カートクエリ->仕様で取得(new 最新カート仕様($ユーザid));
 
         $カート = $this->カートファクトリ->再構成する(new カートID($最新カート->id()), $ユーザid, $最新カート->商品コレクション());
         $カート->商品を全て注文済みにする();

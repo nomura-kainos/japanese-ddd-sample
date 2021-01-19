@@ -52,7 +52,7 @@ package 認証 <<Folder>> {
    interface ドライバインターフェース
    interface ログインユーザインターフェース
    interface ユーザリポジトリインターフェース
-   interface 登録済みユーザクエリサービスインターフェース
+   interface ユーザクエリサービスインターフェース
    class 未登録ユーザ仕様
    class SNSアカウント紐付け済み仕様
   }
@@ -75,7 +75,7 @@ package 認証 <<Folder>> {
   }
   package リポジトリ {
    class ユーザリポジトリ
-   class 登録済みユーザクエリサービス
+   class ユーザクエリサービス
   }
  }
 }

@@ -30,6 +30,7 @@ package カート <<Folder>> {
    class カート
    class カートID
    interface カートリポジトリインターフェース
+   interface カートクエリサービスインターフェース
    class カートファクトリ
    class カート内商品ID
    class カート内商品
@@ -51,6 +52,7 @@ package カート <<Folder>> {
   }
   package リポジトリ {
    class カートリポジトリ
+   class カートクエリサービス
    class 一覧表示クエリサービス
   }
  }

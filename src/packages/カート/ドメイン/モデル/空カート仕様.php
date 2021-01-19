@@ -9,7 +9,7 @@ use 共通\仕様\検証;
 class 空カート仕様 implements 検証
 {
     public function __construct(
-        private カートリポジトリインターフェース $カートリポ
+        private カートクエリサービスインターフェース $カートクエリ,
     ) {
     }
 
@@ -19,7 +19,7 @@ class 空カート仕様 implements 検証
             return true;
         }
 
-        $カート内複数商品 = $this->カートリポ->カート内商品を全件取得(new カートID($カート->id()))->取得();
+        $カート内複数商品 = $this->カートクエリ->カート内商品を全件取得(new カートID($カート->id()))->取得();
         $未注文商品 = array_filter($カート内複数商品, function ($カート内商品) {
             return !$カート内商品->注文済みか？();
         });

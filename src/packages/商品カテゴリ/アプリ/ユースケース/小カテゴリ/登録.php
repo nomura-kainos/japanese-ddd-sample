@@ -14,7 +14,7 @@ class 登録
     public function __construct(
         private トランザクションインターフェース $トランザクション,
         private 小カテゴリリポジトリインターフェース $小カテゴリリポ,
-        private 小カテゴリファクトリ $小カテゴリファクトリ
+        private 小カテゴリファクトリ $小カテゴリファクトリ,
     ) {
     }
 

@@ -13,7 +13,7 @@ class 登録
     public function __construct(
         private トランザクションインターフェース $トランザクション,
         private 大カテゴリリポジトリインターフェース $大カテゴリリポ,
-        private 大カテゴリファクトリ $大カテゴリファクトリ
+        private 大カテゴリファクトリ $大カテゴリファクトリ,
     ) {
     }
 

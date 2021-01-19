@@ -11,13 +11,13 @@ class 注文ファクトリ
 {
     public function __construct(
         private 集約ルートチェッカーインターフェース $集約ルートチェッカー,
-        private 注文リポジトリインターフェース $注文リポ
+        private 注文クエリサービスインターフェース $注文クエリ,
     ) {
     }
 
     public function 作成する(ユーザID $ユーザid, array $注文商品): 注文
     {
-        $注文id = $this->注文リポ->登録用に次の注文IDを取得する();
+        $注文id = $this->注文クエリ->登録用に次の注文IDを取得する();
         $登録用注文id = new 注文ID($注文id->値());
 
         $注文明細 = array_map(

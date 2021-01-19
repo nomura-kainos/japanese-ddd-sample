@@ -23,6 +23,7 @@ package カート <<Folder>> {
    class 商品ID
    class 注文
    interface 注文リポジトリインターフェース
+   interface 注文クエリサービスインターフェース
    interface メールインターフェース
    class 注文ID
    class 注文ファクトリ
@@ -43,6 +44,7 @@ package カート <<Folder>> {
   }
   package リポジトリ {
    class 注文リポジトリ
+   class 注文クエリサービス
   }
  }
 }

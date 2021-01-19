@@ -39,6 +39,7 @@ package 特集 <<Folder>> {
    class 特集ID
    class 特集ファクトリ
    interface 特集リポジトリインターフェース
+   interface 特集クエリサービスインターフェース
   }
  }
  package インフラ {
@@ -57,6 +58,7 @@ package 特集 <<Folder>> {
   package リポジトリ {
    class 一覧表示クエリサービス
    class 特集リポジトリ
+   class 特集クエリサービス
    class 詳細表示クエリサービス
   }
  }
