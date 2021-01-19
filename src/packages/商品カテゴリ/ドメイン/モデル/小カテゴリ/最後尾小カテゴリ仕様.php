@@ -11,7 +11,7 @@ use 商品カテゴリ\ドメイン\モデル\商品カテゴリID;
 class 最後尾小カテゴリ仕様 implements 選択
 {
     private $最後尾小カテゴリid;
-    private $処理を終了するか？ = false;
+    private $仕様チェックしないか？ = false;
 
     public function __construct(private 商品カテゴリID $大カテゴリid)
     {
@@ -23,7 +23,7 @@ class 最後尾小カテゴリ仕様 implements 選択
 
         $複数小カテゴリ = $this->大カテゴリidが一致する小カテゴリのみ抽出する($抽出対象);
         if (empty($複数小カテゴリ)) {
-            $this->処理を終了するか？ = true;
+            $this->仕様チェックしないか？ = true;
             return;
         }
         $複数小カテゴリid = $this->小カテゴリidのみ抽出する($複数小カテゴリ);
@@ -53,7 +53,7 @@ class 最後尾小カテゴリ仕様 implements 選択
 
     public function 満たすか？($小カテゴリ): bool
     {
-        if ($this->処理を終了するか？) {
+        if ($this->仕様チェックしないか？) {
             return false;
         }
 

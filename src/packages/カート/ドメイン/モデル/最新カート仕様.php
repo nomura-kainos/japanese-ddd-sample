@@ -10,7 +10,7 @@ use 共通\配列コピー\ディープコピー;
 class 最新カート仕様 implements 選択
 {
     private $最新日時;
-    private $処理を終了するか？ = false;
+    private $仕様チェックしないか？ = false;
 
     public function __construct(
         private ユーザID $ユーザid
@@ -23,7 +23,7 @@ class 最新カート仕様 implements 選択
 
         $複数カート = $this->ユーザidが一致するカートのみ抽出する($抽出対象);
         if (empty($複数カート)) {
-            $this->処理を終了するか？ = true;
+            $this->仕様チェックしないか？ = true;
             return;
         }
         $複数作成日時 = $this->作成日時のみ抽出する($複数カート);
@@ -53,7 +53,7 @@ class 最新カート仕様 implements 選択
 
     public function 満たすか？($カート): bool
     {
-        if ($this->処理を終了するか？) {
+        if ($this->仕様チェックしないか？) {
             return false;
         }
 
