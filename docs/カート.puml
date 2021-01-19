@@ -40,7 +40,6 @@ package カート <<Folder>> {
  }
  package インフラ {
   package レスポンスデータ {
-   class カート内商品レスポンスデータ
    class カート内商品コレクションレスポンスデータ
    class カートレスポンスデータ
    class カートIDレスポンスデータ
