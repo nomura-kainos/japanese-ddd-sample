@@ -6,8 +6,6 @@ namespace Tests\packages\商品\インフラ\リポジトリ;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
-use 共通\ID採番\DBシーケンス;
-use 共通\ID採番\ID採番インターフェース;
 use 共通\集約ルート\集約ルートチェッカー;
 use 商品\インフラ\エロクアント\商品エロクアント;
 use 商品\インフラ\エロクアント\商品カテゴリエロクアント;
@@ -17,7 +15,6 @@ use 商品\ドメイン\モデル\カテゴリ;
 use 商品\ドメイン\モデル\レンタル料金;
 use 商品\ドメイン\モデル\商品;
 use 商品\ドメイン\モデル\商品ID;
-use Mockery;
 
 /**
  * @group 商品
@@ -34,7 +31,6 @@ class 商品リポジトリテスト extends TestCase
     {
         return new 商品リポジトリ(
             new 集約ルートチェッカー(),
-            new DBシーケンス(),
             new 商品エロクアント(),
             new 商品カテゴリエロクアント(),
             new 商品画像エロクアント()
@@ -49,26 +45,6 @@ class 商品リポジトリテスト extends TestCase
             new レンタル料金($レンタル料金),
             new カテゴリ($大カテゴリid, $小カテゴリid)
         );
-    }
-
-    public function test_登録用に次の商品IDが取得できること()
-    {
-        $ID採番モック = $this->instance(ID採番インターフェース::class, Mockery::mock(DBシーケンス::class, function ($モック) {
-                $モック->shouldReceive('連番を発行する')
-                    ->once()
-                    ->andReturn(2);
-        }));
-        $リポジトリ = new 商品リポジトリ(
-            new 集約ルートチェッカー(),
-            $ID採番モック,
-            new 商品エロクアント(),
-            new 商品カテゴリエロクアント(),
-            new 商品画像エロクアント()
-        );
-
-        $レスポンスデータ = $リポジトリ->登録用に次の商品IDを取得する();
-
-        self::assertSame(2, $レスポンスデータ->値());
     }
 
     public function test_商品の新規登録ができること()
@@ -119,29 +95,5 @@ class 商品リポジトリテスト extends TestCase
             '大カテゴリid' => 1,
             '小カテゴリid' => 1,
         ]);
-    }
-
-    public function test_商品IDで指定した商品が取得できること()
-    {
-        $this->seed('商品が1件登録済シーダ');
-        $リポジトリ = $this->商品リポジトリのインスタンスを作成();
-
-        $レスポンスデータ = $リポジトリ->IDで1件取得(new 商品ID(1));
-
-        self::assertSame(1, $レスポンスデータ->id());
-        self::assertSame('登録済', $レスポンスデータ->名前());
-        self::assertSame(1000, $レスポンスデータ->レンタル料金());
-        self::assertSame(1, $レスポンスデータ->大カテゴリid());
-        self::assertSame(1, $レスポンスデータ->小カテゴリid());
-    }
-
-    public function test_指定した商品が取得できない場合、nullを返す()
-    {
-        $this->seed('商品が1件登録済シーダ');
-        $リポジトリ = $this->商品リポジトリのインスタンスを作成();
-
-        $レスポンスデータ = $リポジトリ->IDで1件取得(new 商品ID(2));
-
-        self::assertNull($レスポンスデータ);
     }
 }
