@@ -22,7 +22,7 @@ class 登録
     ) {
     }
 
-    public function 実行(string $名前, int $レンタル料金, array $カテゴリ, $複数画像ファイル)
+    public function 実行(string $名前, int $レンタル料金, array $カテゴリ, array $複数画像ファイル)
     {
         $_カテゴリ = ディープコピー::実行($カテゴリ);
         $_複数画像ファイル = ディープコピー::実行($複数画像ファイル);
