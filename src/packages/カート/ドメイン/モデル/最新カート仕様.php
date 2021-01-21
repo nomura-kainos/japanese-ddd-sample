@@ -34,7 +34,9 @@ class 最新カート仕様 implements 選択
 
     private function ユーザidが一致するカートのみ抽出する(array $複数カート): array
     {
-        $ユーザ別カート = array_filter($複数カート, function ($カート) {
+        $_複数カート = ディープコピー::実行($複数カート);
+
+        $ユーザ別カート = array_filter($_複数カート, function ($カート) {
             return $カート->ユーザid === $this->ユーザid->値;
         });
         return ディープコピー::実行($ユーザ別カート);
@@ -42,13 +44,17 @@ class 最新カート仕様 implements 選択
 
     private function 作成日時のみ抽出する(array $複数カート): array
     {
-        $作成日時リスト = array_column($複数カート, 'created_at');
+        $_複数カート = ディープコピー::実行($複数カート);
+
+        $作成日時リスト = array_column($_複数カート, 'created_at');
         return ディープコピー::実行($作成日時リスト);
     }
 
     private function 最新の作成日時を抽出する(array $複数作成日時): string
     {
-        return max($複数作成日時);
+        $_複数作成日時 = ディープコピー::実行($複数作成日時);
+
+        return max($_複数作成日時);
     }
 
     public function 満たすか？($カート): bool

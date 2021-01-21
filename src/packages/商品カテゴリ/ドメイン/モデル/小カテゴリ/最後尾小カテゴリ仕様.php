@@ -34,7 +34,9 @@ class 最後尾小カテゴリ仕様 implements 選択
 
     private function 大カテゴリidが一致する小カテゴリのみ抽出する(array $複数小カテゴリ): array
     {
-        $大カテゴリ別の小カテゴリ = array_filter($複数小カテゴリ, function ($小カテゴリ) {
+        $_複数小カテゴリ = ディープコピー::実行($複数小カテゴリ);
+
+        $大カテゴリ別の小カテゴリ = array_filter($_複数小カテゴリ, function ($小カテゴリ) {
             return $小カテゴリ->大カテゴリid === $this->大カテゴリid->値;
         });
         return ディープコピー::実行($大カテゴリ別の小カテゴリ);
@@ -42,13 +44,17 @@ class 最後尾小カテゴリ仕様 implements 選択
 
     private function 小カテゴリidのみ抽出する(array $複数小カテゴリ): array
     {
-        $小カテゴリidリスト = array_column($複数小カテゴリ, '小カテゴリid');
+        $_複数小カテゴリ = ディープコピー::実行($複数小カテゴリ);
+
+        $小カテゴリidリスト = array_column($_複数小カテゴリ, '小カテゴリid');
         return ディープコピー::実行($小カテゴリidリスト);
     }
 
     private function 最後尾の小カテゴリidを抽出する(array $小カテゴリidリスト): int
     {
-        return max($小カテゴリidリスト);
+        $_小カテゴリidリスト = ディープコピー::実行($小カテゴリidリスト);
+
+        return max($_小カテゴリidリスト);
     }
 
     public function 満たすか？($小カテゴリ): bool

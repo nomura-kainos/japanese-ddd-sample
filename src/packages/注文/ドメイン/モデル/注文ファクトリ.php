@@ -50,6 +50,8 @@ class 注文ファクトリ
 
     private function 行番号の範囲を取得する(array $注文商品): array
     {
-        return ディープコピー::実行(range(1, count($注文商品)));
+        $_注文商品 = ディープコピー::実行($注文商品);
+
+        return ディープコピー::実行(range(1, count($_注文商品)));
     }
 }

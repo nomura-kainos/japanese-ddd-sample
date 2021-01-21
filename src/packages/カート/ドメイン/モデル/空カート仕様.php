@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace カート\ドメイン\モデル;
 
 use 共通\仕様\検証;
+use 共通\配列コピー\ディープコピー;
 
 class 空カート仕様 implements 検証
 {
@@ -32,7 +33,9 @@ class 空カート仕様 implements 検証
 
     private function 全て注文済みか？(array $未注文商品): bool
     {
-        if (count($未注文商品) > 0) {
+        $_未注文商品 = ディープコピー::実行($未注文商品);
+
+        if (count($_未注文商品) > 0) {
             return false;
         }
         return true;
