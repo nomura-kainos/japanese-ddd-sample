@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace 認証\ドメイン\モデル;
 
+use 共通\配列コピー\ディープコピー;
 use 共通\集約ルート\集約ルートチェッカーインターフェース;
 
 class ユーザファクトリ
@@ -30,8 +31,10 @@ class ユーザファクトリ
 
     public function 再構成する(ユーザID $ユーザid, string $メール, ?string $パスワード, array $複数SNSアカウント): ユーザ
     {
+        $_複数SNSアカウント = ディープコピー::実行($複数SNSアカウント);
+
         $SNSコレクション = [];
-        foreach ($複数SNSアカウント as $SNSアカウント) {
+        foreach ($_複数SNSアカウント as $SNSアカウント) {
             $SNSコレクション[] = new SNSアカウント(
                 $SNSアカウント->SNS名(),
                 $SNSアカウント->id(),
