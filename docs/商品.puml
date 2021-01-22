@@ -11,6 +11,7 @@ package 商品 <<Folder>> {
    class 一覧ビューモデル
    class 登録フォーム表示ビューモデル
    class 詳細ビューモデル
+   class カテゴリ階層分割済みコレクション
   }
   package コントローラ {
    class 一覧コントローラ
