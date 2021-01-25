@@ -16,15 +16,18 @@ class 小カテゴリ
         $this->名前 = '--' . $名前;
     }
 
-    public function 大カテゴリid(){
+    public function 大カテゴリid()
+    {
         return $this->大カテゴリid;
     }
 
-    public function 小カテゴリid(){
+    public function 小カテゴリid()
+    {
         return $this->小カテゴリid;
     }
 
-    public function 名前(){
+    public function 名前()
+    {
         return $this->名前;
     }
 }
