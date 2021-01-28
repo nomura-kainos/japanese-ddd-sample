@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Tests\packages\商品\アプリ\ユースケース;
 
-use Illuminate\Http\UploadedFile;
 use Tests\TestCase;
 use 共通\トランザクション\DBトランザクション;
 use 商品\アプリ\ユースケース\登録;
@@ -43,7 +42,7 @@ class 登録テスト extends TestCase
                 ->andReturn($this->mock(ファイル::class));
         });
         $ユースケース = new 登録(new DBトランザクション(), $リポジトリスパイ, $ファクトリモック, $画像アップローダモック);
-        $複数画像ファイル = [$this->mock(UploadedFile::class)];
+        $複数画像ファイル = [];
         $カテゴリ = [
             '大カテゴリid' => 1,
             '小カテゴリid' => 1,

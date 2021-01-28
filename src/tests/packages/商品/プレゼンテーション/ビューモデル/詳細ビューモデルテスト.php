@@ -8,6 +8,7 @@ use Illuminate\Support\Collection;
 use Tests\TestCase;
 use 商品\インフラ\エロクアント\商品画像エロクアント;
 use 商品\インフラ\レスポンスデータ\商品画像コレクションレスポンスデータ;
+use 商品\プレゼンテーション\ビューモデル\カテゴリ\カテゴリ階層分割済みコレクション;
 use 商品\プレゼンテーション\ビューモデル\詳細ビューモデル;
 use 商品\インフラ\エロクアント\商品カテゴリエロクアント;
 use 商品\インフラ\レスポンスデータ\商品カテゴリコレクションレスポンスデータ;
@@ -33,7 +34,7 @@ class 詳細ビューモデルテスト extends TestCase
             $this->商品['レンタル料金'],
             $this->商品['大カテゴリid'],
             $this->商品['小カテゴリid'],
-            new 商品カテゴリコレクションレスポンスデータ(new Collection()),
+            new カテゴリ階層分割済みコレクション(new 商品カテゴリコレクションレスポンスデータ(new Collection())),
             new 商品画像コレクションレスポンスデータ(new Collection()),
         );
 
@@ -50,7 +51,7 @@ class 詳細ビューモデルテスト extends TestCase
             $this->商品['レンタル料金'],
             $this->商品['大カテゴリid'],
             $this->商品['小カテゴリid'],
-            new 商品カテゴリコレクションレスポンスデータ(new Collection()),
+            new カテゴリ階層分割済みコレクション(new 商品カテゴリコレクションレスポンスデータ(new Collection())),
             new 商品画像コレクションレスポンスデータ(new Collection()),
         );
 
@@ -67,7 +68,7 @@ class 詳細ビューモデルテスト extends TestCase
             $this->商品['レンタル料金'],
             $this->商品['大カテゴリid'],
             $this->商品['小カテゴリid'],
-            new 商品カテゴリコレクションレスポンスデータ(new Collection()),
+            new カテゴリ階層分割済みコレクション(new 商品カテゴリコレクションレスポンスデータ(new Collection())),
             new 商品画像コレクションレスポンスデータ(new Collection()),
         );
 
@@ -84,7 +85,7 @@ class 詳細ビューモデルテスト extends TestCase
             500,
             $this->商品['大カテゴリid'],
             $this->商品['小カテゴリid'],
-            new 商品カテゴリコレクションレスポンスデータ(new Collection()),
+            new カテゴリ階層分割済みコレクション(new 商品カテゴリコレクションレスポンスデータ(new Collection())),
             new 商品画像コレクションレスポンスデータ(new Collection()),
         );
 
@@ -101,7 +102,7 @@ class 詳細ビューモデルテスト extends TestCase
             $this->商品['レンタル料金'],
             $this->商品['大カテゴリid'],
             $this->商品['小カテゴリid'],
-            new 商品カテゴリコレクションレスポンスデータ(new Collection()),
+            new カテゴリ階層分割済みコレクション(new 商品カテゴリコレクションレスポンスデータ(new Collection())),
             new 商品画像コレクションレスポンスデータ(new Collection()),
         );
 
@@ -118,7 +119,7 @@ class 詳細ビューモデルテスト extends TestCase
             $this->商品['レンタル料金'],
             $this->商品['大カテゴリid'],
             $this->商品['小カテゴリid'],
-            new 商品カテゴリコレクションレスポンスデータ(new Collection()),
+            new カテゴリ階層分割済みコレクション(new 商品カテゴリコレクションレスポンスデータ(new Collection())),
             new 商品画像コレクションレスポンスデータ(new Collection()),
         );
 
@@ -141,17 +142,17 @@ class 詳細ビューモデルテスト extends TestCase
             $this->商品['レンタル料金'],
             $this->商品['大カテゴリid'],
             $this->商品['小カテゴリid'],
-            new 商品カテゴリコレクションレスポンスデータ($コレクション),
+            new カテゴリ階層分割済みコレクション(new 商品カテゴリコレクションレスポンスデータ($コレクション)),
             new 商品画像コレクションレスポンスデータ(new Collection()),
         );
 
         $カテゴリコレクション = $ビューモデル->カテゴリコレクション();
 
-        self::assertSame('■大カテゴリ名', $カテゴリコレクション[0]->名前);
+        self::assertSame('■大カテゴリ名', $カテゴリコレクション[0]->名前());
 
-        self::assertSame('－　小カテゴリ名', $カテゴリコレクション[1]->名前);
-        self::assertSame(1, $カテゴリコレクション[1]->大カテゴリid);
-        self::assertSame(2, $カテゴリコレクション[1]->小カテゴリid);
+        self::assertSame('--小カテゴリ名', $カテゴリコレクション[1]->名前());
+        self::assertSame(1, $カテゴリコレクション[1]->大カテゴリid());
+        self::assertSame(2, $カテゴリコレクション[1]->小カテゴリid());
     }
 
     public function test_画像コレクションが取得できること()
@@ -168,12 +169,12 @@ class 詳細ビューモデルテスト extends TestCase
             $this->商品['レンタル料金'],
             $this->商品['大カテゴリid'],
             $this->商品['小カテゴリid'],
-            new 商品カテゴリコレクションレスポンスデータ(new Collection()),
+            new カテゴリ階層分割済みコレクション(new 商品カテゴリコレクションレスポンスデータ(new Collection())),
             new 商品画像コレクションレスポンスデータ($コレクション),
         );
 
         $画像コレクション = $ビューモデル->画像コレクション();
 
-        self::assertSame('ファイルパス1', $画像コレクション->first()->ファイルパス());
+        self::assertSame('ファイルパス1', $画像コレクション[0]->ファイルパス());
     }
 }

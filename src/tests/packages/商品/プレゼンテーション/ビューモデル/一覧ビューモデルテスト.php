@@ -36,10 +36,10 @@ class 一覧ビューモデルテスト extends TestCase
 
         $ビューモデル = $一覧ビュー->取得();
 
-        self::assertSame('100', $ビューモデル->first()->id());
-        self::assertSame('登録', $ビューモデル->first()->名前());
-        self::assertSame('500', $ビューモデル->first()->レンタル料金());
-        self::assertSame('カテゴリ名1', $ビューモデル->first()->カテゴリ名());
+        self::assertSame('100', $ビューモデル[0]->id());
+        self::assertSame('登録', $ビューモデル[0]->名前());
+        self::assertSame('500', $ビューモデル[0]->レンタル料金());
+        self::assertSame('カテゴリ名1', $ビューモデル[0]->カテゴリ名());
     }
 
     private $商品 = [

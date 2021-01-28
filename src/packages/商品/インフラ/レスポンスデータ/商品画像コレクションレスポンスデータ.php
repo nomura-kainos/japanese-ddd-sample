@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace 商品\インフラ\レスポンスデータ;
 
 use Illuminate\Support\Collection;
+use 共通\配列コピー\ディープコピー;
 use 商品\インフラ\エロクアント\商品画像エロクアント;
 
 class 商品画像コレクションレスポンスデータ
@@ -21,8 +22,8 @@ class 商品画像コレクションレスポンスデータ
         $this->商品画像コレクション = $商品画像コレクション;
     }
 
-    public function 取得(): Collection
+    public function 取得(): array
     {
-        return new Collection($this->商品画像コレクション);
+        return ディープコピー::実行($this->商品画像コレクション->toArray());
     }
 }

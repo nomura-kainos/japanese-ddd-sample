@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace 商品カテゴリ\プレゼンテーション\ビューモデル\大カテゴリ;
 
-use Illuminate\Support\Collection;
+use 共通\配列コピー\ディープコピー;
 use 商品カテゴリ\インフラ\レスポンスデータ\大カテゴリ\一覧表示クエリレスポンスデータ;
 
 class 一覧ビューモデル
@@ -24,9 +24,9 @@ class 一覧ビューモデル
         $this->商品カテゴリコレクション = $詰め替え後のコレクション;
     }
 
-    public function 取得(): Collection
+    public function 取得(): array
     {
-        return new Collection($this->商品カテゴリコレクション);
+        return ディープコピー::実行($this->商品カテゴリコレクション->toArray());
     }
 }
 /*
