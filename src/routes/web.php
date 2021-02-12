@@ -44,6 +44,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/sample', function () {
+    return view('sample');
+});
+
+
 
 Route::get('/user/login', ログインフォーム表示コントローラ::class)->name('login');
 Route::post('/user/login', 入力してログインコントローラ::class);
