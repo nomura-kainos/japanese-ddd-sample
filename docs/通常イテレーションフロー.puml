@@ -1,0 +1,47 @@
+@startuml
+!include color.inc
+
+actor プログラマ as pg
+actor プロダクトオーナー as po
+
+title 通常イテレーション
+
+group イテレーション
+ group 計画ミーティング
+    po -> pg : 背骨とぜい肉リストを更新する\n(機能追加、削除、優先順位)
+    pg -> po : 優先順位が高い一部に\nプランニングポーカーでポイント付与
+    pg -> po : 1週間でできるポイントを伝える
+    po -> pg : ストーリーを選ぶ
+ end
+
+ group 開発する
+    pg -> po : ストーリーの詳細を確認
+    pg -> po : 必要なタスクを確認
+    pg -> po : 受入条件を確認
+    pg -> pg : 機能実装
+    pg -> pg : 顧客テストの作成、実行
+ end
+
+ group 中間イテレーション
+    po -> pg : デモ待ちのポイントを確認
+    po -> pg : 1週間の半分にできるポイントから、\n多ければ追加ストーリーを選ぶ、\n少なければストーリーを減らす
+ end
+
+ group デモ
+    pg -> po : 顧客テストの実行
+    po -> pg : 要求の伝達ミスや漏れがないことを確認
+    po -> pg : 完了を伝える
+ end
+
+ group ふりかえり
+    pg -> pg : ふりかえりKPT
+    pg -> pg : ベロシティの作成
+    pg -> pg : 天気図の作成
+ end
+
+ group 次のイテレーションへ
+ end
+end
+
+
+@enduml
