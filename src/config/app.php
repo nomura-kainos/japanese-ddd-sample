@@ -182,6 +182,7 @@ return [
         App\Providers\トランザクションサービスプロバイダ::class,
         App\Providers\ID採番サービスプロバイダ::class,
         App\Providers\集約ルートチェッカーサービスプロバイダ::class,
+        App\Providers\ビュークリエーターサービスプロバイダ::class,
 
         /*
          * SNSログインプロバイダ
