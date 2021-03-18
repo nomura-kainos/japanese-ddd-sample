@@ -7,6 +7,9 @@ use Illuminate\Support\Facades\View as V;
 use Illuminate\View\ViewName;
 use Jenssegers\Agent\Facades\Agent;
 
+/*
+ * 参考 https://qiita.com/reflet/items/111058c7b13350ed5e10
+ */
 class スマホ画面切り替え
 {
     private View $ビュー;
